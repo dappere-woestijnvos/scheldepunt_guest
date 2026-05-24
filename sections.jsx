@@ -92,9 +92,7 @@ const WelcomeSection = ({ go }) => {
         color: "var(--ink)", letterSpacing: "-0.005em",
         textWrap: "pretty",
       }}>
-        We are so glad you are here. Make yourself at home —
-        the coffee is in the green tin, the wifi is on the next page,
-        and the cathedral bells will be your alarm clock.
+        {A.welcomeText}
       </p>
       <p style={{ fontSize: 13, color: "var(--ink-soft)", marginTop: 10 }}>
         — {A.hosts}
@@ -293,17 +291,19 @@ const WifiSection = () => {
         </div>
       </div>
 
-      {/* Pharmacy + Hospital */}
+      {/* Pharmacy + Hospital + Taxi + Bus */}
       <div style={{ marginTop: 28 }}>
-        <div className="eyebrow">Nearest</div>
+        <div className="eyebrow">Useful to know</div>
         <div style={{ marginTop: 10, borderTop: "1px solid var(--rule)" }}>
           {[
-            { l: "Pharmacy", v: A.emergency.pharmacy },
+            { l: "Nearest pharmacy", v: A.emergency.pharmacy },
             { l: "Hospital", v: A.emergency.hospital },
+            { l: "Taxi", v: `${A.taxi.phone1}  ·  ${A.taxi.phone2}` },
+            { l: "Bus (nearest stop)", v: A.transport.bus },
           ].map((r) => (
             <div key={r.l} style={{ padding: "14px 0", borderBottom: "1px solid var(--rule)" }}>
               <div style={{ fontSize: 12, color: "var(--ink-mute)" }}>{r.l}</div>
-              <div className="serif" style={{ fontSize: 18, marginTop: 2 }}>{r.v}</div>
+              <div className="serif" style={{ fontSize: 16, marginTop: 2, lineHeight: 1.4 }}>{r.v}</div>
             </div>
           ))}
         </div>
@@ -507,7 +507,7 @@ const ToursSection = () => {
         <p className="serif-i" style={{
           fontSize: 18, margin: "8px 0 0", lineHeight: 1.4,
         }}>
-          We can book the boat tickets in advance for you — just ask. The free walking tour is genuinely the best introduction to the city.
+          {A.toursHostNote}
         </p>
       </div>
     </Page>
