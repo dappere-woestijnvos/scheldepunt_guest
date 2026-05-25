@@ -47,16 +47,16 @@ const TypingDots = () => (
   </div>
 );
 
-const SUGGESTIONS = [
-  "What time is checkout?",
-  "Where can I buy groceries nearby?",
-  "Is there parking?",
-  "What's good to do on a rainy day in Ghent?",
+const SUGGESTIONS = () => [
+  window.t('suggest.checkout'),
+  window.t('suggest.groceries'),
+  window.t('suggest.parking'),
+  window.t('suggest.rainy'),
 ];
 
 const ConciergePanel = ({ open, onClose, openContact }) => {
   const [messages, setMessages] = useStateC([
-    { role: "assistant", content: "Hallo! I'm the Scheldepunt concierge — like a local friend on call. Ask me about the apartment, the wifi, dinner spots, day trips, anything." },
+    { role: "assistant", content: window.t('concierge.greeting') },
   ]);
   const [input, setInput] = useStateC("");
   const [thinking, setThinking] = useStateC(false);
@@ -92,7 +92,7 @@ const ConciergePanel = ({ open, onClose, openContact }) => {
     if (!apiKey) {
       setMessages((m) => [...m, {
         role: "assistant",
-        content: "The concierge isn't set up yet — the API key hasn't been configured. You can reach Lien directly via WhatsApp or the contact form.",
+        content: window.t('concierge.no_key'),
       }]);
       setThinking(false);
       return;
@@ -130,7 +130,7 @@ const ConciergePanel = ({ open, onClose, openContact }) => {
       setMessages((m) => [...m, { role: "assistant", content: reply }]);
     } catch (e) {
       console.error("Concierge error", e);
-      setError("Sorry — I couldn't reach the host's brain just now. Try again, or reach Lien directly.");
+      setError(window.t('concierge.error'));
     } finally {
       setThinking(false);
     }
@@ -173,9 +173,9 @@ const ConciergePanel = ({ open, onClose, openContact }) => {
             }} />
           </div>
           <div style={{ flex: 1, lineHeight: 1.15 }}>
-            <div className="serif" style={{ fontSize: 18 }}>The Concierge</div>
+            <div className="serif" style={{ fontSize: 18 }}>{window.t('concierge.title')}</div>
             <div className="mono" style={{ fontSize: 10, letterSpacing: "0.12em", color: "var(--ink-mute)", textTransform: "uppercase", marginTop: 2 }}>
-              Scheldepunt · local host
+              {window.t('concierge.subtitle')}
             </div>
           </div>
           <button onClick={onClose} aria-label="Close" style={{
@@ -218,7 +218,7 @@ const ConciergePanel = ({ open, onClose, openContact }) => {
                 background: "transparent", border: "none", padding: 0,
                 color: "var(--terra-deep)", textDecoration: "underline",
                 fontFamily: "inherit", fontSize: "inherit",
-              }}>Contact owner →</button>
+              }}>{window.t('concierge.contact_link')}</button>
             </div>
           )}
         </div>
@@ -229,7 +229,7 @@ const ConciergePanel = ({ open, onClose, openContact }) => {
             padding: "0 14px 8px",
             display: "flex", gap: 8, overflowX: "auto", scrollbarWidth: "none",
           }}>
-            {SUGGESTIONS.map((s) => (
+            {SUGGESTIONS().map((s) => (
               <button key={s} onClick={() => send(s)} style={{
                 whiteSpace: "nowrap", padding: "8px 12px",
                 background: "var(--cream)", border: "1px solid var(--rule)",
@@ -256,7 +256,7 @@ const ConciergePanel = ({ open, onClose, openContact }) => {
               if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); send(); }
             }}
             rows={1}
-            placeholder="Ask the concierge…"
+            placeholder={window.t('concierge.placeholder')}
             style={{
               flex: 1, resize: "none",
               padding: "12px 14px",

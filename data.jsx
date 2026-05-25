@@ -1,5 +1,9 @@
 // Apartment-specific data. Edit this file to update both the UI and the AI Concierge.
 
+function mapsUrl(query) {
+  return 'https://maps.google.com/maps?q=' + encodeURIComponent(query);
+}
+
 const APARTMENT = {
   name: "Scheldepunt",
   tagline: "Appartement 6.2 — by the Schelde",
@@ -88,25 +92,25 @@ const APARTMENT = {
   },
 
   neighborhood: [
-    { kind: "Bakery", name: "Bakkerij Martens", dist: "400 m", note: "Tentoonstellingslaan 108. Walk to the bridge, climb the stairs, cross to the other side of the street." },
-    { kind: "Bakery", name: "Bakkerij Mertens", dist: "750 m", note: "François Benardstraat 4. Walk past the Kinépolis crossroads, turn right." },
-    { kind: "Bakery", name: "De Superette", dist: "1.4 km", note: "Guldenspoorstraat 29. Artisanal sourdough and grill by chef Kobe Desramaults (De Wulf). Worth the walk." },
-    { kind: "Supermarket", name: "Proxy Delhaize Heuvelpoort", dist: "750 m", note: "Ottergemsesteenweg 2. Walk to the bridge, take the stairs, turn left at the first traffic lights. 100m further." },
-    { kind: "Supermarket", name: "Carrefour Express", dist: "—", note: "Zwijnaardsesteenweg 68, Gent." },
-    { kind: "Restaurant", name: "Jilles Beer en Burgers", dist: "600 m", note: "Tentoonstellingslaan 165. Gourmet beef, veggie & chicken burgers paired with Belgian beers. www.jilles.be" },
-    { kind: "Restaurant", name: "Jour de fête", dist: "750 m", note: "Gustaaf Callierlaan 233. Seasonal Belgian-Mediterranean cuisine, fresh ingredients, two veggie options always on the menu. www.restaurantjourdefete.be" },
-    { kind: "Restaurant", name: "La Dolce Vita", dist: "600 m", note: "Ter Plaeten 2. Walk along the water past the Kinépolis, just before the intersection. https://restoladolcevita.be" },
-    { kind: "Restaurant", name: "Bavet", dist: "650 m", note: "Muinkkaal 120. Fast-casual spaghetti concept — new-wave Belgian. www.bavet.eu" },
-    { kind: "Restaurant", name: "Spring!", dist: "600 m", note: "Tentoonstellingslaan 125. Creative seasonal cooking. www.spring.gent" },
-    { kind: "Restaurant", name: "Casa Di Batavia", dist: "800 m", note: "François Benardstraat 80. Take-away Indonesian food. www.casadibatavia.com" },
-    { kind: "Pub", name: "De Brouwerszaele", dist: "500 m", note: "Ter Plaeten 17, 9000 Gent." },
-    { kind: "Pub", name: "Kaffee De Plank", dist: "500 m", note: "Ter Plaeten 10A, 9000 Gent." },
-    { kind: "Pub", name: "Cocktail Hollywood", dist: "600 m", note: "Ter Plaeten 3, 9000 Gent." },
-    { kind: "Pub", name: "Sunset", dist: "500 m", note: "François Benardstraat 2, 9000 Gent." },
-    { kind: "Pub", name: "Overpoort", dist: "—", note: "The main student café street in Ghent — lively every evening." },
-    { kind: "Cinema", name: "Kinépolis", dist: "500 m", note: "Ter Plaeten 12. Large multiplex cinema, 5 min walk." },
-    { kind: "Pharmacy", name: "Leveugle", dist: "—", note: "Franklin Rooseveltlaan 505, 9000 Gent." },
-    { kind: "Laundry", name: "WASBAR", dist: "—", note: "Nederkouter 109, Gent." },
+    { kind: "Bakery", name: "Bakkerij Martens", dist: "400 m", note: "Tentoonstellingslaan 108. Walk to the bridge, climb the stairs, cross to the other side of the street.", mapsUrl: mapsUrl("Bakkerij Martens, Tentoonstellingslaan 108, Gent") },
+    { kind: "Bakery", name: "Bakkerij Mertens", dist: "750 m", note: "François Benardstraat 4. Walk past the Kinépolis crossroads, turn right.", mapsUrl: mapsUrl("Bakkerij Mertens, François Benardstraat 4, Gent") },
+    { kind: "Bakery", name: "De Superette", dist: "1.4 km", note: "Guldenspoorstraat 29. Artisanal sourdough and grill by chef Kobe Desramaults.", mapsUrl: mapsUrl("De Superette, Guldenspoorstraat 29, Gent") },
+    { kind: "Supermarket", name: "Proxy Delhaize Heuvelpoort", dist: "750 m", note: "Ottergemsesteenweg 2. Walk to bridge, take stairs, turn left at the first traffic lights.", mapsUrl: mapsUrl("Proxy Delhaize Heuvelpoort, Ottergemsesteenweg 2, Gent") },
+    { kind: "Supermarket", name: "Carrefour Express", dist: "—", note: "Zwijnaardsesteenweg 68, Gent.", mapsUrl: mapsUrl("Carrefour Express, Zwijnaardsesteenweg 68, Gent") },
+    { kind: "Restaurant", name: "Jilles Beer en Burgers", dist: "600 m", note: "Tentoonstellingslaan 165. Gourmet beef, veggie & chicken burgers — www.jilles.be", mapsUrl: mapsUrl("Jilles Beer en Burgers, Tentoonstellingslaan 165, Gent") },
+    { kind: "Restaurant", name: "Jour de fête", dist: "750 m", note: "Gustaaf Callierlaan 233. Seasonal Belgian-Mediterranean cuisine. www.restaurantjourdefete.be", mapsUrl: mapsUrl("Jour de fête, Gustaaf Callierlaan 233, Gent") },
+    { kind: "Restaurant", name: "La Dolce Vita", dist: "600 m", note: "Ter Plaeten 2. Walk along the water past the Kinépolis. restoladolcevita.be", mapsUrl: mapsUrl("La Dolce Vita, Ter Plaeten 2, Gent") },
+    { kind: "Restaurant", name: "Bavet", dist: "650 m", note: "Muinkkaal 120. Fast-casual spaghetti, new-wave Belgian. www.bavet.eu", mapsUrl: mapsUrl("Bavet, Muinkkaal 120, Gent") },
+    { kind: "Restaurant", name: "Spring!", dist: "600 m", note: "Tentoonstellingslaan 125. Creative seasonal cooking. www.spring.gent", mapsUrl: mapsUrl("Spring!, Tentoonstellingslaan 125, Gent") },
+    { kind: "Restaurant", name: "Casa Di Batavia", dist: "800 m", note: "François Benardstraat 80. Take-away Indonesian food. www.casadibatavia.com", mapsUrl: mapsUrl("Casa Di Batavia, François Benardstraat 80, Gent") },
+    { kind: "Pub", name: "De Brouwerszaele", dist: "500 m", note: "Ter Plaeten 17, 9000 Gent.", mapsUrl: mapsUrl("De Brouwerszaele, Ter Plaeten 17, Gent") },
+    { kind: "Pub", name: "Kaffee De Plank", dist: "500 m", note: "Ter Plaeten 10A, 9000 Gent.", mapsUrl: mapsUrl("Kaffee De Plank, Ter Plaeten 10A, Gent") },
+    { kind: "Pub", name: "Cocktail Hollywood", dist: "600 m", note: "Ter Plaeten 3, 9000 Gent.", mapsUrl: mapsUrl("Cocktail Hollywood, Ter Plaeten 3, Gent") },
+    { kind: "Pub", name: "Sunset", dist: "500 m", note: "François Benardstraat 2, 9000 Gent.", mapsUrl: mapsUrl("Sunset bar, François Benardstraat 2, Gent") },
+    { kind: "Pub", name: "Overpoort", dist: "—", note: "The main student café street in Ghent — lively every evening.", mapsUrl: mapsUrl("Overpoort student bars, Gent") },
+    { kind: "Cinema", name: "Kinépolis", dist: "500 m", note: "Ter Plaeten 12. Large multiplex cinema, 5 min walk.", mapsUrl: mapsUrl("Kinepolis Gent, Ter Plaeten 12") },
+    { kind: "Pharmacy", name: "Leveugle", dist: "—", note: "Franklin Rooseveltlaan 505, 9000 Gent.", mapsUrl: mapsUrl("Apotheek Leveugle, Franklin Rooseveltlaan 505, Gent") },
+    { kind: "Laundry", name: "WASBAR", dist: "—", note: "Nederkouter 109, Gent.", mapsUrl: mapsUrl("WASBAR, Nederkouter 109, Gent") },
   ],
 
   tours: [
@@ -123,84 +127,100 @@ const APARTMENT = {
     bus: "Walk via Ter Plaeten to the Plaetenbrug. Take bus 58, 70, 71, 72, 76, 77 or 78 towards Ghent South (every 7 minutes).",
     dayTicket: "€7.50 (12+ years). Buy at a ticket machine, Lijnwinkel store, De Lijn app, or text DLD to 4884 (+€0.15 operator charge). Valid 24 hours. Children 6–11 years: €4.",
   },
+
+  // FAQ — edit questions and answers here
+  faq: [
+    {
+      q: "What time is check-in and check-out?",
+      a: "Check-in is from 14:00. Check-out is before 10:00. If you need a different arrangement, please contact us in advance.",
+    },
+    {
+      q: "Is there parking available?",
+      a: "Yes, free parking is available at the entrance of the building's car park. Please do not park on the entrance itself to allow manoeuvring. We are not responsible for damage to vehicles.",
+    },
+    {
+      q: "Are pets allowed?",
+      a: "Unfortunately pets are not allowed in the apartment.",
+    },
+    {
+      q: "Can I smoke in the apartment?",
+      a: "Smoking is strictly forbidden inside the apartment and in all common areas. You may smoke on the terrace only.",
+    },
+    {
+      q: "How do I access the apartment?",
+      a: "A key will be provided at check-in. A deposit is charged at check-in and returned at checkout if the apartment is left in good condition.",
+    },
+    {
+      q: "Is there a washing machine?",
+      a: "There is no washing machine in the apartment. Several laundromats are nearby: WASBAR (Nederkouter 109), VAN DEN HEEDE (Overpoort 20), MAVZER BILAL (Ledebergstraat 17, Ledeberg).",
+    },
+    {
+      q: "How do I get to the city centre?",
+      a: "Walk via Ter Plaeten to the Plaetenbrug and take bus 58, 70, 71, 72, 76, 77 or 78 towards Ghent South. Buses run every 7 minutes. A day ticket costs €7.50.",
+    },
+    {
+      q: "What is the WiFi password?",
+      a: "Network: telenet F5DDF — Password: SyBBm0R4XHPP. Tap the Wifi tab for a tap-to-copy version.",
+    },
+    {
+      q: "Who do I contact in case of a problem?",
+      a: "Contact Luc Browacys: +32 468 12 29 12 (phone/WhatsApp) or lubro@telenet.be. For urgent matters, Tony is also reachable at +32 496 534 160. We typically reply within a few hours.",
+    },
+    {
+      q: "Is there a noise policy?",
+      a: "Please keep noise to a minimum between 22:00 and 07:00, and be mindful of the neighbours below — avoid heavy footsteps and dragging furniture.",
+    },
+    {
+      q: "Can I have visitors?",
+      a: "Day visitors are welcome. Overnight guests must be declared in advance — a maximum of 4 guests are permitted to stay overnight. No parties or events.",
+    },
+  ],
 };
 
-// Compose the system prompt used by the AI concierge from the same data.
 function buildSystemPrompt() {
   const A = APARTMENT;
-  return `You are the AI Concierge for ${A.name}, a holiday apartment in Ghent, Belgium. Your role is to be a warm, knowledgeable local host — helpful, concise, and genuinely fond of the city. Reply in the guest's language. Keep answers short by default (2–4 sentences) unless asked for detail.
+  return `You are the AI Concierge for ${A.name}, a holiday apartment in Ghent, Belgium. Be warm, helpful, and concise. Reply in the guest's language. Keep answers short (2–4 sentences) unless asked for detail.
 
 # APARTMENT
-Name: ${A.name}
-Address: ${A.address}
-District: ${A.district}
-Host: ${A.hosts}
-
-Check-in: ${A.checkIn}
-Check-out: ${A.checkOut}
-Access: ${A.selfCheckIn}
+Address: ${A.address} | Host: ${A.hosts}
+Check-in: ${A.checkIn} | Check-out: ${A.checkOut}
 
 # WIFI
-Network: ${A.wifi.network}
-Password: ${A.wifi.password}
+Network: ${A.wifi.network} | Password: ${A.wifi.password}
 
 # HOUSE RULES
 ${A.rules.map((r) => "- " + r).join("\n")}
 
 # HOW THINGS WORK
-Heating: ${A.howThings.heating}
-Trash & recycling: ${A.howThings.trash}
-Keys: ${A.howThings.keys}
-TV: ${A.howThings.tv}
-Laundry: ${A.howThings.laundry}
-Coffee: ${A.howThings.coffee}
-Parking: ${A.howThings.parking}
+${Object.entries(A.howThings).map(([k, v]) => `${k}: ${v}`).join("\n")}
 
-# EMERGENCY NUMBERS
-European emergency: ${A.emergency.eu}
-Ambulance: ${A.emergency.ambulance}
-Police: ${A.emergency.police}
-Flemish Red Cross: ${A.emergency.flemishRedCross}
-Doctors on call: ${A.emergency.doctorOnCall}
-Dentists on call: ${A.emergency.dentistOnCall}
-Poison Control: ${A.emergency.poisonControl}
-Card Stop (lost bank card): ${A.emergency.cardStop}
-Info Ghent: ${A.emergency.infoGhent}
-Nearest pharmacy: ${A.emergency.pharmacy}
-Hospital: ${A.emergency.hospital}
+# EMERGENCIES
+EU: ${A.emergency.eu} | Police: ${A.emergency.police} | Doctor: ${A.emergency.doctorOnCall}
+Pharmacy: ${A.emergency.pharmacy} | Hospital: ${A.emergency.hospital}
+Taxi: ${A.taxi.phone1} / ${A.taxi.phone2}
 
-# TAXI
-${A.taxi.phone1} · ${A.taxi.phone2} · ${A.taxi.website}
-
-# PUBLIC TRANSPORT
+# TRANSPORT
 ${A.transport.bus}
 Day ticket: ${A.transport.dayTicket}
 
-# NEARBY (walking distance)
-${A.neighborhood.map((n) => `- ${n.kind} — ${n.name} (${n.dist}): ${n.note}`).join("\n")}
+# NEARBY
+${A.neighborhood.map((n) => `- ${n.kind}: ${n.name} (${n.dist}) — ${n.note}`).join("\n")}
 
-# GHENT — MUST-SEE
+# GHENT — HIGHLIGHTS
 ${A.ghent.mustSee.map((s) => `- ${s.name}: ${s.note}`).join("\n")}
-
-# GHENT — HIDDEN GEMS
 ${A.ghent.hidden.map((s) => `- ${s.name}: ${s.note}`).join("\n")}
 
-Best times: ${A.ghent.bestTimes}
-
-# TOURS & DAY TRIPS
+# TOURS
 ${A.tours.map((t) => `- ${t.name} (${t.duration}, ${t.price}): ${t.note}`).join("\n")}
 
 # CONTACT
-Host: ${A.contact.owner}
-Phone/WhatsApp: ${A.contact.whatsapp}
-Email: ${A.contact.email}
+Host: ${A.contact.owner} | WhatsApp: ${A.contact.whatsapp} | Email: ${A.contact.email}
 Response time: ${A.contact.responseTime}
 
-# RULES OF ENGAGEMENT
-- Use ONLY the information above. If the guest asks something you do not know — restaurant openings tonight, today's weather, anything time-sensitive — say so honestly and suggest contacting the host directly.
-- Never invent prices, opening hours, or facts not stated above.
-- Sound like a helpful local friend, not a brochure.
-- Always be honest about uncertainty.`;
+# RULES
+- Only use information above. If uncertain, say so and suggest contacting the host.
+- Never invent prices, hours, or facts.
+- Sound like a helpful local friend, not a brochure.`;
 }
 
 window.APARTMENT = APARTMENT;

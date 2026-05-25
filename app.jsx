@@ -49,7 +49,6 @@ function applyPalette(pKey) {
 function applyFont(fKey) {
   const f = FONTS[fKey] || FONTS.newsreader;
   document.documentElement.style.setProperty("--serif-stack", f.stack);
-  // patch the existing .serif / .serif-i classes via inline rule
   let s = document.getElementById("__serif-override");
   if (!s) { s = document.createElement("style"); s.id = "__serif-override"; document.head.appendChild(s); }
   s.textContent = `.serif, .serif-i { font-family: ${f.stack} !important; }`;
@@ -57,14 +56,23 @@ function applyFont(fKey) {
 
 // ─── NAV ─────────────────────────────────────────────────────
 const NAV_ITEMS = [
-  { k: "welcome",      icon: "home",    label: "Welcome" },
-  { k: "apartment",    icon: "key",     label: "Apartment" },
-  { k: "wifi",         icon: "wifi",    label: "Wifi" },
-  { k: "ghent",        icon: "compass", label: "Ghent" },
-  { k: "neighborhood", icon: "map",     label: "Nearby" },
-  { k: "tours",        icon: "star",    label: "Tours" },
-  { k: "guestbook",    icon: "book",    label: "Book" },
-  { k: "contact",      icon: "mail",    label: "Host" },
+  { k: "welcome",      icon: "home",    tKey: "nav.welcome" },
+  { k: "apartment",    icon: "key",     tKey: "nav.apartment" },
+  { k: "wifi",         icon: "wifi",    tKey: "nav.wifi" },
+  { k: "ghent",        icon: "compass", tKey: "nav.ghent" },
+  { k: "neighborhood", icon: "map",     tKey: "nav.neighborhood" },
+  { k: "tours",        icon: "star",    tKey: "nav.tours" },
+  { k: "guestbook",    icon: "book",    tKey: "nav.guestbook" },
+  { k: "faq",          icon: "spark",   tKey: "nav.faq" },
+  { k: "contact",      icon: "mail",    tKey: "nav.contact" },
+];
+
+const LANGS = [
+  { code: "en", label: "EN" },
+  { code: "fr", label: "FR" },
+  { code: "es", label: "ES" },
+  { code: "de", label: "DE" },
+  { code: "nl", label: "NL" },
 ];
 
 const BottomNav = ({ active, onChange }) => (
@@ -82,9 +90,9 @@ const BottomNav = ({ active, onChange }) => (
         const isActive = n.k === active;
         return (
           <button key={n.k} onClick={() => onChange(n.k)} style={{
-            flex: "0 0 auto", minWidth: 64,
+            flex: "0 0 auto", minWidth: 56,
             display: "flex", flexDirection: "column", alignItems: "center", gap: 4,
-            padding: "8px 8px",
+            padding: "8px 6px",
             background: "transparent", border: "none",
             color: isActive ? "var(--terra)" : "var(--ink-mute)",
             position: "relative",
@@ -93,8 +101,8 @@ const BottomNav = ({ active, onChange }) => (
             <Icon name={n.icon} size={20} stroke={isActive ? "var(--terra)" : "var(--ink)"} strokeWidth={isActive ? 1.8 : 1.4} />
             <span style={{
               fontFamily: "Geist Mono, monospace",
-              fontSize: 9.5, letterSpacing: "0.1em", textTransform: "uppercase",
-            }}>{n.label}</span>
+              fontSize: 9, letterSpacing: "0.08em", textTransform: "uppercase",
+            }}>{window.t(n.tKey)}</span>
             {isActive && <span style={{
               position: "absolute", top: 0, left: "50%", transform: "translateX(-50%)",
               width: 22, height: 2, background: "var(--terra)",
@@ -106,7 +114,7 @@ const BottomNav = ({ active, onChange }) => (
   </nav>
 );
 
-const TopBar = ({ active, onLogo }) => {
+const TopBar = ({ active, onLogo, lang, changeLang }) => {
   const item = NAV_ITEMS.find((n) => n.k === active);
   return (
     <header style={{
@@ -115,7 +123,7 @@ const TopBar = ({ active, onLogo }) => {
       backdropFilter: "blur(8px)",
       borderBottom: "1px solid var(--rule)",
       padding: "12px 18px",
-      display: "flex", alignItems: "center", gap: 12,
+      display: "flex", alignItems: "center", gap: 10,
     }}>
       <button onClick={onLogo} style={{
         background: "transparent", border: "none", padding: 0,
@@ -128,7 +136,20 @@ const TopBar = ({ active, onLogo }) => {
       <div className="mono" style={{
         fontSize: 10, letterSpacing: "0.14em", textTransform: "uppercase",
         color: "var(--ink-mute)",
-      }}>{item ? item.label : ""}</div>
+      }}>{item ? window.t(item.tKey) : ""}</div>
+      <select
+        value={lang}
+        onChange={(e) => changeLang(e.target.value)}
+        style={{
+          fontFamily: "Geist Mono, monospace",
+          fontSize: 10, letterSpacing: "0.1em",
+          background: "transparent", border: "1px solid var(--rule)",
+          color: "var(--ink-mute)", padding: "4px 6px",
+          cursor: "pointer", outline: "none",
+        }}
+      >
+        {LANGS.map((l) => <option key={l.code} value={l.code}>{l.label}</option>)}
+      </select>
     </header>
   );
 };
@@ -144,12 +165,19 @@ const App = () => {
   const [active, setActive] = useStateApp("welcome");
   const [chatOpen, setChatOpen] = useStateApp(false);
   const [entries, setEntries] = useStateApp(window.seedEntries);
+  const [visitorTips, setVisitorTips] = useStateApp(window.seedVisitorTips);
+  const [lang, setLang] = useStateApp("en");
   const [tweaks, setTweak] = window.useTweaks
     ? window.useTweaks(TWEAKS_DEFAULTS)
     : [TWEAKS_DEFAULTS, () => {}];
 
   useEffectApp(() => { applyPalette(tweaks.palette); }, [tweaks.palette]);
   useEffectApp(() => { applyFont(tweaks.displayFont); }, [tweaks.displayFont]);
+
+  const changeLang = (code) => {
+    window.currentLang = code;
+    setLang(code);
+  };
 
   // Smooth scroll to top on section change
   const stageRef = React.useRef(null);
@@ -165,10 +193,11 @@ const App = () => {
     case "welcome":      view = <WelcomeSection go={go} />; break;
     case "apartment":    view = <ApartmentSection />; break;
     case "wifi":         view = <WifiSection />; break;
-    case "ghent":        view = <GhentSection />; break;
+    case "ghent":        view = <GhentSection visitorTips={visitorTips} setVisitorTips={setVisitorTips} />; break;
     case "neighborhood": view = <NeighborhoodSection />; break;
     case "tours":        view = <ToursSection />; break;
     case "guestbook":    view = <GuestbookSection entries={entries} setEntries={setEntries} />; break;
+    case "faq":          view = <FAQSection />; break;
     case "contact":      view = <ContactSection />; break;
     default:             view = <WelcomeSection go={go} />;
   }
@@ -176,13 +205,12 @@ const App = () => {
   return (
     <div className="stage" data-screen-label={`App · ${active}`}>
       <div className="device">
-        <TopBar active={active} onLogo={() => go("welcome")} />
-        <main key={active} style={{
-          animation: "pageIn .35s ease",
-        }}>{view}</main>
+        <TopBar active={active} onLogo={() => go("welcome")} lang={lang} changeLang={changeLang} />
+        <main key={active + "-" + lang} style={{ animation: "pageIn .35s ease" }}>{view}</main>
         <BottomNav active={active} onChange={go} />
         <ConciergeBubble onClick={() => setChatOpen(true)} />
         <ConciergePanel
+          key={"chat-" + lang}
           open={chatOpen}
           onClose={() => setChatOpen(false)}
           openContact={() => { setChatOpen(false); go("contact"); }}

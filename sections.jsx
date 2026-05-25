@@ -29,12 +29,12 @@ const Pill = ({ children, tone = "ink" }) => {
     moss: { bg: "var(--moss)", fg: "var(--paper)", border: "var(--moss)" },
     paper: { bg: "var(--paper)", fg: "var(--ink)", border: "var(--rule)" },
   };
-  const t = tones[tone];
+  const tp = tones[tone];
   return (
     <span style={{
       display: "inline-flex", alignItems: "center", gap: 6,
       padding: "4px 10px",
-      border: `1px solid ${t.border}`, background: t.bg, color: t.fg,
+      border: `1px solid ${tp.border}`, background: tp.bg, color: tp.fg,
       fontFamily: "Geist Mono, monospace", fontSize: 10.5,
       letterSpacing: "0.12em", textTransform: "uppercase",
       borderRadius: 0,
@@ -45,19 +45,19 @@ const Pill = ({ children, tone = "ink" }) => {
 // ─── 1. WELCOME ──────────────────────────────────────────────
 const WelcomeSection = ({ go }) => {
   const A = window.APARTMENT;
+  const t = window.t;
   return (
     <Page>
       <div style={{ paddingTop: 18 }}>
         <div className="eyebrow" style={{ display: "flex", justifyContent: "space-between" }}>
-          <span>№ 01 · Welcome</span>
-          <span>Gent · BE</span>
+          <span>{t('welcome.no')} · {t('welcome.eyebrow')}</span>
+          <span>{t('welcome.loc')}</span>
         </div>
       </div>
 
-      {/* Editorial masthead */}
       <div style={{ marginTop: 16 }}>
         <div className="serif-i" style={{ fontSize: 22, color: "var(--terra-deep)", lineHeight: 1 }}>
-          welcome to
+          {t('welcome.to')}
         </div>
         <h1 className="serif" style={{
           fontSize: 76, lineHeight: 0.92, margin: "4px 0 0",
@@ -70,7 +70,6 @@ const WelcomeSection = ({ go }) => {
         </div>
       </div>
 
-      {/* Hero image slot */}
       <div style={{ marginTop: 22, position: "relative" }}>
         <image-slot
           id="welcome-hero"
@@ -86,7 +85,6 @@ const WelcomeSection = ({ go }) => {
         }}>Plate I</div>
       </div>
 
-      {/* Intro */}
       <p className="serif" style={{
         fontSize: 22, lineHeight: 1.35, margin: "28px 0 0",
         color: "var(--ink)", letterSpacing: "-0.005em",
@@ -100,14 +98,13 @@ const WelcomeSection = ({ go }) => {
 
       <hr className="rule" style={{ margin: "26px 0" }} />
 
-      {/* Check in/out */}
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
         <div>
-          <div className="eyebrow">Check-in</div>
+          <div className="eyebrow">{t('checkin')}</div>
           <div className="serif" style={{ fontSize: 28, marginTop: 4 }}>{A.checkIn}</div>
         </div>
         <div>
-          <div className="eyebrow">Check-out</div>
+          <div className="eyebrow">{t('checkout')}</div>
           <div className="serif" style={{ fontSize: 28, marginTop: 4 }}>{A.checkOut}</div>
         </div>
       </div>
@@ -117,14 +114,13 @@ const WelcomeSection = ({ go }) => {
 
       <hr className="rule" style={{ margin: "26px 0" }} />
 
-      {/* Quick links */}
-      <div className="eyebrow" style={{ marginBottom: 12 }}>Start here</div>
+      <div className="eyebrow" style={{ marginBottom: 12 }}>{t('welcome.start_here')}</div>
       <div style={{ display: "grid", gap: 1, background: "var(--rule)" }}>
         {[
-          { k: "wifi", t: "Wifi & practical info", sub: "Network, codes, emergencies" },
-          { k: "apartment", t: "How the apartment works", sub: "Heating, trash, TV, laundry" },
-          { k: "ghent", t: "Ghent — the city", sub: "What we send our friends to" },
-          { k: "neighborhood", t: "On this street", sub: "Bakery, coffee, dinner" },
+          { k: "wifi",         t: t('welcome.link.wifi'),         sub: t('welcome.link.wifi_sub') },
+          { k: "apartment",    t: t('welcome.link.apartment'),    sub: t('welcome.link.apartment_sub') },
+          { k: "ghent",        t: t('welcome.link.ghent'),        sub: t('welcome.link.ghent_sub') },
+          { k: "neighborhood", t: t('welcome.link.neighborhood'), sub: t('welcome.link.neighborhood_sub') },
         ].map((q) => (
           <button key={q.k} onClick={() => go(q.k)} style={{
             display: "flex", alignItems: "center", gap: 12, width: "100%",
@@ -146,25 +142,23 @@ const WelcomeSection = ({ go }) => {
 // ─── 2. THE APARTMENT ────────────────────────────────────────
 const ApartmentSection = () => {
   const A = window.APARTMENT;
+  const t = window.t;
   const [open, setOpen] = useState("heating");
   const items = [
-    { k: "heating", t: "Heating & thermostat" },
-    { k: "trash", t: "Trash & recycling" },
-    { k: "keys", t: "Keys" },
-    { k: "tv", t: "TV & streaming" },
-    { k: "laundry", t: "Laundry" },
-    { k: "coffee", t: "Coffee" },
-    { k: "parking", t: "Parking" },
+    { k: "heating", label: t('apartment.heating') },
+    { k: "trash",   label: t('apartment.trash') },
+    { k: "keys",    label: t('apartment.keys') },
+    { k: "tv",      label: t('apartment.tv') },
+    { k: "laundry", label: t('apartment.laundry') },
+    { k: "coffee",  label: t('apartment.coffee') },
+    { k: "parking", label: t('apartment.parking') },
   ];
 
   return (
     <Page>
-      <PageHeader no="№ 02" eyebrow="The apartment" title="House" italic="rules" />
+      <PageHeader no={t('apartment.no')} eyebrow={t('apartment.eyebrow')} title={t('apartment.title')} italic={t('apartment.italic')} />
 
-      <ol style={{
-        margin: 0, padding: 0, listStyle: "none",
-        borderTop: "1px solid var(--ink)",
-      }}>
+      <ol style={{ margin: 0, padding: 0, listStyle: "none", borderTop: "1px solid var(--ink)" }}>
         {A.rules.map((r, i) => (
           <li key={i} style={{
             display: "flex", gap: 14, padding: "14px 0",
@@ -180,7 +174,7 @@ const ApartmentSection = () => {
 
       <div style={{ marginTop: 36 }}>
         <div className="eyebrow" style={{ display: "flex", alignItems: "center", gap: 10 }}>
-          <span>How things work</span>
+          <span>{t('apartment.how_things')}</span>
           <span style={{ flex: 1, height: 1, background: "var(--ink)" }} />
         </div>
       </div>
@@ -195,7 +189,7 @@ const ApartmentSection = () => {
                 width: "100%", padding: "16px 0", background: "transparent",
                 border: "none", textAlign: "left",
               }}>
-                <span className="serif" style={{ fontSize: 20, color: isOpen ? "var(--terra)" : "var(--ink)" }}>{it.t}</span>
+                <span className="serif" style={{ fontSize: 20, color: isOpen ? "var(--terra)" : "var(--ink)" }}>{it.label}</span>
                 <span style={{
                   fontFamily: "Geist Mono, monospace", fontSize: 18,
                   color: "var(--ink-mute)", transition: "transform .2s",
@@ -205,7 +199,7 @@ const ApartmentSection = () => {
               {isOpen && (
                 <div style={{
                   paddingBottom: 16, fontSize: 15, lineHeight: 1.55,
-                  color: "var(--ink-soft)", maxWidth: "100%",
+                  color: "var(--ink-soft)",
                 }}>{A.howThings[it.k]}</div>
               )}
             </div>
@@ -219,6 +213,7 @@ const ApartmentSection = () => {
 // ─── 3. WIFI & PRACTICAL ─────────────────────────────────────
 const WifiSection = () => {
   const A = window.APARTMENT;
+  const t = window.t;
   const [copied, setCopied] = useState(null);
   const copy = (key, val) => {
     try { navigator.clipboard?.writeText(val); } catch (e) {}
@@ -228,22 +223,19 @@ const WifiSection = () => {
 
   return (
     <Page>
-      <PageHeader no="№ 03" eyebrow="Practical" title="Wifi &" italic="the basics" />
+      <PageHeader no={t('wifi.no')} eyebrow={t('wifi.eyebrow')} title={t('wifi.title')} italic={t('wifi.italic')} />
 
-      {/* Wifi card — terracotta */}
       <div style={{
         background: "var(--terra)", color: "var(--paper)",
         padding: "26px 22px", marginTop: 4,
         position: "relative", overflow: "hidden",
       }}>
-        <div style={{
-          position: "absolute", right: -30, top: -30, opacity: 0.16,
-        }}>
+        <div style={{ position: "absolute", right: -30, top: -30, opacity: 0.16 }}>
           <Icon name="wifi" size={180} stroke="var(--paper)" strokeWidth={1} />
         </div>
-        <div className="eyebrow" style={{ color: "rgba(251,246,235,0.7)" }}>Internet</div>
+        <div className="eyebrow" style={{ color: "rgba(251,246,235,0.7)" }}>{t('wifi.internet')}</div>
         <div style={{ marginTop: 18, position: "relative" }}>
-          <div style={{ fontSize: 11, opacity: 0.75, letterSpacing: "0.1em", textTransform: "uppercase" }}>Network</div>
+          <div style={{ fontSize: 11, opacity: 0.75, letterSpacing: "0.1em", textTransform: "uppercase" }}>{t('wifi.network')}</div>
           <button onClick={() => copy("net", A.wifi.network)} style={{
             display: "flex", alignItems: "center", gap: 10, marginTop: 4,
             background: "transparent", border: "none", padding: 0, color: "inherit",
@@ -253,7 +245,7 @@ const WifiSection = () => {
           </button>
         </div>
         <div style={{ marginTop: 16, position: "relative" }}>
-          <div style={{ fontSize: 11, opacity: 0.75, letterSpacing: "0.1em", textTransform: "uppercase" }}>Password</div>
+          <div style={{ fontSize: 11, opacity: 0.75, letterSpacing: "0.1em", textTransform: "uppercase" }}>{t('wifi.password')}</div>
           <button onClick={() => copy("pw", A.wifi.password)} style={{
             display: "flex", alignItems: "center", gap: 10, marginTop: 4,
             background: "transparent", border: "none", padding: 0, color: "inherit",
@@ -262,23 +254,22 @@ const WifiSection = () => {
             <Icon name={copied === "pw" ? "check" : "copy"} size={16} stroke="var(--paper)" />
           </button>
         </div>
-        <div style={{ marginTop: 16, fontSize: 12, opacity: 0.8, position: "relative" }}>
-          {A.wifi.note}
-        </div>
+        {A.wifi.note ? (
+          <div style={{ marginTop: 16, fontSize: 12, opacity: 0.8, position: "relative" }}>{A.wifi.note}</div>
+        ) : null}
       </div>
 
-      {/* Emergency */}
       <div style={{ marginTop: 32 }}>
         <div className="eyebrow" style={{ display: "flex", gap: 10, alignItems: "center" }}>
-          <span>In an emergency</span>
+          <span>{t('wifi.emergency')}</span>
           <span style={{ flex: 1, height: 1, background: "var(--ink)" }} />
         </div>
         <div style={{ marginTop: 14, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 1, background: "var(--rule)" }}>
           {[
-            { l: "All emergencies", v: A.emergency.eu, tel: A.emergency.eu },
-            { l: "Police", v: A.emergency.police, tel: A.emergency.police },
-            { l: "Doctor on call", v: A.emergency.doctorOnCall, tel: A.emergency.doctorOnCall },
-            { l: "Owner WhatsApp", v: A.contact.whatsapp, tel: A.contact.whatsapp.replace(/\s/g, "") },
+            { l: t('wifi.all_emergencies'), v: A.emergency.eu,            tel: A.emergency.eu },
+            { l: t('wifi.police'),          v: A.emergency.police,        tel: A.emergency.police },
+            { l: t('wifi.doctor'),          v: A.emergency.doctorOnCall,  tel: A.emergency.doctorOnCall },
+            { l: t('wifi.owner'),           v: A.contact.whatsapp,        tel: A.contact.whatsapp.replace(/\s/g, "") },
           ].map((e) => (
             <a key={e.l} href={`tel:${e.tel}`} style={{
               padding: "18px 14px", background: "var(--paper)", textDecoration: "none",
@@ -291,15 +282,14 @@ const WifiSection = () => {
         </div>
       </div>
 
-      {/* Pharmacy + Hospital + Taxi + Bus */}
       <div style={{ marginTop: 28 }}>
-        <div className="eyebrow">Useful to know</div>
+        <div className="eyebrow">{t('wifi.useful')}</div>
         <div style={{ marginTop: 10, borderTop: "1px solid var(--rule)" }}>
           {[
-            { l: "Nearest pharmacy", v: A.emergency.pharmacy },
-            { l: "Hospital", v: A.emergency.hospital },
-            { l: "Taxi", v: `${A.taxi.phone1}  ·  ${A.taxi.phone2}` },
-            { l: "Bus (nearest stop)", v: A.transport.bus },
+            { l: t('wifi.pharmacy'), v: A.emergency.pharmacy },
+            { l: t('wifi.hospital'), v: A.emergency.hospital },
+            { l: t('wifi.taxi'),     v: `${A.taxi.phone1}  ·  ${A.taxi.phone2}` },
+            { l: t('wifi.bus'),      v: A.transport.bus },
           ].map((r) => (
             <div key={r.l} style={{ padding: "14px 0", borderBottom: "1px solid var(--rule)" }}>
               <div style={{ fontSize: 12, color: "var(--ink-mute)" }}>{r.l}</div>
@@ -313,61 +303,183 @@ const WifiSection = () => {
 };
 
 // ─── 4. GHENT CITY GUIDE ─────────────────────────────────────
-const GhentSection = () => {
+const GhentSection = ({ visitorTips, setVisitorTips }) => {
   const A = window.APARTMENT;
+  const t = window.t;
   const [tab, setTab] = useState("must");
+  const [tipForm, setTipForm] = useState({ name: "", place: "", desc: "" });
   const list = tab === "must" ? A.ghent.mustSee : A.ghent.hidden;
+
+  const submitTip = (e) => {
+    e.preventDefault();
+    if (!tipForm.place.trim() || !tipForm.desc.trim()) return;
+    const newTip = {
+      id: Date.now(),
+      name: tipForm.name.trim() || "A guest",
+      place: tipForm.place.trim(),
+      desc: tipForm.desc.trim(),
+      votes: 0,
+    };
+    setVisitorTips((prev) => [newTip, ...prev]);
+    setTipForm({ name: "", place: "", desc: "" });
+  };
+
+  const vote = (id, delta) => {
+    setVisitorTips((prev) => prev.map((tip) =>
+      tip.id === id ? { ...tip, votes: tip.votes + delta } : tip
+    ));
+  };
+
+  const sortedTips = [...(visitorTips || [])].sort((a, b) => b.votes - a.votes);
 
   return (
     <Page>
-      <PageHeader no="№ 04" eyebrow="City guide" title="Ghent," italic="slowly" />
+      <PageHeader no={t('ghent.no')} eyebrow={t('ghent.eyebrow')} title={t('ghent.title')} italic={t('ghent.italic')} />
+
+      <div style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 10 }}>
+        <span style={{ fontSize: 12, color: "var(--ink-mute)" }}>{t('ghent.attribution')}</span>
+        <a href="https://www.visitgent.be" target="_blank" rel="noreferrer" style={{
+          fontSize: 12, color: "var(--terra)", fontStyle: "italic", textDecoration: "none",
+        }}>visitgent.be</a>
+      </div>
 
       <p className="serif-i" style={{
         fontSize: 17, color: "var(--ink-soft)", lineHeight: 1.45,
-        marginTop: -4, maxWidth: 340,
+        marginTop: 4, maxWidth: 340,
       }}>
         {A.ghent.bestTimes}
       </p>
 
       {/* Tabs */}
-      <div style={{ display: "flex", gap: 0, marginTop: 22, borderBottom: "1px solid var(--ink)" }}>
+      <div style={{ display: "flex", marginTop: 22, borderBottom: "1px solid var(--ink)", overflowX: "auto" }}>
         {[
-          { k: "must", l: "Must-see" },
-          { k: "hidden", l: "Hidden gems" },
-        ].map((t) => (
-          <button key={t.k} onClick={() => setTab(t.k)} style={{
-            flex: 1, padding: "12px 0", background: "transparent",
-            border: "none", borderBottom: tab === t.k ? "2px solid var(--terra)" : "2px solid transparent",
+          { k: "must",     l: t('ghent.must_see') },
+          { k: "hidden",   l: t('ghent.hidden') },
+          { k: "visitors", l: t('ghent.visitor_title') },
+        ].map((tb) => (
+          <button key={tb.k} onClick={() => setTab(tb.k)} style={{
+            flex: "0 0 auto", padding: "12px 14px", background: "transparent",
+            border: "none",
+            borderBottom: tab === tb.k ? "2px solid var(--terra)" : "2px solid transparent",
             marginBottom: -1,
-            fontFamily: "Geist, sans-serif", fontSize: 13,
+            fontFamily: "Geist, sans-serif", fontSize: 12,
             letterSpacing: "0.06em", textTransform: "uppercase",
-            color: tab === t.k ? "var(--ink)" : "var(--ink-mute)",
-            fontWeight: tab === t.k ? 600 : 500,
-          }}>{t.l}</button>
+            color: tab === tb.k ? "var(--ink)" : "var(--ink-mute)",
+            fontWeight: tab === tb.k ? 600 : 500,
+            whiteSpace: "nowrap", cursor: "pointer",
+          }}>{tb.l}</button>
         ))}
       </div>
 
-      {/* List */}
-      <div style={{ marginTop: 4 }}>
-        {list.map((s, i) => (
-          <article key={s.name} style={{
-            padding: "22px 0", borderBottom: "1px solid var(--rule)",
-            display: "grid", gridTemplateColumns: "32px 1fr", gap: 12,
-          }}>
-            <div className="serif-i" style={{
-              fontSize: 28, color: "var(--terra)", lineHeight: 1,
-              paddingTop: 4,
-            }}>{String(i + 1).padStart(2, "0")}</div>
+      {/* Must-see / Hidden gems */}
+      {(tab === "must" || tab === "hidden") && (
+        <div style={{ marginTop: 4 }}>
+          {list.map((s, i) => (
+            <article key={s.name} style={{
+              padding: "22px 0", borderBottom: "1px solid var(--rule)",
+              display: "grid", gridTemplateColumns: "32px 1fr", gap: 12,
+            }}>
+              <div className="serif-i" style={{
+                fontSize: 28, color: "var(--terra)", lineHeight: 1, paddingTop: 4,
+              }}>{String(i + 1).padStart(2, "0")}</div>
+              <div>
+                <h3 className="serif" style={{ fontSize: 22, margin: 0, letterSpacing: "-0.01em" }}>{s.name}</h3>
+                <p style={{
+                  margin: "6px 0 0", fontSize: 14.5, lineHeight: 1.5,
+                  color: "var(--ink-soft)", textWrap: "pretty",
+                }}>{s.note}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      )}
+
+      {/* Visitor tips */}
+      {tab === "visitors" && (
+        <div style={{ marginTop: 16 }}>
+          {sortedTips.length === 0 ? (
+            <div style={{
+              padding: "32px 0", textAlign: "center",
+              fontFamily: "Newsreader, serif", fontStyle: "italic",
+              fontSize: 18, color: "var(--ink-mute)",
+            }}>{t('ghent.no_tips')}</div>
+          ) : (
             <div>
-              <h3 className="serif" style={{ fontSize: 22, margin: 0, letterSpacing: "-0.01em" }}>{s.name}</h3>
-              <p style={{
-                margin: "6px 0 0", fontSize: 14.5, lineHeight: 1.5,
-                color: "var(--ink-soft)", textWrap: "pretty",
-              }}>{s.note}</p>
+              {sortedTips.map((tip) => (
+                <article key={tip.id} style={{
+                  padding: "16px 0", borderBottom: "1px solid var(--rule)",
+                  display: "grid", gridTemplateColumns: "1fr auto", gap: 12, alignItems: "start",
+                }}>
+                  <div>
+                    <h3 className="serif" style={{ fontSize: 20, margin: 0 }}>{tip.place}</h3>
+                    <p style={{ margin: "6px 0 0", fontSize: 14, lineHeight: 1.5, color: "var(--ink-soft)" }}>{tip.desc}</p>
+                    <div className="mono" style={{ fontSize: 10, color: "var(--ink-mute)", marginTop: 8, letterSpacing: "0.08em" }}>
+                      — {tip.name}
+                    </div>
+                  </div>
+                  <div style={{
+                    display: "flex", flexDirection: "column", alignItems: "center", gap: 2,
+                    paddingTop: 4, minWidth: 36,
+                  }}>
+                    <button onClick={() => vote(tip.id, 1)} style={{
+                      background: "transparent", border: "none", padding: "4px 8px",
+                      color: "var(--moss)", fontSize: 14, cursor: "pointer", lineHeight: 1,
+                    }}>▲</button>
+                    <span className="mono" style={{
+                      fontSize: 13, fontWeight: 600,
+                      color: tip.votes > 0 ? "var(--moss)" : tip.votes < 0 ? "var(--terra)" : "var(--ink-mute)",
+                    }}>{tip.votes}</span>
+                    <button onClick={() => vote(tip.id, -1)} style={{
+                      background: "transparent", border: "none", padding: "4px 8px",
+                      color: "var(--terra)", fontSize: 14, cursor: "pointer", lineHeight: 1,
+                    }}>▼</button>
+                  </div>
+                </article>
+              ))}
             </div>
-          </article>
-        ))}
-      </div>
+          )}
+
+          {/* Add tip form */}
+          <div style={{ marginTop: 28 }}>
+            <div className="eyebrow" style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 14 }}>
+              <span>{t('ghent.add_tip')}</span>
+              <span style={{ flex: 1, height: 1, background: "var(--ink)" }} />
+            </div>
+            <form onSubmit={submitTip} style={{
+              background: "var(--cream-soft)", padding: "18px 16px", border: "1px solid var(--rule)",
+            }}>
+              <input
+                value={tipForm.place}
+                onChange={(e) => setTipForm({ ...tipForm, place: e.target.value })}
+                placeholder={t('ghent.tip_place')}
+                style={{ ...inputStyle, marginBottom: 10 }}
+              />
+              <textarea
+                value={tipForm.desc}
+                onChange={(e) => setTipForm({ ...tipForm, desc: e.target.value })}
+                placeholder={t('ghent.tip_desc')}
+                rows={3}
+                style={{ ...inputStyle, resize: "vertical", marginBottom: 10 }}
+              />
+              <input
+                value={tipForm.name}
+                onChange={(e) => setTipForm({ ...tipForm, name: e.target.value })}
+                placeholder={t('ghent.tip_name')}
+                style={{ ...inputStyle, marginBottom: 12 }}
+              />
+              <button type="submit" style={{
+                padding: "11px 20px",
+                background: "var(--ink)", color: "var(--paper)", border: "none",
+                fontFamily: "Geist Mono, monospace", fontSize: 11,
+                letterSpacing: "0.18em", textTransform: "uppercase",
+                display: "inline-flex", alignItems: "center", gap: 10, cursor: "pointer",
+              }}>
+                {t('ghent.submit_tip')} <Icon name="arrow" size={14} stroke="var(--paper)" />
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
     </Page>
   );
 };
@@ -375,13 +487,14 @@ const GhentSection = () => {
 // ─── 5. NEIGHBORHOOD MAP & SHOPS ─────────────────────────────
 const NeighborhoodSection = () => {
   const A = window.APARTMENT;
+  const t = window.t;
   const [filter, setFilter] = useState("All");
   const kinds = ["All", ...Array.from(new Set(A.neighborhood.map((n) => n.kind)))];
   const filtered = filter === "All" ? A.neighborhood : A.neighborhood.filter((n) => n.kind === filter);
 
   return (
     <Page>
-      <PageHeader no="№ 05" eyebrow="On foot" title="The" italic="neighbourhood" />
+      <PageHeader no={t('neighborhood.no')} eyebrow={t('neighborhood.eyebrow')} title={t('neighborhood.title')} italic={t('neighborhood.italic')} />
 
       {/* Stylized map placeholder */}
       <div style={{
@@ -391,10 +504,8 @@ const NeighborhoodSection = () => {
         marginBottom: 22, overflow: "hidden",
       }}>
         <svg viewBox="0 0 320 220" style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }}>
-          {/* Canal */}
           <path d="M -20 130 Q 80 90, 160 120 T 340 110" fill="none" stroke="#9DB6A6" strokeWidth="22" opacity="0.55" strokeLinecap="round"/>
           <path d="M -20 130 Q 80 90, 160 120 T 340 110" fill="none" stroke="#7B9C8A" strokeWidth="1" opacity="0.7"/>
-          {/* Streets */}
           <g stroke="#C5B596" strokeWidth="1.2" fill="none">
             <path d="M40 0 L 60 220"/>
             <path d="M120 0 L 140 220"/>
@@ -403,7 +514,6 @@ const NeighborhoodSection = () => {
             <path d="M0 60 L 320 50"/>
             <path d="M0 180 L 320 170"/>
           </g>
-          {/* Blocks */}
           <g fill="#E2D5B8" opacity="0.7">
             <rect x="64" y="54" width="50" height="50"/>
             <rect x="146" y="48" width="55" height="50"/>
@@ -412,7 +522,6 @@ const NeighborhoodSection = () => {
             <rect x="148" y="148" width="60" height="38"/>
             <rect x="236" y="144" width="48" height="40"/>
           </g>
-          {/* Pin */}
           <g transform="translate(160 110)">
             <circle r="18" fill="var(--terra)" opacity="0.15"/>
             <circle r="10" fill="var(--terra)" opacity="0.3"/>
@@ -445,24 +554,30 @@ const NeighborhoodSection = () => {
       </div>
 
       <div>
-        {filtered.map((n, i) => (
-          <div key={n.name} style={{
+        {filtered.map((n) => (
+          <a key={n.name} href={n.mapsUrl} target="_blank" rel="noreferrer" style={{
+            display: "block", textDecoration: "none", color: "inherit",
             padding: "16px 0", borderBottom: "1px solid var(--rule)",
-            display: "grid", gridTemplateColumns: "1fr auto", columnGap: 12, rowGap: 4,
           }}>
-            <div>
-              <div className="eyebrow" style={{ fontSize: 9.5 }}>{n.kind}</div>
-              <h3 className="serif" style={{ fontSize: 20, margin: "2px 0 0" }}>{n.name}</h3>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr auto", columnGap: 12, rowGap: 4 }}>
+              <div>
+                <div className="eyebrow" style={{ fontSize: 9.5 }}>{n.kind}</div>
+                <h3 className="serif" style={{ fontSize: 20, margin: "2px 0 0" }}>{n.name}</h3>
+              </div>
+              <div className="mono" style={{
+                fontSize: 11, color: "var(--moss)", alignSelf: "start", paddingTop: 6,
+              }}>{n.dist}</div>
+              <p style={{
+                margin: 0, gridColumn: "1 / -1",
+                fontSize: 13.5, color: "var(--ink-soft)", lineHeight: 1.5,
+              }}>{n.note}</p>
+              <div style={{
+                gridColumn: "1 / -1", marginTop: 4,
+                fontSize: 11, color: "var(--terra)",
+                fontFamily: "Geist Mono, monospace", letterSpacing: "0.08em",
+              }}>{t('neighborhood.open_maps')}</div>
             </div>
-            <div className="mono" style={{
-              fontSize: 11, color: "var(--moss)", alignSelf: "start",
-              paddingTop: 6,
-            }}>{n.dist}</div>
-            <p style={{
-              margin: 0, gridColumn: "1 / -1",
-              fontSize: 13.5, color: "var(--ink-soft)", lineHeight: 1.5,
-            }}>{n.note}</p>
-          </div>
+          </a>
         ))}
       </div>
     </Page>
@@ -472,30 +587,31 @@ const NeighborhoodSection = () => {
 // ─── 6. TOURS ────────────────────────────────────────────────
 const ToursSection = () => {
   const A = window.APARTMENT;
+  const t = window.t;
   return (
     <Page>
-      <PageHeader no="№ 06" eyebrow="Tours & trips" title="Days" italic="out" />
+      <PageHeader no={t('tours.no')} eyebrow={t('tours.eyebrow')} title={t('tours.title')} italic={t('tours.italic')} />
 
       <div style={{ marginTop: 4 }}>
-        {A.tours.map((t, i) => (
-          <article key={t.name} style={{
+        {A.tours.map((tour) => (
+          <article key={tour.name} style={{
             padding: "22px 0", borderBottom: "1px solid var(--rule)",
           }}>
             <div style={{ display: "flex", gap: 10, alignItems: "baseline", flexWrap: "wrap" }}>
               <h3 className="serif" style={{
                 fontSize: 23, margin: 0, letterSpacing: "-0.01em", flex: "1 1 auto",
-              }}>{t.name}</h3>
+              }}>{tour.name}</h3>
             </div>
             <div style={{ display: "flex", gap: 14, marginTop: 8, alignItems: "center" }}>
               <span className="mono" style={{ fontSize: 11, color: "var(--moss)" }}>
-                <Icon name="clock" size={11} /> &nbsp;{t.duration}
+                <Icon name="clock" size={11} /> &nbsp;{tour.duration}
               </span>
-              <span className="mono" style={{ fontSize: 11, color: "var(--terra)" }}>{t.price}</span>
+              <span className="mono" style={{ fontSize: 11, color: "var(--terra)" }}>{tour.price}</span>
             </div>
             <p style={{
               margin: "10px 0 0", fontSize: 14.5, lineHeight: 1.5,
               color: "var(--ink-soft)",
-            }}>{t.note}</p>
+            }}>{tour.note}</p>
           </article>
         ))}
       </div>
@@ -503,10 +619,8 @@ const ToursSection = () => {
       <div style={{
         marginTop: 26, padding: "18px 16px", background: "var(--moss)", color: "var(--paper)",
       }}>
-        <div className="eyebrow" style={{ color: "rgba(251,246,235,0.7)" }}>A note from the host</div>
-        <p className="serif-i" style={{
-          fontSize: 18, margin: "8px 0 0", lineHeight: 1.4,
-        }}>
+        <div className="eyebrow" style={{ color: "rgba(251,246,235,0.7)" }}>{t('tours.host_note')}</div>
+        <p className="serif-i" style={{ fontSize: 18, margin: "8px 0 0", lineHeight: 1.4 }}>
           {A.toursHostNote}
         </p>
       </div>
@@ -517,11 +631,12 @@ const ToursSection = () => {
 // ─── 7. GUESTBOOK ────────────────────────────────────────────
 const seedEntries = [
   { name: "Marlene & Thomas", from: "Berlin", date: "April 2026", text: "The light through the bedroom window at 7am. The bells. The little bakery you wrote about. We didn't want to leave." },
-  { name: "Sofia", from: "Lisbon", date: "March 2026", text: "Came for the Van Eyck, stayed for the jenever. Lien's restaurant tips were perfect — every one." },
+  { name: "Sofia", from: "Lisbon", date: "March 2026", text: "Came for the Van Eyck, stayed for the jenever. The restaurant tips were perfect — every one." },
   { name: "The Tanaka family", from: "Osaka", date: "February 2026", text: "Our children loved the castle. Thank you for the extra blankets, it was very cold but very beautiful." },
 ];
 
 const GuestbookSection = ({ entries, setEntries }) => {
+  const t = window.t;
   const [form, setForm] = useState({ name: "", from: "", text: "" });
   const submit = (e) => {
     e.preventDefault();
@@ -539,7 +654,7 @@ const GuestbookSection = ({ entries, setEntries }) => {
 
   return (
     <Page>
-      <PageHeader no="№ 07" eyebrow="Guestbook" title="Leave" italic="a note" />
+      <PageHeader no={t('guestbook.no')} eyebrow={t('guestbook.eyebrow')} title={t('guestbook.title')} italic={t('guestbook.italic')} />
 
       <form onSubmit={submit} style={{
         background: "var(--cream-soft)", padding: "20px 18px",
@@ -547,26 +662,26 @@ const GuestbookSection = ({ entries, setEntries }) => {
       }}>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10, marginBottom: 12 }}>
           <input value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })}
-            placeholder="Your name" style={inputStyle} />
+            placeholder={t('guestbook.name')} style={inputStyle} />
           <input value={form.from} onChange={(e) => setForm({ ...form, from: e.target.value })}
-            placeholder="From..." style={inputStyle} />
+            placeholder={t('guestbook.from')} style={inputStyle} />
         </div>
         <textarea value={form.text} onChange={(e) => setForm({ ...form, text: e.target.value })}
-          rows={4} placeholder="A few words for the next guest..."
+          rows={4} placeholder={t('guestbook.text')}
           style={{ ...inputStyle, width: "100%", resize: "vertical", minHeight: 90 }} />
         <button type="submit" style={{
           marginTop: 12, padding: "12px 22px",
           background: "var(--ink)", color: "var(--paper)", border: "none",
           fontFamily: "Geist Mono, monospace", fontSize: 11,
           letterSpacing: "0.18em", textTransform: "uppercase",
-          display: "inline-flex", alignItems: "center", gap: 10,
+          display: "inline-flex", alignItems: "center", gap: 10, cursor: "pointer",
         }}>
-          Sign the book <Icon name="arrow" size={14} stroke="var(--paper)" />
+          {t('guestbook.submit')} <Icon name="arrow" size={14} stroke="var(--paper)" />
         </button>
       </form>
 
       <div className="eyebrow" style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 14 }}>
-        <span>Previous guests</span>
+        <span>{t('guestbook.previous')}</span>
         <span style={{ flex: 1, height: 1, background: "var(--ink)" }} />
         <span>{entries.length}</span>
       </div>
@@ -601,9 +716,54 @@ const GuestbookSection = ({ entries, setEntries }) => {
   );
 };
 
+// ─── 8. FAQ ──────────────────────────────────────────────────
+const FAQSection = () => {
+  const A = window.APARTMENT;
+  const t = window.t;
+  const [open, setOpen] = useState(null);
+
+  return (
+    <Page>
+      <PageHeader no={t('faq.no')} eyebrow={t('faq.eyebrow')} title={t('faq.title')} italic={t('faq.italic')} />
+
+      <div style={{ borderTop: "1px solid var(--ink)" }}>
+        {A.faq.map((item, i) => {
+          const isOpen = open === i;
+          return (
+            <div key={i} style={{ borderBottom: "1px solid var(--rule)" }}>
+              <button onClick={() => setOpen(isOpen ? null : i)} style={{
+                display: "flex", alignItems: "center", justifyContent: "space-between",
+                width: "100%", padding: "18px 0", background: "transparent",
+                border: "none", textAlign: "left", gap: 12, cursor: "pointer",
+              }}>
+                <span className="serif" style={{
+                  fontSize: 19, lineHeight: 1.3,
+                  color: isOpen ? "var(--terra)" : "var(--ink)",
+                }}>{item.q}</span>
+                <span style={{
+                  fontFamily: "Geist Mono, monospace", fontSize: 18, flexShrink: 0,
+                  color: "var(--ink-mute)", transition: "transform .2s",
+                  transform: isOpen ? "rotate(45deg)" : "none",
+                }}>+</span>
+              </button>
+              {isOpen && (
+                <div style={{
+                  paddingBottom: 18, fontSize: 15, lineHeight: 1.6,
+                  color: "var(--ink-soft)",
+                }}>{item.a}</div>
+              )}
+            </div>
+          );
+        })}
+      </div>
+    </Page>
+  );
+};
+
 // ─── 9. CONTACT OWNER ────────────────────────────────────────
 const ContactSection = () => {
   const A = window.APARTMENT;
+  const t = window.t;
   const [form, setForm] = useState({ name: "", phone: "", message: "" });
   const [sent, setSent] = useState(false);
   const submit = (e) => {
@@ -614,18 +774,17 @@ const ContactSection = () => {
 
   return (
     <Page>
-      <PageHeader no="№ 08" eyebrow="Contact" title="Reach" italic="the host" />
+      <PageHeader no={t('contact.no')} eyebrow={t('contact.eyebrow')} title={t('contact.title')} italic={t('contact.italic')} />
 
       <p style={{ fontSize: 15, lineHeight: 1.55, color: "var(--ink-soft)", marginTop: -4 }}>
         {A.contact.responseTime}.
       </p>
 
-      {/* Direct links */}
       <div style={{ marginTop: 20, display: "grid", gap: 1, background: "var(--rule)" }}>
         <a href={`https://wa.me/${A.contact.whatsapp.replace(/[^0-9]/g, "")}`} target="_blank" rel="noreferrer" style={contactLink}>
           <Icon name="phone" size={18} stroke="var(--moss)" />
           <div style={{ flex: 1 }}>
-            <div style={{ fontSize: 11, color: "var(--ink-mute)", letterSpacing: "0.1em", textTransform: "uppercase" }}>WhatsApp</div>
+            <div style={{ fontSize: 11, color: "var(--ink-mute)", letterSpacing: "0.1em", textTransform: "uppercase" }}>{t('contact.whatsapp')}</div>
             <div className="serif" style={{ fontSize: 20, marginTop: 2 }}>{A.contact.whatsapp}</div>
           </div>
           <Icon name="arrow" size={16} stroke="var(--ink)" />
@@ -633,7 +792,7 @@ const ContactSection = () => {
         <a href={`mailto:${A.contact.email}`} style={contactLink}>
           <Icon name="mail" size={18} stroke="var(--terra)" />
           <div style={{ flex: 1 }}>
-            <div style={{ fontSize: 11, color: "var(--ink-mute)", letterSpacing: "0.1em", textTransform: "uppercase" }}>Email</div>
+            <div style={{ fontSize: 11, color: "var(--ink-mute)", letterSpacing: "0.1em", textTransform: "uppercase" }}>{t('contact.email')}</div>
             <div className="serif" style={{ fontSize: 20, marginTop: 2 }}>{A.contact.email}</div>
           </div>
           <Icon name="arrow" size={16} stroke="var(--ink)" />
@@ -641,7 +800,7 @@ const ContactSection = () => {
       </div>
 
       <div className="eyebrow" style={{ display: "flex", alignItems: "center", gap: 10, margin: "32px 0 14px" }}>
-        <span>Or send a message</span>
+        <span>{t('contact.or_send')}</span>
         <span style={{ flex: 1, height: 1, background: "var(--ink)" }} />
       </div>
 
@@ -651,28 +810,28 @@ const ContactSection = () => {
           textAlign: "center",
         }}>
           <Icon name="check" size={28} stroke="var(--paper)" />
-          <div className="serif" style={{ fontSize: 24, marginTop: 10 }}>Message sent.</div>
+          <div className="serif" style={{ fontSize: 24, marginTop: 10 }}>{t('contact.sent_title')}</div>
           <div className="serif-i" style={{ fontSize: 16, marginTop: 6, opacity: 0.85 }}>
-            We will get back to you shortly — {A.contact.owner}
+            {t('contact.sent_body')} — {A.contact.owner}
           </div>
           <button onClick={() => { setSent(false); setForm({ name: "", phone: "", message: "" }); }} style={{
             marginTop: 18, padding: "10px 18px", background: "transparent",
             border: "1px solid var(--paper)", color: "var(--paper)",
             fontFamily: "Geist Mono, monospace", fontSize: 10,
-            letterSpacing: "0.16em", textTransform: "uppercase",
-          }}>Send another</button>
+            letterSpacing: "0.16em", textTransform: "uppercase", cursor: "pointer",
+          }}>{t('contact.send_another')}</button>
         </div>
       ) : (
         <form onSubmit={submit}>
-          <label style={labelStyle}>Your name
+          <label style={labelStyle}>{t('contact.name')}
             <input value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })}
               style={inputStyle} placeholder="—" />
           </label>
-          <label style={labelStyle}>Phone (optional)
+          <label style={labelStyle}>{t('contact.phone')}
             <input value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })}
               style={inputStyle} placeholder="—" />
           </label>
-          <label style={labelStyle}>Message
+          <label style={labelStyle}>{t('contact.message')}
             <textarea value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })}
               rows={5} style={{ ...inputStyle, resize: "vertical", minHeight: 110 }} placeholder="—" />
           </label>
@@ -681,7 +840,8 @@ const ContactSection = () => {
             background: "var(--ink)", color: "var(--paper)", border: "none",
             fontFamily: "Geist Mono, monospace", fontSize: 11,
             letterSpacing: "0.18em", textTransform: "uppercase",
-            display: "inline-flex", alignItems: "center", justifyContent: "center", gap: 10,
+            display: "inline-flex", alignItems: "center", justifyContent: "center",
+            gap: 10, cursor: "pointer",
           }}>
             Send to {A.contact.owner.split(" ")[0]} <Icon name="send" size={14} stroke="var(--paper)" />
           </button>
@@ -691,7 +851,7 @@ const ContactSection = () => {
   );
 };
 
-// ─── shared styles ──────────────────────────────────────────
+// ─── shared styles ───────────────────────────────────────────
 const inputStyle = {
   width: "100%",
   padding: "12px 12px",
@@ -718,9 +878,11 @@ const contactLink = {
   textDecoration: "none", color: "var(--ink)",
 };
 
+const seedVisitorTips = [];
+
 Object.assign(window, {
   WelcomeSection, ApartmentSection, WifiSection,
   GhentSection, NeighborhoodSection, ToursSection,
-  GuestbookSection, ContactSection,
-  seedEntries,
+  GuestbookSection, FAQSection, ContactSection,
+  seedEntries, seedVisitorTips,
 });
