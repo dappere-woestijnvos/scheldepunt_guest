@@ -65,6 +65,7 @@ const NAV_ITEMS = [
   { k: "guestbook",    icon: "book",    tKey: "nav.guestbook" },
   { k: "faq",          icon: "spark",   tKey: "nav.faq" },
   { k: "contact",      icon: "mail",    tKey: "nav.contact" },
+  { k: "walk",         icon: "pin",     tKey: "nav.walk" },
 ];
 
 const LANGS = [
@@ -199,6 +200,7 @@ const App = () => {
     case "guestbook":    view = <GuestbookSection entries={entries} setEntries={setEntries} />; break;
     case "faq":          view = <FAQSection />; break;
     case "contact":      view = <ContactSection />; break;
+    case "walk":         view = <WalkSection />; break;
     default:             view = <WelcomeSection go={go} />;
   }
 
