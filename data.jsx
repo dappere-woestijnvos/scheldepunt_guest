@@ -9,7 +9,7 @@ const APARTMENT = {
   tagline: "Appartement 6.2 — by the Schelde",
   address: "Ter Plaeten 99, 9000 Gent, Belgium",
   district: "Ter Plaeten",
-  hosts: "Luc Browacys",
+  hosts: "Family Browaeys",
 
   checkIn: "From 14:00",
   checkOut: "Until 10:00",
@@ -19,7 +19,7 @@ const APARTMENT = {
   // Leave empty to disable (guests will be directed to contact you directly).
   apiKey: "",
 
-  welcomeText: "We are so glad you are here. Make yourself at home — the wifi code is on the next page, the whole city is at your doorstep, and the Schelde is right outside your window.",
+  welcomeText: "Welcome to Scheldepunt. We are Family Browaeys and we are so glad you are here. We hope the apartment feels like a home away from home. Make yourself comfortable — the wifi code is on the next screen, the whole city is at your doorstep, and the Schelde is right outside your window.",
 
   wifi: {
     network: "telenet F5DDF",
@@ -30,8 +30,9 @@ const APARTMENT = {
   contact: {
     owner: "Luc Browacys",
     whatsapp: "+32 468 12 29 12",
+    phone2: "+32 496 59 41 60",
     email: "lubro@telenet.be",
-    responseTime: "We typically reply within a few hours. Urgent matters: also reachable via Tony at +32 496 534 160",
+    responseTime: "We typically reply within a few hours. For urgent matters: also reachable via +32 468 12 29 12 or +32 496 59 41 60.",
   },
 
   emergency: {
@@ -60,18 +61,19 @@ const APARTMENT = {
     "Check-in is after 14:00. Check-out is before 10:00. A deposit is charged at check-in and returned at checkout if the apartment is left in good condition.",
     "Quiet between 22:00 and 07:00 — please respect the neighbours below (avoid heels indoors and dragging chairs).",
     "Entrance doors inside must always be closed — do not lock with the night lock.",
-    "Free parking is available at the car park. Do not park on the entrance itself. We are not responsible for damage to vehicles.",
+    "Free parking is available on the fixed spot in the building's underground garage. Do not park in other spots. We are not responsible for damage to vehicles.",
     "No BBQs, open fires, or flammable/explosive materials are permitted on balconies or anywhere in the building.",
   ],
 
   howThings: {
-    heating: "Ask the host for instructions on the heating system.",
-    trash: "Ask the host for trash collection and recycling instructions specific to the building.",
-    keys: "A deposit is charged at check-in and returned at checkout if the apartment is left in good condition. Please return all keys at checkout.",
-    tv: "Ask the host for TV and streaming instructions.",
+    layout: "The apartment has two bedrooms, each with its own private bathroom. There is a spacious living room, a fully equipped kitchen, and a terrace with views over the Scheldt. Underground closed parking is included — bikes can also be stored in the garage. Towels and bedding are provided.",
+    heating: "……",
+    trash: "Please sort your waste. Yellow bag (PMD): plastic bottles, metal cans, and drink cartons. Blue bin: paper and cardboard. Glass container (in the building entrance area): glass bottles and jars. Black bag: residual/non-recyclable waste. Bags are in the kitchen cabinet under the sink. Ask if you have any questions.",
+    keys: "Two full sets of keys are provided. The same key opens the front entrance, the stairwell doors, and the underground garage. A remote control for the garage is in the apartment. Please return both key sets at checkout. A deposit is charged at check-in and returned at checkout when all keys are back and the apartment is left in good condition.",
+    tv: "We hope you enjoy Ghent so much you have little time for TV. If you do sit down, the television has Netflix and Streamz available.",
     laundry: "Nearby laundromats: WASBAR (Nederkouter 109, Gent) · VAN DEN HEEDE (Overpoort 20, Gent) · MAVZER BILAL (Ledebergstraat 17, Ledeberg) · GREEN AND ACTIVE SOLUTIONS (Ossenstraat 20, Gent).",
-    coffee: "Ask the host for coffee machine instructions.",
-    parking: "Free parking at the car park entrance of the building. Do not park on the entrance itself to allow manoeuvring. We are not responsible for damage to vehicles.",
+    coffee: "A Senseo coffee machine is on the counter. Use the Senseo pods stored in the apartment. Press the single-cup button for a small cup or the double-cup button for a large cup. Rinse the pod holder after use.",
+    parking: "Free parking on your fixed spot in the building's underground garage. Please do not park in other spots. Bikes can also be stored in the garage. We are not responsible for damage to vehicles.",
   },
 
   ghent: {
@@ -89,14 +91,23 @@ const APARTMENT = {
       { name: "Vrijdagmarkt", note: "The historic market square. Friday morning for fresh food and flowers, Saturday for the flea market." },
     ],
     bestTimes: "Mornings before 10 are quietest — the day-trippers arrive on the 11:15 train from Brussels. Sundays are calm. See www.visitgent.be for events and what's on.",
+    restaurantLinks: [
+      { label: "Hip & trendy restaurants", url: "https://visit.gent.be/en/eat-drink/hip-trendy-restaurants" },
+      { label: "Ghent specialities", url: "https://visit.gent.be/en/eat-drink/ghent-specialities" },
+      { label: "Vegan & vegetarian", url: "https://visit.gent.be/en/eat-drink/vegetarian-vegan" },
+      { label: "Beer cafés", url: "https://visit.gent.be/en/eat-drink/beer-cafes" },
+      { label: "Hip & trendy cafés", url: "https://visit.gent.be/en/eat-drink/hip-trendy-cafes" },
+      { label: "Dance cafés", url: "https://visit.gent.be/en/nightlife" },
+      { label: "Festivals & events", url: "https://visit.gent.be/en/see-do/festivals-and-events" },
+      { label: "Shopping", url: "https://visit.gent.be/en/see-do/shopping" },
+    ],
   },
 
   neighborhood: [
-    { kind: "Bakery", name: "Bakkerij Martens", dist: "400 m", note: "Tentoonstellingslaan 108. Walk to the bridge, climb the stairs, cross to the other side of the street.", mapsUrl: mapsUrl("Bakkerij Martens, Tentoonstellingslaan 108, Gent") },
     { kind: "Bakery", name: "Bakkerij Mertens", dist: "750 m", note: "François Benardstraat 4. Walk past the Kinépolis crossroads, turn right.", mapsUrl: mapsUrl("Bakkerij Mertens, François Benardstraat 4, Gent") },
-    { kind: "Bakery", name: "De Superette", dist: "1.4 km", note: "Guldenspoorstraat 29. Artisanal sourdough and grill by chef Kobe Desramaults.", mapsUrl: mapsUrl("De Superette, Guldenspoorstraat 29, Gent") },
+    { kind: "Bakery", name: "Smørbrod", dist: "1.4 km", note: "Guldenspoorstraat 29. Scandinavian-inspired open sandwiches and seasonal bakes.", mapsUrl: mapsUrl("Smørbrod, Guldenspoorstraat 29, Gent") },
     { kind: "Supermarket", name: "Proxy Delhaize Heuvelpoort", dist: "750 m", note: "Ottergemsesteenweg 2. Walk to bridge, take stairs, turn left at the first traffic lights.", mapsUrl: mapsUrl("Proxy Delhaize Heuvelpoort, Ottergemsesteenweg 2, Gent") },
-    { kind: "Supermarket", name: "Carrefour Express", dist: "—", note: "Zwijnaardsesteenweg 68, Gent.", mapsUrl: mapsUrl("Carrefour Express, Zwijnaardsesteenweg 68, Gent") },
+    { kind: "Supermarket", name: "Albert Heijn Overpoort", dist: "—", note: "Overpoortstraat, Gent — in the student district.", mapsUrl: mapsUrl("Albert Heijn, Overpoortstraat, Gent") },
     { kind: "Restaurant", name: "Jilles Beer en Burgers", dist: "600 m", note: "Tentoonstellingslaan 165. Gourmet beef, veggie & chicken burgers — www.jilles.be", mapsUrl: mapsUrl("Jilles Beer en Burgers, Tentoonstellingslaan 165, Gent") },
     { kind: "Restaurant", name: "Jour de fête", dist: "750 m", note: "Gustaaf Callierlaan 233. Seasonal Belgian-Mediterranean cuisine. www.restaurantjourdefete.be", mapsUrl: mapsUrl("Jour de fête, Gustaaf Callierlaan 233, Gent") },
     { kind: "Restaurant", name: "La Dolce Vita", dist: "600 m", note: "Ter Plaeten 2. Walk along the water past the Kinépolis. restoladolcevita.be", mapsUrl: mapsUrl("La Dolce Vita, Ter Plaeten 2, Gent") },
@@ -119,12 +130,14 @@ const APARTMENT = {
     { name: "Beer + Belgian Food Tour", duration: "3 h", price: "€75", note: "Small groups, six tastings. Book via Vizit Ghent." },
     { name: "Bruges day trip", duration: "Full day", price: "€19 return", note: "Direct train, 25 min. Go early — the medieval centre is best before the tour buses arrive." },
     { name: "Bike the Lys", duration: "Half day", price: "€15", note: "Rent at Biker, cycle the river path to Sint-Martens-Latem. Flat and mostly car-free." },
+    { name: "GetYourGuide — Ghent tours", duration: "Varies", price: "From €10", note: "All types of tours — boat trips, food tours, walking tours, day trips. Book online: www.getyourguide.com/ghent" },
+    { name: "Gentse Gidsen (Licensed City Guides)", duration: "2 h", price: "From €90 (group)", note: "Official licensed guides of Ghent. Private and group tours, tailor-made itineraries. www.gentsegidsen.be" },
   ],
 
-  toursHostNote: "For any tips or help booking activities, just ask via the contact page or WhatsApp. The free walking tour is genuinely the best introduction to the city.",
+  toursHostNote: "For any tips or help booking activities, just ask via the contact page or WhatsApp. The free walking tour is genuinely the best introduction to the city. For deeper dives, the licensed Gentse Gidsen offer wonderful private tours.",
 
   transport: {
-    bus: "Walk via Ter Plaeten to the Plaetenbrug. Take bus 58, 70, 71, 72, 76, 77 or 78 towards Ghent South (every 7 minutes).",
+    bus: "Walk via Ter Plaeten to the Plaetenbrug. Take the stairs up and cross at the zebra crossing. Two bus stops on Tentoonstellingslaan on the other side:\n• Right stop (towards city centre): buses 33, 55, 70, 76, 78\n• Left stop (towards station Sint-Pieters): buses 34, 55, 70, 71, 76, 78\nBuses run every 7–10 minutes.",
     dayTicket: "€7.50 (12+ years). Buy at a ticket machine, Lijnwinkel store, De Lijn app, or text DLD to 4884 (+€0.15 operator charge). Valid 24 hours. Children 6–11 years: €4.",
   },
 
@@ -136,7 +149,7 @@ const APARTMENT = {
     },
     {
       q: "Is there parking available?",
-      a: "Yes, free parking is available at the entrance of the building's car park. Please do not park on the entrance itself to allow manoeuvring. We are not responsible for damage to vehicles.",
+      a: "Yes, free parking is available on your fixed spot in the building's underground garage. Please do not park in other spots. Bikes can also be stored in the garage. We are not responsible for damage to vehicles.",
     },
     {
       q: "Are pets allowed?",
@@ -148,7 +161,7 @@ const APARTMENT = {
     },
     {
       q: "How do I access the apartment?",
-      a: "A key will be provided at check-in. A deposit is charged at check-in and returned at checkout if the apartment is left in good condition.",
+      a: "A key will be provided at check-in. The same key opens the front entrance, stairwell doors, and the underground garage. A remote for the garage is provided. A deposit is charged at check-in and returned at checkout.",
     },
     {
       q: "Is there a washing machine?",
@@ -156,15 +169,15 @@ const APARTMENT = {
     },
     {
       q: "How do I get to the city centre?",
-      a: "Walk via Ter Plaeten to the Plaetenbrug and take bus 58, 70, 71, 72, 76, 77 or 78 towards Ghent South. Buses run every 7 minutes. A day ticket costs €7.50.",
+      a: "Walk via Ter Plaeten to the Plaetenbrug, take the stairs up and cross at the zebra crossing. Buses on Tentoonstellingslaan: towards city centre (right stop): 33, 55, 70, 76, 78. Towards station Sint-Pieters (left stop): 34, 55, 70, 71, 76, 78. Buses run every 7–10 minutes. A day ticket costs €7.50.",
     },
     {
       q: "What is the WiFi password?",
-      a: "Network: telenet F5DDF — Password: SyBBm0R4XHPP. Tap the Wifi tab for a tap-to-copy version.",
+      a: "Network: telenet F5DDF — Password: SyBBm0R4XHPP. Tap the Info tab for a tap-to-copy version.",
     },
     {
       q: "Who do I contact in case of a problem?",
-      a: "Contact Luc Browacys: +32 468 12 29 12 (phone/WhatsApp) or lubro@telenet.be. For urgent matters, Tony is also reachable at +32 496 534 160. We typically reply within a few hours.",
+      a: "Contact Luc Browacys: +32 468 12 29 12 (phone/WhatsApp) or lubro@telenet.be. Second emergency number: +32 496 59 41 60. We typically reply within a few hours.",
     },
     {
       q: "Is there a noise policy?",
@@ -173,6 +186,10 @@ const APARTMENT = {
     {
       q: "Can I have visitors?",
       a: "Day visitors are welcome. Overnight guests must be declared in advance — a maximum of 4 guests are permitted to stay overnight. No parties or events.",
+    },
+    {
+      q: "What does the apartment include?",
+      a: "Two bedrooms each with a private bathroom, living room, fully equipped kitchen, terrace with Scheldt views, and underground parking (bikes welcome). Towels and bedding are provided.",
     },
   ],
 };
@@ -184,6 +201,7 @@ function buildSystemPrompt() {
 # APARTMENT
 Address: ${A.address} | Host: ${A.hosts}
 Check-in: ${A.checkIn} | Check-out: ${A.checkOut}
+Layout: ${A.howThings.layout}
 
 # WIFI
 Network: ${A.wifi.network} | Password: ${A.wifi.password}
@@ -214,7 +232,7 @@ ${A.ghent.hidden.map((s) => `- ${s.name}: ${s.note}`).join("\n")}
 ${A.tours.map((t) => `- ${t.name} (${t.duration}, ${t.price}): ${t.note}`).join("\n")}
 
 # CONTACT
-Host: ${A.contact.owner} | WhatsApp: ${A.contact.whatsapp} | Email: ${A.contact.email}
+Host: ${A.contact.owner} | WhatsApp: ${A.contact.whatsapp} | Second: ${A.contact.phone2} | Email: ${A.contact.email}
 Response time: ${A.contact.responseTime}
 
 # RULES

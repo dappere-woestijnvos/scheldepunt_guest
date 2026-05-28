@@ -1,235 +1,161 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gpx version="1.1" creator="Scheldepunt Guest Guide"
-     xmlns="http://www.topografix.com/GPX/1/1"
-     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-     xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+  xmlns="http://www.topografix.com/GPX/1/1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
   <metadata>
-    <name>City Walk Ghent – Scheldepunt</name>
-    <desc>Self-guided city walk starting at Scheldepunt, Ter Plaeten 99, Ghent. Full route: 11.5 km. Shortened route (skip extension): 9.3 km.</desc>
+    <name>Ghent City Walk — Scheldepunt</name>
+    <desc>Self-guided walking tour of Ghent, 43 stops, starting and ending at Scheldepunt (Ter Plaeten 99). Full route 11.5 km. Skip stops 15–18 for 9.3 km shortened route.</desc>
+    <author><name>Family Browaeys — Scheldepunt</name></author>
+    <link href="https://scheldepunt.be"><text>Scheldepunt Guest Guide</text></link>
+    <time>2025-01-01T00:00:00Z</time>
+    <keywords>Ghent, Gent, walking tour, city walk, self-guided</keywords>
+    <bounds minlat="51.0380" minlon="3.7068" maxlat="51.0590" maxlon="3.7259"/>
   </metadata>
 
-  <wpt lat="51.0393" lon="3.7057">
-    <name>01 – Scheldepunt (Start / Finish)</name>
-  </wpt>
-  <wpt lat="51.0383" lon="3.7085">
-    <name>02 – Kinepolis</name>
-  </wpt>
-  <wpt lat="51.038" lon="3.7148">
-    <name>03 – Muinkpark</name>
-  </wpt>
-  <wpt lat="51.0367" lon="3.719">
-    <name>04 – Het Zuid / Woodrow Wilsonplein</name>
-  </wpt>
-  <wpt lat="51.0523" lon="3.7214">
-    <name>05 – Belfort & Lakenhalle</name>
-  </wpt>
-  <wpt lat="51.0537" lon="3.7207">
-    <name>06 – Stadshal</name>
-  </wpt>
-  <wpt lat="51.0533" lon="3.7196">
-    <name>07 – Korenmarkt</name>
-  </wpt>
-  <wpt lat="51.0536" lon="3.7193">
-    <name>08 – De Post</name>
-  </wpt>
-  <wpt lat="51.0538" lon="3.7194">
-    <name>09 – Sint-Niklaaskerk</name>
-  </wpt>
-  <wpt lat="51.0528" lon="3.7184">
-    <name>10 – Graffiti – Lam Gods</name>
-  </wpt>
-  <wpt lat="51.0525" lon="3.7179">
-    <name>11 – Sint-Michielskerk</name>
-  </wpt>
-  <wpt lat="51.0527" lon="3.7196">
-    <name>12 – Korenlei & Graslei</name>
-  </wpt>
-  <wpt lat="51.0545" lon="3.7202">
-    <name>13 – Designmuseum</name>
-  </wpt>
-  <wpt lat="51.0582" lon="3.7196">
-    <name>14 – Gravensteen</name>
-  </wpt>
-  <wpt lat="51.0589" lon="3.7184">
-    <name>15 – [Ext] Paters Karmelieten [EXTENSION]</name>
-  </wpt>
-  <wpt lat="51.0592" lon="3.7161">
-    <name>16 – [Ext] Oud Begijnhof [EXTENSION]</name>
-  </wpt>
-  <wpt lat="51.0591" lon="3.7148">
-    <name>17 – [Ext] Prinsenhof [EXTENSION]</name>
-  </wpt>
-  <wpt lat="51.0583" lon="3.7169">
-    <name>18 – [Ext] Brug der Keizerlijke Geneugten [EXTENSION]</name>
-  </wpt>
-  <wpt lat="51.0576" lon="3.7185">
-    <name>19 – De Lieve</name>
-  </wpt>
-  <wpt lat="51.057" lon="3.7178">
-    <name>20 – Caermersklooster</name>
-  </wpt>
-  <wpt lat="51.0566" lon="3.7177">
-    <name>21 – Sint-Stephanuskerk</name>
-  </wpt>
-  <wpt lat="51.0562" lon="3.7175">
-    <name>22 – Graffiti – Roa konijnen</name>
-  </wpt>
-  <wpt lat="51.0568" lon="3.72">
-    <name>23 – Huis van Alijn / Kraanlei</name>
-  </wpt>
-  <wpt lat="51.0574" lon="3.72">
-    <name>24 – Patershol</name>
-  </wpt>
-  <wpt lat="51.0577" lon="3.7192">
-    <name>25 – Veerleplein</name>
-  </wpt>
-  <wpt lat="51.0566" lon="3.72">
-    <name>26 – Groot Vleeshuis & Groentemarkt</name>
-  </wpt>
-  <wpt lat="51.0577" lon="3.7218">
-    <name>27 – Dulle Griet</name>
-  </wpt>
-  <wpt lat="51.0573" lon="3.7219">
-    <name>28 – Vrijdagmarkt</name>
-  </wpt>
-  <wpt lat="51.0559" lon="3.7234">
-    <name>29 – Gruut Stadsbrouwerij</name>
-  </wpt>
-  <wpt lat="51.0559" lon="3.7245">
-    <name>30 – Sint-Jacobskerk</name>
-  </wpt>
-  <wpt lat="51.0549" lon="3.7233">
-    <name>31 – Graffitistraatje (Werregarenstraat)</name>
-  </wpt>
-  <wpt lat="51.0523" lon="3.7224">
-    <name>32 – Stadhuis</name>
-  </wpt>
-  <wpt lat="51.0518" lon="3.7228">
-    <name>33 – Biezekapel</name>
-  </wpt>
-  <wpt lat="51.0514" lon="3.7238">
-    <name>34 – Sint-Baafskathedraal</name>
-  </wpt>
-  <wpt lat="51.0502" lon="3.7233">
-    <name>35 – Bisschoppelijk Paleis</name>
-  </wpt>
-  <wpt lat="51.0496" lon="3.722">
-    <name>36 – Geraard de Duivelsteen</name>
-  </wpt>
-  <wpt lat="51.0487" lon="3.7214">
-    <name>37 – De Kouter</name>
-  </wpt>
-  <wpt lat="51.0474" lon="3.7235">
-    <name>38 – De Krook</name>
-  </wpt>
-  <wpt lat="51.0466" lon="3.7228">
-    <name>39 – Wintercircus</name>
-  </wpt>
-  <wpt lat="51.046" lon="3.7219">
-    <name>40 – De Vooruit</name>
-  </wpt>
-  <wpt lat="51.0452" lon="3.7231">
-    <name>41 – Boekentoren</name>
-  </wpt>
-  <wpt lat="51.0432" lon="3.7224">
-    <name>42 – Sint-Pietersplein & Abdij</name>
-  </wpt>
-  <wpt lat="51.043" lon="3.7227">
-    <name>43 – Wereld van Kina</name>
-  </wpt>
+  <!-- Waypoints for all 43 stops -->
+  <wpt lat="51.0383" lon="3.7068"><name>01 Scheldepunt (Start &amp; Finish)</name><desc>The name 'Scheldepunt' refers to the junction of the Scheldt river right at this building. The walk begins by following the left arm via Ter Plaeten, walking under the bridge past the Kinepolis.</desc><sym>Flag, Green</sym></wpt>
+  <wpt lat="51.0380" lon="3.7082"><name>02 Kinepolis</name><desc>When it was built in 1980, this was the largest cinema complex in the world. Today the 12 screens serve Ghent's film-lovers.</desc><sym>Flag, Blue</sym></wpt>
+  <wpt lat="51.0389" lon="3.7145"><name>03 Muinkpark</name><desc>1.3-hectare park in English landscape style, the only remnant of the 19th-century Ghent zoo. Lions, parrots, ostriches, a crocodile and an elephant were real crowd-pullers.</desc><sym>Flag, Blue</sym></wpt>
+  <wpt lat="51.0440" lon="3.7215"><name>04 Het Zuid – Woodrow Wilsonplein</name><desc>'t Zuid is the vibrant neighbourhood around the neo-baroque Zuidpark. The name refers to the former South Railway Station, closed in 1928.</desc><sym>Flag, Blue</sym></wpt>
+  <wpt lat="51.0527" lon="3.7217"><name>05 Belfry &amp; Cloth Hall</name><desc>Construction of the Ghent Belfry began in 1314. UNESCO World Heritage site — you can climb the tower. The Cloth Hall (Lakenhalle) was added half a century later.</desc><sym>Flag, Blue</sym></wpt>
+  <wpt lat="51.0533" lon="3.7213"><name>06 Stadshal (City Hall)</name><desc>The new building between the Belfry and Saint-Nicholas Church. Controversial 'Sheepfold' with 1,600 small windows. Houses Klokke Roeland and a Michaël Borremans painting.</desc><sym>Flag, Blue</sym></wpt>
+  <wpt lat="51.0534" lon="3.7200"><name>07 Korenmarkt</name><desc>Since the 10th–11th century, the square where grain was traded. Mokabon (Donkersteeg 35) — the very first coffee shop in Ghent.</desc><sym>Flag, Blue</sym></wpt>
+  <wpt lat="51.0534" lon="3.7193"><name>08 De Post (The Post Office)</name><desc>Former Post Office built 1898–1908, with a beautiful 52m-high clock tower. Now a shopping centre and hotel 1898 The Post.</desc><sym>Flag, Blue</sym></wpt>
+  <wpt lat="51.0537" lon="3.7201"><name>09 Sint-Niklaaskerk (Saint-Nicholas Church)</name><desc>Origins in the 11th century. The tower functioned as the belfry before the actual belfry was built. Note: the tower is located in the middle of the church building.</desc><sym>Flag, Blue</sym></wpt>
+  <wpt lat="51.0530" lon="3.7192"><name>10 Graffiti – Lam Gods (Copy)</name><desc>Reproduction of 'Het Lam Gods' by street artist Smates. From the bridge above: the three towers in a line, and the Graslei below.</desc><sym>Flag, Blue</sym></wpt>
+  <wpt lat="51.0527" lon="3.7185"><name>11 Sint-Michielskerk (Saint-Michael's Church)</name><desc>Construction began 1440. Tower is without a spire since 1672 — the intended height was 134 metres! 'Christ on the Cross' by Antoon Van Dyck is here.</desc><sym>Flag, Blue</sym></wpt>
+  <wpt lat="51.0535" lon="3.7208"><name>12 Korenlei &amp; Graslei</name><desc>Ghent held the grain-stacking right. The Graslei has beautiful old buildings including possibly the world's oldest step gable.</desc><sym>Flag, Blue</sym></wpt>
+  <wpt lat="51.0555" lon="3.7198"><name>13 Designmuseum Gent</name><desc>Housed in the 18th-century Hotel De Coninck. Don't miss the toilet wing — a monumental protest against the city council.</desc><sym>Flag, Blue</sym></wpt>
+  <wpt lat="51.0568" lon="3.7197"><name>14 Gravensteen (Castle of the Counts)</name><desc>Construction began in 1180. Students famously occupied it in 1949 — the 'greatest student joke of all time', celebrated annually at the Gravensteenfestival.</desc><sym>Flag, Blue</sym></wpt>
+  <wpt lat="51.0581" lon="3.7196"><name>15 Paters Karmelieten [Extension]</name><desc>The church 'Paters Karmelieten' on Burgstraat — free entry, visit is highly recommended. Next to the church is the cloister garden.</desc><sym>Flag, Red</sym></wpt>
+  <wpt lat="51.0582" lon="3.7163"><name>16 Oud Begijnhof – Sint-Elisabethkerk [Extension]</name><desc>One of the oldest beguinages in Flanders. 'The Holy Corner' — four religions practised in three churches. A new Orthodox church painted with Byzantine frescoes is nearby.</desc><sym>Flag, Red</sym></wpt>
+  <wpt lat="51.0588" lon="3.7150"><name>17 Prinsenhof [Extension]</name><desc>Charles V was born here in 1500. The 'Donkere Poort' is the only remnant of the original 'Hof ten Walle'. The statue represents the proud Charles.</desc><sym>Flag, Red</sym></wpt>
+  <wpt lat="51.0577" lon="3.7171"><name>18 Bridge of Imperial Pleasures [Extension]</name><desc>Built in 2000 (Charles V centennial) over the River Lieve. Statues by Ghent sculptor Walter De Buck referencing legends about Charles V's life.</desc><sym>Flag, Red</sym></wpt>
+  <wpt lat="51.0572" lon="3.7183"><name>19 De Lieve</name><desc>The Lieve was dug between 1251 and 1269 to connect the city with the Zwin at Damme. The Sint-Widostraat offers a beautiful vista through to the Gravensteen.</desc><sym>Flag, Blue</sym></wpt>
+  <wpt lat="51.0566" lon="3.7182"><name>20 Caermersklooster</name><desc>Former Carmelite monastery in use since the end of the 13th century. Now an exhibition space for prestigious temporary exhibitions, often with free admission.</desc><sym>Flag, Blue</sym></wpt>
+  <wpt lat="51.0563" lon="3.7179"><name>21 Sint-Stephanuskerk</name><desc>During WWII, panels of the 'Mystic Lamb' by the Van Eyck brothers were hidden here from the occupiers. Open 06:30–12:30 and 14:00–18:30.</desc><sym>Flag, Blue</sym></wpt>
+  <wpt lat="51.0560" lon="3.7177"><name>22 Graffiti – Roa (Giant Rabbits)</name><desc>Giant rabbits by Ghent street artist Roa — animals painted in large format, often black and white.</desc><sym>Flag, Blue</sym></wpt>
+  <wpt lat="51.0568" lon="3.7208"><name>23 Huis van Alijn &amp; Kraanlei</name><desc>Museum of folk life in a 14th-century almshouse. Houses the original 'Manneke Pis of Ghent'. Nearby: Huis Temmerman, the oldest sweet shop in Ghent.</desc><sym>Flag, Blue</sym></wpt>
+  <wpt lat="51.0572" lon="3.7203"><name>24 Patershol</name><desc>The narrow medieval streets behind Kraanlei. Ghent's most atmospheric restaurant quarter — Japanese, Indonesian, Turkish, Italian, Spanish and Flemish cuisine in cobbled alleys.</desc><sym>Flag, Blue</sym></wpt>
+  <wpt lat="51.0574" lon="3.7197"><name>25 Veerleplein</name><desc>Historic gateway to the Old Fish Market. Neptune oversees the Leie and Scheldt. The lanterns light up each time a baby is born in a Ghent hospital.</desc><sym>Flag, Blue</sym></wpt>
+  <wpt lat="51.0568" lon="3.7214"><name>26 Groot Vleeshuis &amp; Groentemarkt</name><desc>Medieval hall from the early 15th century with 200 East-Flemish regional products. 't Galgenhuis: the smallest café in Ghent. Cuberdon stands and Vve Tierenteyn mustard.</desc><sym>Flag, Blue</sym></wpt>
+  <wpt lat="51.0572" lon="3.7234"><name>27 Dulle Griet</name><desc>The iron 'Evil Woman' is 5 metres long and weighs 12,500 kg. Painted ox-red. Possibly used in the siege of Oudenaarde in 1452.</desc><sym>Flag, Blue</sym></wpt>
+  <wpt lat="51.0574" lon="3.7259"><name>28 Vrijdagmarkt</name><desc>Jacob Van Artevelde's statue surveys the square. Weekly market every Friday since 1199. De Dulle Griet café: 500+ Belgian beers — order a 'kwak', leave your shoe as deposit!</desc><sym>Flag, Blue</sym></wpt>
+  <wpt lat="51.0558" lon="3.7246"><name>29 Gruut Stadsbrouwerij</name><desc>Founded 2009. Five beers, four brewed with herbs instead of hops — a medieval tradition revived. Café and brewery under one roof, free to visit.</desc><sym>Flag, Blue</sym></wpt>
+  <wpt lat="51.0558" lon="3.7249"><name>30 Sint-Jacobskerk (Saint-James' Church)</name><desc>Started around the mid-12th century. Every July, the vibrant core of the Gentse Feesten. Flea market every Friday, Saturday and Sunday morning.</desc><sym>Flag, Blue</sym></wpt>
+  <wpt lat="51.0545" lon="3.7232"><name>31 Werregarenstraat (Graffiti Street)</name><desc>Since 1995, anyone may create here — one rule: don't attack works better than your own. One of four officially tolerated graffiti locations in Ghent.</desc><sym>Flag, Blue</sym></wpt>
+  <wpt lat="51.0524" lon="3.7227"><name>32 Stadhuis (Town Hall)</name><desc>Central part 15th century. Hoogpoort side: niches of the Counts of Flanders. Botermarkt side: Renaissance style with Doric, Ionic and Corinthian columns.</desc><sym>Flag, Blue</sym></wpt>
+  <wpt lat="51.0521" lon="3.7232"><name>33 Biezekapel</name><desc>One of the oldest chapels in the city. A statue of Mary placed here in 1608. In 1934 people believed the stolen 'Just Judges' panel was hidden here.</desc><sym>Flag, Blue</sym></wpt>
+  <wpt lat="51.0518" lon="3.7239"><name>34 Sint-Baafskathedraal (Saint-Bavo's Cathedral)</name><desc>Gothic cathedral, status granted 1559. Charles V baptized here in 1500. Home of 'The Mystic Lamb' by the Van Eyck brothers.</desc><sym>Flag, Blue</sym></wpt>
+  <wpt lat="51.0505" lon="3.7233"><name>35 Bisschoppelijk Paleis (Episcopal Palace)</name><desc>Construction 1843–1845. Cross the Wijdenaardbrug — since end of 2018, the Lower Scheldt flows under this bridge again towards Portus Ganda.</desc><sym>Flag, Blue</sym></wpt>
+  <wpt lat="51.0499" lon="3.7219"><name>36 Geraard de Duivelsteen</name><desc>Despite the name, no devil ever lived here. Named after the 13th-century owner Gerard, 'the Devil'. Has been arsenal, school, monastery, prison, and asylum.</desc><sym>Flag, Blue</sym></wpt>
+  <wpt lat="51.0490" lon="3.7213"><name>37 De Kouter</name><desc>Daily flower market all year round. The Blue Kiosk serves cava and fresh oysters around 11 o'clock. The 19th-century Ghent Opera and De Handelsbeurs concert hall are here.</desc><sym>Flag, Blue</sym></wpt>
+  <wpt lat="51.0474" lon="3.7236"><name>38 De Krook (Library)</name><desc>Much more than a library — steel and concrete, open to all. Cafeteria with terrace, 3D printer, virtual reality. 'Krook' = old word for fold, referencing the Scheldt's bend.</desc><sym>Flag, Blue</sym></wpt>
+  <wpt lat="51.0468" lon="3.7229"><name>39 Het Wintercircus</name><desc>Built in 1885 as 'Nieuw Cirkus', became a garage, then reopened in 2024 after 5 years of renovation. Winner Ghent Monument Prize 2022.</desc><sym>Flag, Blue</sym></wpt>
+  <wpt lat="51.0462" lon="3.7240"><name>40 De Vooruit</name><desc>Historic hall complex from 1913 — originally the party and arts centre of the Ghent workers' movement. Today: concerts, debates, literary evenings, parties and dance performances.</desc><sym>Flag, Blue</sym></wpt>
+  <wpt lat="51.0451" lon="3.7237"><name>41 Boekentoren (Book Tower)</name><desc>64-metre tower designed by Henry Van de Velde. Houses 3 million books — 46 km of shelves. The most striking example of modernist architecture in Ghent.</desc><sym>Flag, Blue</sym></wpt>
+  <wpt lat="51.0438" lon="3.7248"><name>42 Sint-Pietersplein &amp; Sint-Pietersabdij</name><desc>Heart of the student district. The 7th-century Benedictine abbey is free to enter. The abbey garden is a green oasis. Exit right onto Overpoort for 35+ student cafés side by side.</desc><sym>Flag, Blue</sym></wpt>
+  <wpt lat="51.0435" lon="3.7252"><name>43 Wereld van Kina – The House</name><desc>Museum with prehistoric fossils, native bird dioramas, and minerals. Exit through the abbey garden, cross the water, turn left into Ter Plaeten — back to Scheldepunt.</desc><sym>Flag, Green</sym></wpt>
 
-  <rte>
-    <name>Full route – 11.5 km (with extension)</name>
-    <desc>Complete walk including Oud Begijnhof and Prinsenhof extension.</desc>
-    <rtept lat="51.0393" lon="3.7057"><name>01 – Scheldepunt (Start / Finish)</name></rtept>
-    <rtept lat="51.0383" lon="3.7085"><name>02 – Kinepolis</name></rtept>
-    <rtept lat="51.038" lon="3.7148"><name>03 – Muinkpark</name></rtept>
-    <rtept lat="51.0367" lon="3.719"><name>04 – Het Zuid / Woodrow Wilsonplein</name></rtept>
-    <rtept lat="51.0523" lon="3.7214"><name>05 – Belfort & Lakenhalle</name></rtept>
-    <rtept lat="51.0537" lon="3.7207"><name>06 – Stadshal</name></rtept>
-    <rtept lat="51.0533" lon="3.7196"><name>07 – Korenmarkt</name></rtept>
-    <rtept lat="51.0536" lon="3.7193"><name>08 – De Post</name></rtept>
-    <rtept lat="51.0538" lon="3.7194"><name>09 – Sint-Niklaaskerk</name></rtept>
-    <rtept lat="51.0528" lon="3.7184"><name>10 – Graffiti – Lam Gods</name></rtept>
-    <rtept lat="51.0525" lon="3.7179"><name>11 – Sint-Michielskerk</name></rtept>
-    <rtept lat="51.0527" lon="3.7196"><name>12 – Korenlei & Graslei</name></rtept>
-    <rtept lat="51.0545" lon="3.7202"><name>13 – Designmuseum</name></rtept>
-    <rtept lat="51.0582" lon="3.7196"><name>14 – Gravensteen</name></rtept>
-    <rtept lat="51.0589" lon="3.7184"><name>15 – [Ext] Paters Karmelieten</name></rtept>
-    <rtept lat="51.0592" lon="3.7161"><name>16 – [Ext] Oud Begijnhof</name></rtept>
-    <rtept lat="51.0591" lon="3.7148"><name>17 – [Ext] Prinsenhof</name></rtept>
-    <rtept lat="51.0583" lon="3.7169"><name>18 – [Ext] Brug der Keizerlijke Geneugten</name></rtept>
-    <rtept lat="51.0576" lon="3.7185"><name>19 – De Lieve</name></rtept>
-    <rtept lat="51.057" lon="3.7178"><name>20 – Caermersklooster</name></rtept>
-    <rtept lat="51.0566" lon="3.7177"><name>21 – Sint-Stephanuskerk</name></rtept>
-    <rtept lat="51.0562" lon="3.7175"><name>22 – Graffiti – Roa konijnen</name></rtept>
-    <rtept lat="51.0568" lon="3.72"><name>23 – Huis van Alijn / Kraanlei</name></rtept>
-    <rtept lat="51.0574" lon="3.72"><name>24 – Patershol</name></rtept>
-    <rtept lat="51.0577" lon="3.7192"><name>25 – Veerleplein</name></rtept>
-    <rtept lat="51.0566" lon="3.72"><name>26 – Groot Vleeshuis & Groentemarkt</name></rtept>
-    <rtept lat="51.0577" lon="3.7218"><name>27 – Dulle Griet</name></rtept>
-    <rtept lat="51.0573" lon="3.7219"><name>28 – Vrijdagmarkt</name></rtept>
-    <rtept lat="51.0559" lon="3.7234"><name>29 – Gruut Stadsbrouwerij</name></rtept>
-    <rtept lat="51.0559" lon="3.7245"><name>30 – Sint-Jacobskerk</name></rtept>
-    <rtept lat="51.0549" lon="3.7233"><name>31 – Graffitistraatje (Werregarenstraat)</name></rtept>
-    <rtept lat="51.0523" lon="3.7224"><name>32 – Stadhuis</name></rtept>
-    <rtept lat="51.0518" lon="3.7228"><name>33 – Biezekapel</name></rtept>
-    <rtept lat="51.0514" lon="3.7238"><name>34 – Sint-Baafskathedraal</name></rtept>
-    <rtept lat="51.0502" lon="3.7233"><name>35 – Bisschoppelijk Paleis</name></rtept>
-    <rtept lat="51.0496" lon="3.722"><name>36 – Geraard de Duivelsteen</name></rtept>
-    <rtept lat="51.0487" lon="3.7214"><name>37 – De Kouter</name></rtept>
-    <rtept lat="51.0474" lon="3.7235"><name>38 – De Krook</name></rtept>
-    <rtept lat="51.0466" lon="3.7228"><name>39 – Wintercircus</name></rtept>
-    <rtept lat="51.046" lon="3.7219"><name>40 – De Vooruit</name></rtept>
-    <rtept lat="51.0452" lon="3.7231"><name>41 – Boekentoren</name></rtept>
-    <rtept lat="51.0432" lon="3.7224"><name>42 – Sint-Pietersplein & Abdij</name></rtept>
-    <rtept lat="51.043" lon="3.7227"><name>43 – Wereld van Kina</name></rtept>
-    <rtept lat="51.0393" lon="3.7057"><name>Return – Scheldepunt</name></rtept>
-  </rte>
+  <!-- Full route track (all 43 stops, ~11.5 km) -->
+  <trk>
+    <name>Ghent City Walk — Full Route (11.5 km, 43 stops)</name>
+    <desc>Complete self-guided walking tour from Scheldepunt through Ghent's historic centre. Includes optional extension stops 15–18 through Oud Begijnhof and Prinsenhof.</desc>
+    <trkseg>
+      <trkpt lat="51.0383" lon="3.7068"><name>01 Scheldepunt</name></trkpt>
+      <trkpt lat="51.0380" lon="3.7082"><name>02 Kinepolis</name></trkpt>
+      <trkpt lat="51.0389" lon="3.7145"><name>03 Muinkpark</name></trkpt>
+      <trkpt lat="51.0440" lon="3.7215"><name>04 Het Zuid</name></trkpt>
+      <trkpt lat="51.0527" lon="3.7217"><name>05 Belfry</name></trkpt>
+      <trkpt lat="51.0533" lon="3.7213"><name>06 Stadshal</name></trkpt>
+      <trkpt lat="51.0534" lon="3.7200"><name>07 Korenmarkt</name></trkpt>
+      <trkpt lat="51.0534" lon="3.7193"><name>08 De Post</name></trkpt>
+      <trkpt lat="51.0537" lon="3.7201"><name>09 Sint-Niklaaskerk</name></trkpt>
+      <trkpt lat="51.0530" lon="3.7192"><name>10 Graffiti Lam Gods</name></trkpt>
+      <trkpt lat="51.0527" lon="3.7185"><name>11 Sint-Michielskerk</name></trkpt>
+      <trkpt lat="51.0535" lon="3.7208"><name>12 Korenlei &amp; Graslei</name></trkpt>
+      <trkpt lat="51.0555" lon="3.7198"><name>13 Designmuseum</name></trkpt>
+      <trkpt lat="51.0568" lon="3.7197"><name>14 Gravensteen</name></trkpt>
+      <trkpt lat="51.0581" lon="3.7196"><name>15 Paters Karmelieten</name></trkpt>
+      <trkpt lat="51.0582" lon="3.7163"><name>16 Oud Begijnhof</name></trkpt>
+      <trkpt lat="51.0588" lon="3.7150"><name>17 Prinsenhof</name></trkpt>
+      <trkpt lat="51.0577" lon="3.7171"><name>18 Bridge of Imperial Pleasures</name></trkpt>
+      <trkpt lat="51.0572" lon="3.7183"><name>19 De Lieve</name></trkpt>
+      <trkpt lat="51.0566" lon="3.7182"><name>20 Caermersklooster</name></trkpt>
+      <trkpt lat="51.0563" lon="3.7179"><name>21 Sint-Stephanuskerk</name></trkpt>
+      <trkpt lat="51.0560" lon="3.7177"><name>22 Graffiti Roa</name></trkpt>
+      <trkpt lat="51.0568" lon="3.7208"><name>23 Huis van Alijn</name></trkpt>
+      <trkpt lat="51.0572" lon="3.7203"><name>24 Patershol</name></trkpt>
+      <trkpt lat="51.0574" lon="3.7197"><name>25 Veerleplein</name></trkpt>
+      <trkpt lat="51.0568" lon="3.7214"><name>26 Groot Vleeshuis</name></trkpt>
+      <trkpt lat="51.0572" lon="3.7234"><name>27 Dulle Griet</name></trkpt>
+      <trkpt lat="51.0574" lon="3.7259"><name>28 Vrijdagmarkt</name></trkpt>
+      <trkpt lat="51.0558" lon="3.7246"><name>29 Gruut Brouwerij</name></trkpt>
+      <trkpt lat="51.0558" lon="3.7249"><name>30 Sint-Jacobskerk</name></trkpt>
+      <trkpt lat="51.0545" lon="3.7232"><name>31 Werregarenstraat</name></trkpt>
+      <trkpt lat="51.0524" lon="3.7227"><name>32 Stadhuis</name></trkpt>
+      <trkpt lat="51.0521" lon="3.7232"><name>33 Biezekapel</name></trkpt>
+      <trkpt lat="51.0518" lon="3.7239"><name>34 Sint-Baafskathedraal</name></trkpt>
+      <trkpt lat="51.0505" lon="3.7233"><name>35 Bisschoppelijk Paleis</name></trkpt>
+      <trkpt lat="51.0499" lon="3.7219"><name>36 Geraard de Duivelsteen</name></trkpt>
+      <trkpt lat="51.0490" lon="3.7213"><name>37 De Kouter</name></trkpt>
+      <trkpt lat="51.0474" lon="3.7236"><name>38 De Krook</name></trkpt>
+      <trkpt lat="51.0468" lon="3.7229"><name>39 Het Wintercircus</name></trkpt>
+      <trkpt lat="51.0462" lon="3.7240"><name>40 De Vooruit</name></trkpt>
+      <trkpt lat="51.0451" lon="3.7237"><name>41 Boekentoren</name></trkpt>
+      <trkpt lat="51.0438" lon="3.7248"><name>42 Sint-Pietersplein</name></trkpt>
+      <trkpt lat="51.0435" lon="3.7252"><name>43 Wereld van Kina</name></trkpt>
+      <trkpt lat="51.0383" lon="3.7068"><name>Scheldepunt (Finish)</name></trkpt>
+    </trkseg>
+  </trk>
 
-  <rte>
-    <name>Shortened route – 9.3 km (no extension)</name>
-    <desc>Walk without the Oud Begijnhof/Prinsenhof extension.</desc>
-    <rtept lat="51.0393" lon="3.7057"><name>01 – Scheldepunt (Start / Finish)</name></rtept>
-    <rtept lat="51.0383" lon="3.7085"><name>02 – Kinepolis</name></rtept>
-    <rtept lat="51.038" lon="3.7148"><name>03 – Muinkpark</name></rtept>
-    <rtept lat="51.0367" lon="3.719"><name>04 – Het Zuid / Woodrow Wilsonplein</name></rtept>
-    <rtept lat="51.0523" lon="3.7214"><name>05 – Belfort & Lakenhalle</name></rtept>
-    <rtept lat="51.0537" lon="3.7207"><name>06 – Stadshal</name></rtept>
-    <rtept lat="51.0533" lon="3.7196"><name>07 – Korenmarkt</name></rtept>
-    <rtept lat="51.0536" lon="3.7193"><name>08 – De Post</name></rtept>
-    <rtept lat="51.0538" lon="3.7194"><name>09 – Sint-Niklaaskerk</name></rtept>
-    <rtept lat="51.0528" lon="3.7184"><name>10 – Graffiti – Lam Gods</name></rtept>
-    <rtept lat="51.0525" lon="3.7179"><name>11 – Sint-Michielskerk</name></rtept>
-    <rtept lat="51.0527" lon="3.7196"><name>12 – Korenlei & Graslei</name></rtept>
-    <rtept lat="51.0545" lon="3.7202"><name>13 – Designmuseum</name></rtept>
-    <rtept lat="51.0582" lon="3.7196"><name>14 – Gravensteen</name></rtept>
-    <rtept lat="51.0576" lon="3.7185"><name>19 – De Lieve</name></rtept>
-    <rtept lat="51.057" lon="3.7178"><name>20 – Caermersklooster</name></rtept>
-    <rtept lat="51.0566" lon="3.7177"><name>21 – Sint-Stephanuskerk</name></rtept>
-    <rtept lat="51.0562" lon="3.7175"><name>22 – Graffiti – Roa konijnen</name></rtept>
-    <rtept lat="51.0568" lon="3.72"><name>23 – Huis van Alijn / Kraanlei</name></rtept>
-    <rtept lat="51.0574" lon="3.72"><name>24 – Patershol</name></rtept>
-    <rtept lat="51.0577" lon="3.7192"><name>25 – Veerleplein</name></rtept>
-    <rtept lat="51.0566" lon="3.72"><name>26 – Groot Vleeshuis & Groentemarkt</name></rtept>
-    <rtept lat="51.0577" lon="3.7218"><name>27 – Dulle Griet</name></rtept>
-    <rtept lat="51.0573" lon="3.7219"><name>28 – Vrijdagmarkt</name></rtept>
-    <rtept lat="51.0559" lon="3.7234"><name>29 – Gruut Stadsbrouwerij</name></rtept>
-    <rtept lat="51.0559" lon="3.7245"><name>30 – Sint-Jacobskerk</name></rtept>
-    <rtept lat="51.0549" lon="3.7233"><name>31 – Graffitistraatje (Werregarenstraat)</name></rtept>
-    <rtept lat="51.0523" lon="3.7224"><name>32 – Stadhuis</name></rtept>
-    <rtept lat="51.0518" lon="3.7228"><name>33 – Biezekapel</name></rtept>
-    <rtept lat="51.0514" lon="3.7238"><name>34 – Sint-Baafskathedraal</name></rtept>
-    <rtept lat="51.0502" lon="3.7233"><name>35 – Bisschoppelijk Paleis</name></rtept>
-    <rtept lat="51.0496" lon="3.722"><name>36 – Geraard de Duivelsteen</name></rtept>
-    <rtept lat="51.0487" lon="3.7214"><name>37 – De Kouter</name></rtept>
-    <rtept lat="51.0474" lon="3.7235"><name>38 – De Krook</name></rtept>
-    <rtept lat="51.0466" lon="3.7228"><name>39 – Wintercircus</name></rtept>
-    <rtept lat="51.046" lon="3.7219"><name>40 – De Vooruit</name></rtept>
-    <rtept lat="51.0452" lon="3.7231"><name>41 – Boekentoren</name></rtept>
-    <rtept lat="51.0432" lon="3.7224"><name>42 – Sint-Pietersplein & Abdij</name></rtept>
-    <rtept lat="51.043" lon="3.7227"><name>43 – Wereld van Kina</name></rtept>
-    <rtept lat="51.0393" lon="3.7057"><name>Return – Scheldepunt</name></rtept>
-  </rte>
+  <!-- Shortened route track (skips extension stops 15–18, ~9.3 km) -->
+  <trk>
+    <name>Ghent City Walk — Short Route (9.3 km, skip stops 15–18)</name>
+    <desc>Shortened self-guided walking tour. Skips the optional extension through Oud Begijnhof and Prinsenhof (stops 15–18, saves ~2.2 km).</desc>
+    <trkseg>
+      <trkpt lat="51.0383" lon="3.7068"><name>01 Scheldepunt</name></trkpt>
+      <trkpt lat="51.0380" lon="3.7082"><name>02 Kinepolis</name></trkpt>
+      <trkpt lat="51.0389" lon="3.7145"><name>03 Muinkpark</name></trkpt>
+      <trkpt lat="51.0440" lon="3.7215"><name>04 Het Zuid</name></trkpt>
+      <trkpt lat="51.0527" lon="3.7217"><name>05 Belfry</name></trkpt>
+      <trkpt lat="51.0533" lon="3.7213"><name>06 Stadshal</name></trkpt>
+      <trkpt lat="51.0534" lon="3.7200"><name>07 Korenmarkt</name></trkpt>
+      <trkpt lat="51.0534" lon="3.7193"><name>08 De Post</name></trkpt>
+      <trkpt lat="51.0537" lon="3.7201"><name>09 Sint-Niklaaskerk</name></trkpt>
+      <trkpt lat="51.0530" lon="3.7192"><name>10 Graffiti Lam Gods</name></trkpt>
+      <trkpt lat="51.0527" lon="3.7185"><name>11 Sint-Michielskerk</name></trkpt>
+      <trkpt lat="51.0535" lon="3.7208"><name>12 Korenlei &amp; Graslei</name></trkpt>
+      <trkpt lat="51.0555" lon="3.7198"><name>13 Designmuseum</name></trkpt>
+      <trkpt lat="51.0568" lon="3.7197"><name>14 Gravensteen</name></trkpt>
+      <trkpt lat="51.0572" lon="3.7183"><name>19 De Lieve</name></trkpt>
+      <trkpt lat="51.0566" lon="3.7182"><name>20 Caermersklooster</name></trkpt>
+      <trkpt lat="51.0563" lon="3.7179"><name>21 Sint-Stephanuskerk</name></trkpt>
+      <trkpt lat="51.0560" lon="3.7177"><name>22 Graffiti Roa</name></trkpt>
+      <trkpt lat="51.0568" lon="3.7208"><name>23 Huis van Alijn</name></trkpt>
+      <trkpt lat="51.0572" lon="3.7203"><name>24 Patershol</name></trkpt>
+      <trkpt lat="51.0574" lon="3.7197"><name>25 Veerleplein</name></trkpt>
+      <trkpt lat="51.0568" lon="3.7214"><name>26 Groot Vleeshuis</name></trkpt>
+      <trkpt lat="51.0572" lon="3.7234"><name>27 Dulle Griet</name></trkpt>
+      <trkpt lat="51.0574" lon="3.7259"><name>28 Vrijdagmarkt</name></trkpt>
+      <trkpt lat="51.0558" lon="3.7246"><name>29 Gruut Brouwerij</name></trkpt>
+      <trkpt lat="51.0558" lon="3.7249"><name>30 Sint-Jacobskerk</name></trkpt>
+      <trkpt lat="51.0545" lon="3.7232"><name>31 Werregarenstraat</name></trkpt>
+      <trkpt lat="51.0524" lon="3.7227"><name>32 Stadhuis</name></trkpt>
+      <trkpt lat="51.0521" lon="3.7232"><name>33 Biezekapel</name></trkpt>
+      <trkpt lat="51.0518" lon="3.7239"><name>34 Sint-Baafskathedraal</name></trkpt>
+      <trkpt lat="51.0505" lon="3.7233"><name>35 Bisschoppelijk Paleis</name></trkpt>
+      <trkpt lat="51.0499" lon="3.7219"><name>36 Geraard de Duivelsteen</name></trkpt>
+      <trkpt lat="51.0490" lon="3.7213"><name>37 De Kouter</name></trkpt>
+      <trkpt lat="51.0474" lon="3.7236"><name>38 De Krook</name></trkpt>
+      <trkpt lat="51.0468" lon="3.7229"><name>39 Het Wintercircus</name></trkpt>
+      <trkpt lat="51.0462" lon="3.7240"><name>40 De Vooruit</name></trkpt>
+      <trkpt lat="51.0451" lon="3.7237"><name>41 Boekentoren</name></trkpt>
+      <trkpt lat="51.0438" lon="3.7248"><name>42 Sint-Pietersplein</name></trkpt>
+      <trkpt lat="51.0435" lon="3.7252"><name>43 Wereld van Kina</name></trkpt>
+      <trkpt lat="51.0383" lon="3.7068"><name>Scheldepunt (Finish)</name></trkpt>
+    </trkseg>
+  </trk>
 
 </gpx>

@@ -143,8 +143,8 @@ const WelcomeSection = ({ go }) => {
 const ApartmentSection = () => {
   const A = window.APARTMENT;
   const t = window.t;
-  const [open, setOpen] = useState("heating");
   const items = [
+    { k: "layout",  label: t('apartment.layout') },
     { k: "heating", label: t('apartment.heating') },
     { k: "trash",   label: t('apartment.trash') },
     { k: "keys",    label: t('apartment.keys') },
@@ -153,6 +153,7 @@ const ApartmentSection = () => {
     { k: "coffee",  label: t('apartment.coffee') },
     { k: "parking", label: t('apartment.parking') },
   ];
+  const [open, setOpen] = useState("layout");
 
   return (
     <Page>
@@ -266,10 +267,11 @@ const WifiSection = () => {
         </div>
         <div style={{ marginTop: 14, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 1, background: "var(--rule)" }}>
           {[
+            { l: t('wifi.owner'),           v: A.contact.whatsapp,        tel: A.contact.whatsapp.replace(/\s/g, "") },
+            { l: t('wifi.owner2'),          v: A.contact.phone2,          tel: (A.contact.phone2 || '').replace(/\s/g, "") },
             { l: t('wifi.all_emergencies'), v: A.emergency.eu,            tel: A.emergency.eu },
             { l: t('wifi.police'),          v: A.emergency.police,        tel: A.emergency.police },
             { l: t('wifi.doctor'),          v: A.emergency.doctorOnCall,  tel: A.emergency.doctorOnCall },
-            { l: t('wifi.owner'),           v: A.contact.whatsapp,        tel: A.contact.whatsapp.replace(/\s/g, "") },
           ].map((e) => (
             <a key={e.l} href={`tel:${e.tel}`} style={{
               padding: "18px 14px", background: "var(--paper)", textDecoration: "none",
@@ -279,6 +281,10 @@ const WifiSection = () => {
               <div className="serif" style={{ fontSize: 22, marginTop: 4 }}>{e.v}</div>
             </a>
           ))}
+          <div style={{ padding: "18px 14px", background: "var(--paper)", gridColumn: "1 / -1" }}>
+            <div className="eyebrow" style={{ fontSize: 10 }}>{t('wifi.pharmacy')}</div>
+            <div className="serif" style={{ fontSize: 16, marginTop: 4, lineHeight: 1.4 }}>{A.emergency.pharmacy}</div>
+          </div>
         </div>
       </div>
 
@@ -286,16 +292,29 @@ const WifiSection = () => {
         <div className="eyebrow">{t('wifi.useful')}</div>
         <div style={{ marginTop: 10, borderTop: "1px solid var(--rule)" }}>
           {[
-            { l: t('wifi.pharmacy'), v: A.emergency.pharmacy },
             { l: t('wifi.hospital'), v: A.emergency.hospital },
             { l: t('wifi.taxi'),     v: `${A.taxi.phone1}  ·  ${A.taxi.phone2}` },
-            { l: t('wifi.bus'),      v: A.transport.bus },
           ].map((r) => (
             <div key={r.l} style={{ padding: "14px 0", borderBottom: "1px solid var(--rule)" }}>
               <div style={{ fontSize: 12, color: "var(--ink-mute)" }}>{r.l}</div>
               <div className="serif" style={{ fontSize: 16, marginTop: 2, lineHeight: 1.4 }}>{r.v}</div>
             </div>
           ))}
+        </div>
+      </div>
+
+      <div style={{ marginTop: 28 }}>
+        <div className="eyebrow" style={{ display: "flex", gap: 10, alignItems: "center" }}>
+          <span>{t('wifi.transport_title')}</span>
+          <span style={{ flex: 1, height: 1, background: "var(--rule)" }} />
+        </div>
+        <div style={{ marginTop: 12, padding: "16px", background: "var(--cream-soft)", border: "1px solid var(--rule)" }}>
+          <div style={{ fontSize: 14, lineHeight: 1.65, color: "var(--ink-soft)", whiteSpace: "pre-line" }}>
+            {A.transport.bus}
+          </div>
+          <div style={{ marginTop: 10, fontSize: 12.5, color: "var(--ink-mute)", lineHeight: 1.5 }}>
+            {A.transport.dayTicket}
+          </div>
         </div>
       </div>
     </Page>
@@ -395,6 +414,30 @@ const GhentSection = ({ visitorTips, setVisitorTips }) => {
       )}
 
       {/* Visitor tips */}
+      {/* Explore more — visit.gent.be links */}
+      {(tab === "must" || tab === "hidden") && A.ghent.restaurantLinks && A.ghent.restaurantLinks.length > 0 && (
+        <div style={{ marginTop: 32 }}>
+          <div className="eyebrow" style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 12 }}>
+            <span>Explore more on visitgent.be</span>
+            <span style={{ flex: 1, height: 1, background: "var(--rule)" }} />
+          </div>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
+            {A.ghent.restaurantLinks.map((link) => (
+              <a key={link.label} href={link.url} target="_blank" rel="noreferrer" style={{
+                display: "block", textDecoration: "none",
+                padding: "12px 14px",
+                border: "1px solid var(--rule)",
+                background: "var(--cream-soft)",
+                color: "var(--ink)",
+              }}>
+                <div style={{ fontSize: 12.5, fontFamily: "Geist, sans-serif", lineHeight: 1.3 }}>{link.label}</div>
+                <div style={{ fontSize: 10, color: "var(--terra)", fontFamily: "Geist Mono, monospace", marginTop: 5, letterSpacing: "0.05em" }}>visitgent.be →</div>
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
+
       {tab === "visitors" && (
         <div style={{ marginTop: 16 }}>
           {sortedTips.length === 0 ? (
