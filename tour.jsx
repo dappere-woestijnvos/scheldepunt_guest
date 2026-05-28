@@ -3,7 +3,7 @@ const { useState: useStateW, useRef: useRefW } = React;
 
 const TOUR_STOPS = [
   {
-    id: 1, lat: 51.0393, lon: 3.7057, extension: false,
+    id: 1, lat: 51.0383, lon: 3.7068, extension: false,
     en: {
       name: `Scheldepunt (Start & Finish)`,
       desc: `The name 'Scheldepunt' refers to the junction of the Scheldt river right at this building. The Scheldt originates in northern France (Gouy) and flows via Belgium and the Netherlands to the North Sea. The left arm here connects the Leie with the Scheldt and is called the Upper Scheldt. The walk begins by following the left arm via Ter Plaeten, walking under the bridge past the Kinepolis.`,
@@ -24,7 +24,7 @@ const TOUR_STOPS = [
     },
   },
   {
-    id: 2, lat: 51.0383, lon: 3.7085, extension: false,
+    id: 2, lat: 51.0380, lon: 3.7082, extension: false,
     en: {
       name: `Kinepolis`,
       desc: `When it was built in 1980, this was the largest cinema complex in the world. Today the 12 screens are only just enough to cater to Ghent's film-lovers.`,
@@ -45,7 +45,7 @@ const TOUR_STOPS = [
     },
   },
   {
-    id: 3, lat: 51.038, lon: 3.7148, extension: false,
+    id: 3, lat: 51.0389, lon: 3.7145, extension: false,
     en: {
       name: `Muinkpark`,
       desc: `The Muinkpark (from the word 'monk') is 1.3 hectares, landscaped in English style, and is the only remnant of the 19th-century Ghent zoo. Lions, parrots, ostriches, a crocodile and an elephant were real crowd-pullers. The surrounding streets still recall this past: Zebrastraat, Olifantstraat, Tijgerstraat, Leeuwstraat… Folk legend says a bear ended up on the BBQ after the zoo's bankruptcy — the elephant was turned into sausages in the Netherlands.`,
@@ -66,7 +66,7 @@ const TOUR_STOPS = [
     },
   },
   {
-    id: 4, lat: 51.0367, lon: 3.719, extension: false,
+    id: 4, lat: 51.0440, lon: 3.7215, extension: false,
     en: {
       name: `Het Zuid – Woodrow Wilsonplein`,
       desc: `'t Zuid (The South) is the vibrant neighbourhood around the neo-baroque Zuidpark. The name refers to the former South Railway Station, closed in 1928 when Gent-Sint-Pieters opened. The impressive Urbiscomplex houses a shopping centre; across the square you find the old library and the city's administrative centre. Adjacent Graaf van Vlaanderenplein hosts the renovated Capitole theatre for musicals and stand-up comedy.`,
@@ -87,7 +87,7 @@ const TOUR_STOPS = [
     },
   },
   {
-    id: 5, lat: 51.0523, lon: 3.7214, extension: false,
+    id: 5, lat: 51.0527, lon: 3.7217, extension: false,
     en: {
       name: `Belfry & Cloth Hall (Belfort & Lakenhalle)`,
       desc: `Construction of the Ghent Belfry began in 1314; by 1377 the legendary fire-breathing dragon was hoisted on top. The belfry stored city privileges and its bells, including 'Klokke Roeland', marked the working day and rang for feasts, storms or danger. It is a UNESCO World Heritage site — you can climb the tower. About half a century later the Cloth Hall (Lakenhalle) was added; above a corner gate the story of the 'Mammelokker' is depicted — a father saved from starvation in prison by his daughter's breast milk.`,
@@ -108,7 +108,7 @@ const TOUR_STOPS = [
     },
   },
   {
-    id: 6, lat: 51.0537, lon: 3.7207, extension: false,
+    id: 6, lat: 51.0533, lon: 3.7213, extension: false,
     en: {
       name: `Stadshal (City Hall)`,
       desc: `The new building between the Belfry and Saint-Nicholas Church is the Stadshal. Controversial from the start, some Ghentians dismissively call it the 'Sheepfold'. It is an open hall with a café below and 1,600 small windows in the roof providing dynamic light. The large bell underneath is 'Klokke Roeland', used as a belfry bell during the Middle Ages until 1659. On the plinth is a painting by Ghent's world-famous artist Michaël Borremans, 'The Virgin'.`,
@@ -129,7 +129,7 @@ const TOUR_STOPS = [
     },
   },
   {
-    id: 7, lat: 51.0533, lon: 3.7196, extension: false,
+    id: 7, lat: 51.0534, lon: 3.7200, extension: false,
     en: {
       name: `Korenmarkt`,
       desc: `Since the 10th–11th century this square was where grain entering Ghent via the Leie or Scheldt was traded. It is surrounded by historical buildings and is an important tourist hub. On leaving Donkersteeg you immediately see a modern art column with a gold necklace whose motifs reference medieval windows. The house 'De Cooremaete' (nr 7-8) was used for grain stacking; 'Het waepen van Zeelant' (nr 20), probably from the 13th century, bears the inscription 'Vry huys, vry erve' ('Free house, free estate').`,
@@ -150,7 +150,7 @@ const TOUR_STOPS = [
     },
   },
   {
-    id: 8, lat: 51.0536, lon: 3.7193, extension: false,
+    id: 8, lat: 51.0534, lon: 3.7193, extension: false,
     en: {
       name: `De Post (The Post Office)`,
       desc: `The former Post Office, built between 1898 and 1908, still breathes historical atmosphere along its exterior façade — note the beautiful 52m-high clock tower. Inside is now a shopping centre; a few remnants of the original interior can still be spotted (look up). The building also houses the iconic hotel 1898 The Post.`,
@@ -171,7 +171,7 @@ const TOUR_STOPS = [
     },
   },
   {
-    id: 9, lat: 51.0538, lon: 3.7194, extension: false,
+    id: 9, lat: 51.0537, lon: 3.7201, extension: false,
     en: {
       name: `Sint-Niklaaskerk (Saint-Nicholas Church)`,
       desc: `The distant origins of Saint-Nicholas Church lie in the 11th century. In 1120 the first church was destroyed by fire; a second barely lasted 75 years. In the 13th century the present church was begun, a work continued for centuries. The city council gave the church tower the function of the belfry until the actual belfry came into use. Note the tower is located in the middle of the church building. Inside you can admire a wealth of religious art.`,
@@ -192,7 +192,7 @@ const TOUR_STOPS = [
     },
   },
   {
-    id: 10, lat: 51.0528, lon: 3.7184, extension: false,
+    id: 10, lat: 51.0530, lon: 3.7192, extension: false,
     en: {
       name: `Graffiti – Lam Gods (Copy)`,
       desc: `On the wall you can see part of the famous masterpiece 'Het Lam Gods' (The Mystic Lamb) reproduced by street artist Smates (Bart Smeets, www.smates.be). He created it for the cinema release of 'The Monuments Men'. From the bridge above you get two of Ghent's most beautiful panoramas: turning around you see the famous trio of towers (Saint-Nicholas, Belfry, Saint-Bavo) in a perfect line; below lies the Graslei with one of the most beautiful rows of houses in the world.`,
@@ -213,7 +213,7 @@ const TOUR_STOPS = [
     },
   },
   {
-    id: 11, lat: 51.0525, lon: 3.7179, extension: false,
+    id: 11, lat: 51.0527, lon: 3.7185, extension: false,
     en: {
       name: `Sint-Michielskerk (Saint-Michael's Church)`,
       desc: `In 1440 the construction of Saint-Michael's Church began; earlier there was a chapel here. Iconoclasts demolished the building in the 16th century, so in 1619 a new church was built — the current one. Due to lack of money, work stopped in 1672 and the tower has been without a spire ever since. The intention was a tower of 134 metres! 'Christ on the Cross' by Antoon Van Dyck is the most important work of art here.`,
@@ -234,7 +234,7 @@ const TOUR_STOPS = [
     },
   },
   {
-    id: 12, lat: 51.0527, lon: 3.7196, extension: false,
+    id: 12, lat: 51.0535, lon: 3.7208, extension: false,
     en: {
       name: `Korenlei & Graslei`,
       desc: `Walk over the Korenlei and admire the majestic Graslei. Ghent held the grain-stacking right, meaning grain from northern France had to pass through and be stored here for two weeks before trading. The Graslei shows a series of beautiful old buildings: the Cooremetershuys (nr 12-13) was the 14th-century meeting place of cargo craftsmen; Tolhuisje (nr 11) is the smallest house in the city; the Korenstapelhuis (nr 10, also 'Het Spijker', from Spica = Latin for grain) has what is said to be the world's oldest step gable. On the Korenlei, the hotel Marriott hides behind a preserved historic façade — two swans on the gable hint at its medieval past as a brothel.`,
@@ -255,7 +255,7 @@ const TOUR_STOPS = [
     },
   },
   {
-    id: 13, lat: 51.0545, lon: 3.7202, extension: false,
+    id: 13, lat: 51.0555, lon: 3.7198, extension: false,
     en: {
       name: `Designmuseum Gent`,
       desc: `The Ghent Design Museum is housed in the 18th-century Hotel De Coninck. Modern design in a new building is successfully combined with the historic structure. In the old wing you find 18th-century Ghent aristocracy salons; in the new building a completely different world awaits. Don't miss the toilet wing — built in defiance after the city repeatedly denied expansion funds. The museum turned it into a monumental giant toilet roll, literally telling the city council 'de pot op' (go to hell).`,
@@ -276,7 +276,7 @@ const TOUR_STOPS = [
     },
   },
   {
-    id: 14, lat: 51.0582, lon: 3.7196, extension: false,
+    id: 14, lat: 51.0568, lon: 3.7197, extension: false,
     en: {
       name: `Gravensteen (Castle of the Counts)`,
       desc: `Construction of the current Castle of the Counts began in 1180 under Count Philip of Alsace. Until the mid-15th century it served as residence of the Counts of Flanders; later as meeting hall, court, and cotton mill. The castle exhibits weapons and torture equipment. On 16 November 1949 Ghent students famously occupied the castle — supposedly to protest rising beer prices and new police helmets, but really just a student prank born of boredom. This 'greatest student joke of all time' is still celebrated annually with the Gravensteenfestival.`,
@@ -297,7 +297,7 @@ const TOUR_STOPS = [
     },
   },
   {
-    id: 15, lat: 51.0589, lon: 3.7184, extension: true,
+    id: 15, lat: 51.0581, lon: 3.7196, extension: true,
     en: {
       name: `Paters Karmelieten (Carmelite Monastery)`,
       desc: `In the middle of the Burgstraat, on the right, you see the church 'Paters Karmelieten'. You can enter freely and a visit is highly recommended. Next to the church is the cloister garden, only open on request. The monastery is known for guests who come for 'peace, quiet and relaxation'.`,
@@ -318,7 +318,7 @@ const TOUR_STOPS = [
     },
   },
   {
-    id: 16, lat: 51.0592, lon: 3.7161, extension: true,
+    id: 16, lat: 51.0582, lon: 3.7163, extension: true,
     en: {
       name: `Oud Begijnhof – Sint-Elisabethkerk`,
       desc: `Believed to be one of the oldest beguinages in Flanders, the atmosphere is best absorbed in the Proveniersterstraat. The Sint-Elisabethkerk is the central building of the Oud-begijnhof. Unusually, it hosts both Roman Catholic and Anglican services. This district is known as 'The Holy Corner' — four religions are practised in three churches within a short distance of each other. A place of tolerance. A striking new Orthodox church in the Sophie Van Akenstraat was painted inside with frescoes in authentic Byzantine technique.`,
@@ -339,7 +339,7 @@ const TOUR_STOPS = [
     },
   },
   {
-    id: 17, lat: 51.0591, lon: 3.7148, extension: true,
+    id: 17, lat: 51.0588, lon: 3.7150, extension: true,
     en: {
       name: `Prinsenhof`,
       desc: `The 'Donkere Poort' (Dark Gate) on your left is the only remnant of the 'Hof ten Walle', once a fortified castle. The square here, the Prinsenhof, was part of the large domain of the Flemish Counts. None other than Charles V was born here in 1500. The statue represents the proud Charles. It is thanks to Charles V that the people of Ghent are called 'noose-bearers' — after he forced all officials and nobles to make a penitential walk through the streets with a noose around their necks and barefoot.`,
@@ -360,7 +360,7 @@ const TOUR_STOPS = [
     },
   },
   {
-    id: 18, lat: 51.0583, lon: 3.7169, extension: true,
+    id: 18, lat: 51.0577, lon: 3.7171, extension: true,
     en: {
       name: `Bridge of Imperial Pleasures`,
       desc: `The Bridge of Imperial Pleasures was built in 2000 (the Charles V centennial year) over the River Lieve, with statues by Ghent sculptor and cabaret artist Walter De Buck (1934–2014), referencing various legends about Charles V's life. The ship at one end refers to the story of the 'ship-puller': the emperor accidentally caused a barge to run aground on a towpath; the captain forced Charles to pull it free, after which Charles gave him a new boat.`,
@@ -381,7 +381,7 @@ const TOUR_STOPS = [
     },
   },
   {
-    id: 19, lat: 51.0576, lon: 3.7185, extension: false,
+    id: 19, lat: 51.0572, lon: 3.7183, extension: false,
     en: {
       name: `De Lieve`,
       desc: `The Lieve was dug between 1251 and 1269 to connect the city with the Zwin at Damme. From there, goods such as fine cloth could be shipped to England. The Dutch also used this canal for trade. The Sint-Widostraat in a bend offers a view of both the theatre Arca (NTG) and a beautiful vista through to the Gravensteen.`,
@@ -402,7 +402,7 @@ const TOUR_STOPS = [
     },
   },
   {
-    id: 20, lat: 51.057, lon: 3.7178, extension: false,
+    id: 20, lat: 51.0566, lon: 3.7182, extension: false,
     en: {
       name: `Caermersklooster`,
       desc: `This former Carmelite monastery was in use from the end of the 13th century. Besides the usual monastery buildings there was also a brewery. After the French Revolution it passed into private hands; later the city of Ghent bought the buildings. It has been transformed into an exhibition space where mainly prestigious temporary exhibitions take place, often with free admission. In one of the living quarters a huge wall painting with remains of a fresco can be viewed (at a charge).`,
@@ -423,7 +423,7 @@ const TOUR_STOPS = [
     },
   },
   {
-    id: 21, lat: 51.0566, lon: 3.7177, extension: false,
+    id: 21, lat: 51.0563, lon: 3.7179, extension: false,
     en: {
       name: `Sint-Stephanuskerk`,
       desc: `Saint Stephanus's Church also has a connection with the Mystic Lamb. During the Second World War, several panels of the world-famous 'Mystic Lamb' by the Van Eyck brothers were hidden here from the occupiers. The church can be entered early, from 6:30 to 12:30, and from 14:00 to 18:30.`,
@@ -444,7 +444,7 @@ const TOUR_STOPS = [
     },
   },
   {
-    id: 22, lat: 51.0562, lon: 3.7175, extension: false,
+    id: 22, lat: 51.0560, lon: 3.7177, extension: false,
     en: {
       name: `Graffiti – Roa (Giant Rabbits)`,
       desc: `These giant rabbits leave little to the imagination. The Ghent street artist Roa has put animals on walls in several places around the world, each time in large format and often in black and white. You can find his work at other locations in Ghent too.`,
@@ -465,7 +465,7 @@ const TOUR_STOPS = [
     },
   },
   {
-    id: 23, lat: 51.0568, lon: 3.72, extension: false,
+    id: 23, lat: 51.0568, lon: 3.7208, extension: false,
     en: {
       name: `Huis van Alijn & Kraanlei`,
       desc: `The cosy inn of the House of Alijn (also accessible without museum visit) and its courtyard garden are a pleasant resting point. The museum in the 14th-century building grew from the Museum of Folklore — inside, objects, photos and films give a good impression of Ghent folk life before the mid-20th century. The house holds the original 'Manneke Pis of Ghent'; the statue now has two companions, girls called Luna and Lena. Nearby is the oldest sweet shop in Ghent, Huis Temmerman, selling treats with typically Ghent names.`,
@@ -486,7 +486,7 @@ const TOUR_STOPS = [
     },
   },
   {
-    id: 24, lat: 51.0574, lon: 3.72, extension: false,
+    id: 24, lat: 51.0572, lon: 3.7203, extension: false,
     en: {
       name: `Patershol`,
       desc: `The narrow medieval streets behind Kraanlei are the Patershol. In this old quarter, former inhabitants have been replaced by numerous restaurants. In the 18th century it was home to magistrates; in the 19th century to cotton factory workers. Today: Japanese and Indonesian food, Turkish, Italian, Spanish and traditional Flemish cuisine — all shoulder to shoulder in cobbled streets. Whether modern, romantic, eccentric or exclusive, you won't leave with an empty stomach.`,
@@ -507,7 +507,7 @@ const TOUR_STOPS = [
     },
   },
   {
-    id: 25, lat: 51.0577, lon: 3.7192, extension: false,
+    id: 25, lat: 51.0574, lon: 3.7197, extension: false,
     en: {
       name: `Veerleplein`,
       desc: `In the corner stands the historic gateway to the Old Fish Market. Neptune supervises the Leie (woman) and the Scheldt (man). The tourist office is in the building. The long white table is a unique creation to discover Ghent. The lanterns on Sint-Veerleplein are an artwork by Alberto Garutti — every time a baby is born in a Ghent hospital, parents can press a button and the lanterns light up briefly. This square was once where witches were burned at the stake in the 16th–17th centuries.`,
@@ -528,7 +528,7 @@ const TOUR_STOPS = [
     },
   },
   {
-    id: 26, lat: 51.0566, lon: 3.72, extension: false,
+    id: 26, lat: 51.0568, lon: 3.7214, extension: false,
     en: {
       name: `Groot Vleeshuis & Groentemarkt`,
       desc: `A medieval hall from the early 15th century where you can find almost 200 East-Flemish regional products and specialties — and consume them on site. Above your head hang the famous Ghent 'Gandahammen'. Next door: 't Galgenhuis, the smallest café in Ghent — offal was sold here to those who couldn't afford meat; the 'galg' (gallows) in the name refers to convicts who waited at the rear façade. The Groentemarkt is famous for cuberdon stands ('Neuzekes') and the historic mustard house Vve Tierenteyn-Verlent; also home to Ghent's oldest bakery Oud Huis Himschoot and the Belgian Artisan Centre BAM.`,
@@ -549,7 +549,7 @@ const TOUR_STOPS = [
     },
   },
   {
-    id: 27, lat: 51.0577, lon: 3.7218, extension: false,
+    id: 27, lat: 51.0572, lon: 3.7234, extension: false,
     en: {
       name: `Dulle Griet`,
       desc: `The iron Dulle Griet ('Evil Woman') is 5 metres long and weighs 12,500 kg. Painted ox-red, earning it the nickname 'large red devil'. Little is known about this bombard (a type of cannon). It is said Duke Philip the Good ordered it made around 1430 and it may have been used in the siege of Oudenaarde in 1452 — though other sources say it never fired a single projectile. The opening was eventually sealed because it was too often used for rubbish or as a sleeping place by drunk students.`,
@@ -570,7 +570,7 @@ const TOUR_STOPS = [
     },
   },
   {
-    id: 28, lat: 51.0573, lon: 3.7219, extension: false,
+    id: 28, lat: 51.0574, lon: 3.7259, extension: false,
     en: {
       name: `Vrijdagmarkt`,
       desc: `Jacob Van Artevelde's statue surveys the square from above. In the first half of the 14th century this Ghent-born statesman negotiated a trade agreement with Edward III of England, keeping the Ghent textile industry alive. He was later murdered by weavers. He points towards England — a nod to his ties with King Edward III. Since 1199 a weekly market has been held here every Friday. The Toreken (15th c.) was the guild house of the tanners; it now houses the Poetry Centre for Flanders. A statue of folk singer Karel Waeri, who sang about workers' poverty, stands nearby.`,
@@ -591,7 +591,7 @@ const TOUR_STOPS = [
     },
   },
   {
-    id: 29, lat: 51.0559, lon: 3.7234, extension: false,
+    id: 29, lat: 51.0558, lon: 3.7246, extension: false,
     en: {
       name: `Gruut Stadsbrouwerij`,
       desc: `Founded in 2009 by Annick De Splenter, who grew up working in the brewing world. There are five varieties of beer, four of which are brewed using herbs instead of hops — reviving a medieval tradition. Both café and brewery (free to visit) are under one roof.`,
@@ -612,7 +612,7 @@ const TOUR_STOPS = [
     },
   },
   {
-    id: 30, lat: 51.0559, lon: 3.7245, extension: false,
+    id: 30, lat: 51.0558, lon: 3.7249, extension: false,
     en: {
       name: `Sint-Jacobskerk (Saint-James' Church)`,
       desc: `Around the middle of the 12th century, the current Saint-James' Church was begun. One of the most beautiful works of art is a Renaissance tabernacle of black marble and copper. The church is only open on Fridays and Saturdays in the morning. A flea market takes place at the church every Friday, Saturday and Sunday morning. Every July for ten days, Ghent's great folk festival erupts here: Sint-Jacobs is the vibrant core of the Gentse Feesten.`,
@@ -633,7 +633,7 @@ const TOUR_STOPS = [
     },
   },
   {
-    id: 31, lat: 51.0549, lon: 3.7233, extension: false,
+    id: 31, lat: 51.0545, lon: 3.7232, extension: false,
     en: {
       name: `Werregarenstraat (Graffiti Street)`,
       desc: `Officially the Werregarenstraatje but better known as the Graffiti Street, between Hoogpoort and Onderstraat. Since 1995, anyone who feels called to leave a creation here may do so — with one rule: don't attack works that are better than what you can shake out of your spray can. The appearance changes regularly. It is one of four officially tolerated graffiti locations in Ghent. The city also runs graffiti projects, workshops and an annual jam.`,
@@ -654,7 +654,7 @@ const TOUR_STOPS = [
     },
   },
   {
-    id: 32, lat: 51.0523, lon: 3.7224, extension: false,
+    id: 32, lat: 51.0524, lon: 3.7227, extension: false,
     en: {
       name: `Stadhuis (Town Hall)`,
       desc: `The central part of the Town Hall dates from the 15th century, with various additions in different architectural styles. The Hoogpoort side looks particularly rich — niches depict the Counts of Flanders. The Botermarkt side shows Renaissance style (late 16th – early 17th century) with three column types (Doric, Ionic, Corinthian). A striking blue-and-white drainpipe on the building — coloured since 2002 — appears to reference AA Gent football colours, but monuments conservation says it is an authentic reconstruction.`,
@@ -675,7 +675,7 @@ const TOUR_STOPS = [
     },
   },
   {
-    id: 33, lat: 51.0518, lon: 3.7228, extension: false,
+    id: 33, lat: 51.0521, lon: 3.7232, extension: false,
     en: {
       name: `Biezekapel`,
       desc: `The Biezekapel is one of the oldest chapels in the city. The present chapel dates from the early 18th century, but a statue of Mary in a niche was placed here as early as 1608 by Jean-Baptiste de Rodoan. Under French rule in 1794 the chapel was sealed; after restoration it was rededicated in 1931. You have to press your nose almost against the window to see the beautiful statue. In 1934 it was rumoured that the stolen panel of the 'Just Judges' from the Mystic Lamb was hidden here.`,
@@ -696,7 +696,7 @@ const TOUR_STOPS = [
     },
   },
   {
-    id: 34, lat: 51.0514, lon: 3.7238, extension: false,
+    id: 34, lat: 51.0518, lon: 3.7239, extension: false,
     en: {
       name: `Sint-Baafskathedraal (Saint-Bavo's Cathedral)`,
       desc: `The predecessor 'Sint-Janskerk' existed in the 10th century. The present cathedral only received that status when the Diocese of Ghent was founded in 1559. Gothic elements were added from the late 13th century; the completely renovated cathedral was consecrated in 1659. Charles V was baptized here in 1500. Don't miss: the rococo pulpit, baroque high altar, choir stalls with stunning trompe-l'œil, paintings by Rubens and Joos van Wassenhover. Above all: 'The Mystic Lamb' by the Van Eyck brothers, one of the most famous paintings in the world — and the gripping story of a stolen panel ('the Just Judges') in 1934.`,
@@ -717,7 +717,7 @@ const TOUR_STOPS = [
     },
   },
   {
-    id: 35, lat: 51.0502, lon: 3.7233, extension: false,
+    id: 35, lat: 51.0505, lon: 3.7233, extension: false,
     en: {
       name: `Bisschoppelijk Paleis (Episcopal Palace)`,
       desc: `Construction of the Episcopal Palace began in 1843 and was completed just two years later. Above the main entrance door is the coat of arms of its builder, Bishop Louis Joseph Delbecque. Cross the nearby Wijdenaardbrug ('wide mooring place') — since the end of 2018 the water of the Lower Scheldt flows under this bridge again towards Portus Ganda, where the Leie and Scheldt once joined.`,
@@ -738,7 +738,7 @@ const TOUR_STOPS = [
     },
   },
   {
-    id: 36, lat: 51.0496, lon: 3.722, extension: false,
+    id: 36, lat: 51.0499, lon: 3.7219, extension: false,
     en: {
       name: `Geraard de Duivelsteen`,
       desc: `Despite the name, no devil ever lived in this 'Steen' (stone building). It owes its name to Gerard of Ghent, an unsavoury character born around 1210 who owned the building in the 13th century. He called himself 'knight Gerard of Ghent, nicknamed the Devil'. Legend says he killed his father, kicked his son to death, and occupied himself with 'debauchery, shame and horror'. After his death the building passed to the city: it has since been an arsenal, school, monastery, prison, disciplinary house and home for the mentally ill.`,
@@ -759,7 +759,7 @@ const TOUR_STOPS = [
     },
   },
   {
-    id: 37, lat: 51.0487, lon: 3.7214, extension: false,
+    id: 37, lat: 51.0490, lon: 3.7213, extension: false,
     en: {
       name: `De Kouter`,
       desc: `Thanks to the daily flower market, you can see a colourful mosaic of blossoms on the Kouter every day of the year. At the blue Kiosk around 11 o'clock real bon vivants gather — this monument transformed into an aperitif bar offers a glass of cava, fresh oysters and other appetisers. Music lovers should also visit: the 19th-century Ghent Opera and concert hall De Handelsbeurs are found here.`,
@@ -780,7 +780,7 @@ const TOUR_STOPS = [
     },
   },
   {
-    id: 38, lat: 51.0474, lon: 3.7235, extension: false,
+    id: 38, lat: 51.0474, lon: 3.7236, extension: false,
     en: {
       name: `De Krook (Library)`,
       desc: `De Krook is much more than a library — a striking mix of steel and concrete that you can simply walk into. There is a cafeteria with a terrace with a beautiful view, a reading room, a study room, a multipurpose room; you can work with a 3D printer, learn about virtual reality, surf the internet. The name 'krook' is an old word for crease or fold, referring to the bend the Scheldt makes around the Waalse Krook, where ships once unloaded coal from Wallonia.`,
@@ -801,7 +801,7 @@ const TOUR_STOPS = [
     },
   },
   {
-    id: 39, lat: 51.0466, lon: 3.7228, extension: false,
+    id: 39, lat: 51.0468, lon: 3.7229, extension: false,
     en: {
       name: `Het Wintercircus`,
       desc: `In 1885 the 'Nieuw Cirkus' was built here, one of several stone circuses constructed in 19th-century Belgian cities. After a 1920 fire and reconstruction, it became a garage after WWII and then a vintage car depot for 20 years. The city bought it in 2005 and after five years of intensive renovation, the building reopened in 2024. The central arena is now a publicly accessible covered square; Club Wintercircus (concert hall for 500) is housed below. Winner of the Ghent Monument Prize 2022.`,
@@ -822,7 +822,7 @@ const TOUR_STOPS = [
     },
   },
   {
-    id: 40, lat: 51.046, lon: 3.7219, extension: false,
+    id: 40, lat: 51.0462, lon: 3.7240, extension: false,
     en: {
       name: `De Vooruit`,
       desc: `The Vooruit is a historic hall complex from 1913, originally the party and arts centre of the Ghent workers' movement, with a ballroom, cinema and theatre group. Since 1982, the arts centre Vooruit vzw uses the 5 main halls (Ballroom, Theaterzaal, Domzaal, Concertzaal and Café) for debates, literary evenings, concerts, parties, dance and stage performances.`,
@@ -843,7 +843,7 @@ const TOUR_STOPS = [
     },
   },
   {
-    id: 41, lat: 51.0452, lon: 3.7231, extension: false,
+    id: 41, lat: 51.0451, lon: 3.7237, extension: false,
     en: {
       name: `Boekentoren (Book Tower)`,
       desc: `The 64-metre Book Tower was designed by Belgian architect Henry Van de Velde and is the most striking example of modernist architecture in the city. As the main warehouse of Ghent University Library, the tower houses some 3 million books — 46 kilometres of shelves. It is an important symbol for both the university and the city of Ghent.`,
@@ -864,7 +864,7 @@ const TOUR_STOPS = [
     },
   },
   {
-    id: 42, lat: 51.0432, lon: 3.7224, extension: false,
+    id: 42, lat: 51.0438, lon: 3.7248, extension: false,
     en: {
       name: `Sint-Pietersplein & Sint-Pietersabdij`,
       desc: `The Sint-Pietersplein is in the heart of the student district. Every July the Mid-Lent Fair sets up here; it has also hosted intimate concerts by Prince, Björk and others. The 7th-century Benedictine Saint Peter's Abbey grew into a real village with farms, gardens and farmland. The ground floor of the abbey is free; guided with the unique movie guide 'Alison' — 17 episodes with digital monk Alison. The abbey garden, with its vineyard and ruins, is a green city oasis popular with students. If you exit right on Overpoort you'll find 35+ student cafés side by side — Thursday is the big student night.`,
@@ -885,7 +885,7 @@ const TOUR_STOPS = [
     },
   },
   {
-    id: 43, lat: 51.043, lon: 3.7227, extension: false,
+    id: 43, lat: 51.0435, lon: 3.7252, extension: false,
     en: {
       name: `Wereld van Kina – The House`,
       desc: `The House is a museum where children and adults fall from one surprise to another: a unique fossil of a prehistoric reptile, a beautiful diorama room with native birds, and an interactive exhibition with thousands of rocks and minerals. The abbey garden can be reached through the courtyard of the Wereld van Kina — enter the courtyard and on the left-hand side is a gate that gives access to this green oasis. From here, cross the water and turn left into Ter Plaeten — back to Scheldepunt.`,
