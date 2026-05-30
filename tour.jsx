@@ -913,10 +913,63 @@ function getStopLang(stop) {
   return stop[lang] || stop.en;
 }
 
+// Searchable place names per stop, so "Navigate here" opens the real landmark
+// in Google Maps instead of dropping a pin on bare coordinates.
+const STOP_QUERIES = {
+  1: 'Ter Plaeten 99, Gent',
+  2: 'Kinepolis Gent',
+  3: 'Muinkpark, Gent',
+  4: 'Woodrow Wilsonplein, Gent',
+  5: 'Belfort, Gent',
+  6: 'Stadshal, Gent',
+  7: 'Korenmarkt, Gent',
+  8: '1898 The Post, Korenmarkt, Gent',
+  9: 'Sint-Niklaaskerk, Gent',
+  10: 'Sint-Michielshelling, Gent',
+  11: 'Sint-Michielskerk, Gent',
+  12: 'Graslei, Gent',
+  13: 'Design Museum Gent',
+  14: 'Gravensteen, Gent',
+  15: 'Karmelietenklooster, Burgstraat, Gent',
+  16: 'Oud Begijnhof Sint-Elisabeth, Gent',
+  17: 'Prinsenhof, Gent',
+  18: 'Brug der Keizerlijke Geneugten, Gent',
+  19: 'Sint-Widostraat, Gent',
+  20: 'Caermersklooster, Gent',
+  21: 'Sint-Stefanuskerk, Gent',
+  22: 'Oudburg, Gent',
+  23: 'Huis van Alijn, Gent',
+  24: 'Patershol, Gent',
+  25: 'Sint-Veerleplein, Gent',
+  26: 'Groot Vleeshuis, Gent',
+  27: 'Dulle Griet kanon, Grootkanonplein, Gent',
+  28: 'Vrijdagmarkt, Gent',
+  29: 'Gruut Stadsbrouwerij, Gent',
+  30: 'Sint-Jacobskerk, Gent',
+  31: 'Werregarenstraat, Gent',
+  32: 'Stadhuis Gent, Botermarkt',
+  33: 'Biezekapel, Biezekapelstraat, Gent',
+  34: 'Sint-Baafskathedraal, Gent',
+  35: 'Bisschoppelijk Paleis, Gent',
+  36: 'Geraard de Duivelsteen, Gent',
+  37: 'Kouter, Gent',
+  38: 'De Krook, Gent',
+  39: 'Wintercircus, Gent',
+  40: 'Vooruit, Sint-Pietersnieuwstraat, Gent',
+  41: 'Boekentoren, Gent',
+  42: 'Sint-Pietersplein, Gent',
+  43: 'Wereld van Kina Het Huis, Gent',
+};
+
+function stopMapsUrl(stop) {
+  const q = STOP_QUERIES[stop.id] || `${getStopLang(stop).name}, Gent`;
+  return 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(q);
+}
+
 const StopCard = ({ stop, open, onToggle }) => {
   const lang = getStopLang(stop);
   const isExt = stop.extension;
-  const mapsUrl = `https://maps.google.com/maps?q=${stop.lat},${stop.lon}`;
+  const mapsUrl = stopMapsUrl(stop);
 
   return (
     <div style={{
@@ -1003,6 +1056,12 @@ const WalkSection = () => {
   const fullStops = TOUR_STOPS.length;
   const shortStops = TOUR_STOPS.filter(s => !s.extension).length;
 
+  // Alternative to the GPX file: a walking route through every stop that opens
+  // directly in Google Maps — no GPX app required.
+  const routeUrl = 'https://www.google.com/maps/dir/'
+    + TOUR_STOPS.map(s => `${s.lat},${s.lon}`).join('/')
+    + '/data=!4m2!4m1!3e2';
+
   return (
     <div>
       {/* Header */}
@@ -1051,6 +1110,30 @@ const WalkSection = () => {
             <Icon name="arrow" size={14} stroke="var(--paper)" style={{ transform: 'rotate(90deg)' }} />
             {window.t('walk.download_gpx')}
           </a>
+          <a
+            href={routeUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: 'inline-flex', alignItems: 'center', gap: 7,
+              background: 'transparent', color: 'var(--ink)',
+              padding: '10px 16px', border: '1px solid var(--ink)',
+              fontSize: 13, textDecoration: 'none',
+              fontFamily: 'Geist, sans-serif',
+            }}
+          >
+            <Icon name="pin" size={14} stroke="var(--ink)" />
+            {window.t('walk.open_route')}
+          </a>
+        </div>
+
+        {/* No-GPX alternative note */}
+        <div style={{
+          background: 'var(--cream)', border: '1px solid var(--rule)',
+          padding: '10px 12px', marginBottom: 16,
+          fontSize: 12.5, color: 'var(--ink-soft)', lineHeight: 1.5,
+        }}>
+          {window.t('walk.no_gpx_note')}
         </div>
 
         {/* Extension note */}
