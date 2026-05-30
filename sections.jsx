@@ -88,7 +88,7 @@ const WelcomeSection = ({ go }) => {
       <p className="serif" style={{
         fontSize: 22, lineHeight: 1.35, margin: "28px 0 0",
         color: "var(--ink)", letterSpacing: "-0.005em",
-        textWrap: "pretty",
+        textWrap: "pretty", whiteSpace: "pre-line",
       }}>
         {A.welcomeText}
       </p>
@@ -418,7 +418,7 @@ const GhentSection = ({ visitorTips, setVisitorTips }) => {
       {(tab === "must" || tab === "hidden") && A.ghent.restaurantLinks && A.ghent.restaurantLinks.length > 0 && (
         <div style={{ marginTop: 32 }}>
           <div className="eyebrow" style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 12 }}>
-            <span>Explore more on visitgent.be</span>
+            <span>{t('ghent.explore_more')}</span>
             <span style={{ flex: 1, height: 1, background: "var(--rule)" }} />
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
@@ -534,6 +534,7 @@ const NeighborhoodSection = () => {
   const [filter, setFilter] = useState("All");
   const kinds = ["All", ...Array.from(new Set(A.neighborhood.map((n) => n.kind)))];
   const filtered = filter === "All" ? A.neighborhood : A.neighborhood.filter((n) => n.kind === filter);
+  const kindLabel = (k) => (k === "All" ? t('neighborhood.all') : k);
 
   return (
     <Page>
@@ -592,7 +593,7 @@ const NeighborhoodSection = () => {
             fontFamily: "Geist Mono, monospace", fontSize: 10,
             letterSpacing: "0.12em", textTransform: "uppercase",
             cursor: "pointer",
-          }}>{k}</button>
+          }}>{kindLabel(k)}</button>
         ))}
       </div>
 
@@ -886,7 +887,7 @@ const ContactSection = () => {
             display: "inline-flex", alignItems: "center", justifyContent: "center",
             gap: 10, cursor: "pointer",
           }}>
-            Send to {A.contact.owner.split(" ")[0]} <Icon name="send" size={14} stroke="var(--paper)" />
+            {t('contact.send_to')} {A.contact.owner.split(" ")[0]} <Icon name="send" size={14} stroke="var(--paper)" />
           </button>
         </form>
       )}
