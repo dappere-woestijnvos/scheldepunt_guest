@@ -257,7 +257,7 @@ const WifiSection = () => {
 
   return (
     <Page>
-      <PageHeader no={t('wifi.no')} eyebrow={t('wifi.eyebrow')} title={t('wifi.title')} italic={t('wifi.italic')} />
+      <PageHeader no={t('wifi.no')} eyebrow={t('wifi.eyebrow')} title={t('wifi.title')} />
 
       <div style={{
         background: "var(--terra)", color: "var(--paper)",

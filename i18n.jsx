@@ -521,5 +521,8 @@ window.TRANSLATIONS = TRANSLATIONS;
 window.currentLang = 'en';
 window.t = (key) => {
   const L = window.currentLang || 'en';
-  return (TRANSLATIONS[L] && TRANSLATIONS[L][key]) || TRANSLATIONS.en[key] || key;
+  const v = TRANSLATIONS[L] && TRANSLATIONS[L][key] !== undefined ? TRANSLATIONS[L][key]
+          : TRANSLATIONS.en[key] !== undefined ? TRANSLATIONS.en[key]
+          : key;
+  return v;
 };
