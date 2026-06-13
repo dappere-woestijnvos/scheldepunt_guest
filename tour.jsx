@@ -22,6 +22,18 @@ const TOUR_STOPS = [
       beer: ``,
       food: ``,
     },
+    es: {
+      name: `Scheldepunt (Inicio y Final)`,
+      desc: `El nombre 'Scheldepunt' hace referencia a la confluencia del río Escalda justo en este edificio. El Escalda nace en el norte de Francia (Gouy) y fluye por Bélgica y los Países Bajos hasta el mar del Norte. El brazo izquierdo une aquí el Leie con el Escalda y se llama el Alto Escalda. El paseo comienza siguiendo el brazo izquierdo por Ter Plaeten, pasando bajo el puente junto al Kinepolis.`,
+      beer: ``,
+      food: ``,
+    },
+    de: {
+      name: `Scheldepunt (Start & Ziel)`,
+      desc: `Der Name 'Scheldepunt' bezieht sich auf die Gabelung der Schelde direkt an diesem Gebäude. Die Schelde entspringt in Nordfrankreich (Gouy) und fließt über Belgien und die Niederlande zur Nordsee. Der linke Arm verbindet hier die Leie mit der Schelde und heißt Oberschelde. Der Rundgang beginnt entlang des linken Arms über Ter Plaeten, unter der Brücke hindurch am Kinepolis vorbei.`,
+      beer: ``,
+      food: ``,
+    },
   },
   {
     id: 2, lat: 51.0378, lon: 3.7340, extension: false,
@@ -43,6 +55,18 @@ const TOUR_STOPS = [
       beer: `De Planck – ancienne péniche transformée en café-brasserie avec terrasse d'été. Brouwzaele – brasserie avec plus de 100 bières.`,
       food: ``,
     },
+    es: {
+      name: `Kinepolis`,
+      desc: `Cuando se construyó en 1980, era el mayor complejo de cines del mundo. Hoy las 12 salas apenas bastan para satisfacer a los amantes del cine de Gante.`,
+      beer: `De Planck – antigua gabarra convertida en cervecería con terraza de verano en cubierta. Brouwzaele – cervecería y restaurante con más de 100 cervezas en la carta.`,
+      food: ``,
+    },
+    de: {
+      name: `Kinepolis`,
+      desc: `Bei seiner Eröffnung 1980 war dies der größte Kinokomplex der Welt. Heute reichen die 12 Säle gerade noch, um die Genter Cineasten zufriedenzustellen.`,
+      beer: `De Planck – altes Binnenschiff, umgebaut zur Bierkneipe mit Sommerterrasse an Deck. Brouwzaele – Bier- und Speiselokal mit über 100 Bieren.`,
+      food: ``,
+    },
   },
   {
     id: 3, lat: 51.0390, lon: 3.7315, extension: false,
@@ -61,6 +85,18 @@ const TOUR_STOPS = [
     fr: {
       name: `Muinkpark`,
       desc: `Le Muinkpark (dérivé de « moine ») de 1,3 ha, aménagé dans le style anglais, est le seul vestige du zoo de Gand du XIXe siècle. Des lions, perroquets, autruches, un crocodile et un éléphant étaient de véritables attractions. Les noms des rues environnantes rappellent ce passé : Zebrastraat, Olifantstraat, Tijgerstraat, Leeuwstraat… La légende dit qu'après la faillite du zoo, un ours finit au barbecue — l'éléphant fut transformé en saucisses aux Pays-Bas.`,
+      beer: ``,
+      food: ``,
+    },
+    es: {
+      name: `Muinkpark`,
+      desc: `El Muinkpark (de la palabra 'monje') tiene 1,3 hectáreas, ajardinado al estilo inglés, y es el único vestigio del zoo de Gante del siglo XIX. Leones, loros, avestruces, un cocodrilo y un elefante eran auténticas atracciones. Las calles de alrededor aún lo recuerdan: Zebrastraat, Olifantstraat, Tijgerstraat, Leeuwstraat… La leyenda popular dice que un oso acabó en la barbacoa tras la quiebra del zoo — el elefante se convirtió en salchichas en los Países Bajos.`,
+      beer: ``,
+      food: ``,
+    },
+    de: {
+      name: `Muinkpark`,
+      desc: `Der Muinkpark (vom Wort 'Mönch') ist 1,3 Hektar groß, im englischen Stil angelegt und das einzige Überbleibsel des Genter Zoos aus dem 19. Jahrhundert. Löwen, Papageien, Strauße, ein Krokodil und ein Elefant waren echte Publikumsmagnete. Die umliegenden Straßen erinnern noch daran: Zebrastraat, Olifantstraat, Tijgerstraat, Leeuwstraat… Der Volkssage nach landete nach dem Konkurs des Zoos ein Bär auf dem Grill — der Elefant wurde in den Niederlanden zu Würsten verarbeitet.`,
       beer: ``,
       food: ``,
     },
@@ -85,6 +121,18 @@ const TOUR_STOPS = [
       beer: ``,
       food: `De Martino (Vlaanderenstraat) – l'endroit légendaire où le sandwich Martino a été inventé. Joost Arijs – célèbre boutique de pralines. Cremerie Gérard (Limburgstraat 36) – glacier réputé.`,
     },
+    es: {
+      name: `El Sur – Woodrow Wilsonplein`,
+      desc: `'t Zuid (El Sur) es el animado barrio en torno al Zuidpark neobarroco. El nombre alude a la antigua Estación del Sur, cerrada en 1928 al abrir Gent-Sint-Pieters. El imponente Urbiscomplex alberga un centro comercial; al otro lado de la plaza están la antigua biblioteca y el centro administrativo. La contigua Graaf van Vlaanderenplein acoge el renovado teatro Capitole, para musicales y monólogos.`,
+      beer: ``,
+      food: `The Martino (Vlaanderenstraat) – legendaria bocadillería donde se inventó el bocadillo 'Martino'. Joost Arijs – afamada bombonería al final de la calle. Cremerie Gérard (Limburgstraat 36) – célebre heladería.`,
+    },
+    de: {
+      name: `Het Zuid – Woodrow Wilsonplein`,
+      desc: `'t Zuid (der Süden) ist das lebhafte Viertel rund um den neobarocken Zuidpark. Der Name verweist auf den früheren Südbahnhof, 1928 mit Eröffnung von Gent-Sint-Pieters geschlossen. Der imposante Urbiscomplex beherbergt ein Einkaufszentrum; gegenüber liegen die alte Bibliothek und das Verwaltungszentrum. Der angrenzende Graaf van Vlaanderenplein beherbergt das renovierte Capitole-Theater für Musicals und Stand-up-Comedy.`,
+      beer: ``,
+      food: `The Martino (Vlaanderenstraat) – legendärer Imbiss, wo das 'Martino'-Sandwich erfunden wurde. Joost Arijs – renommierte Pralinen-Boutique am Ende der Straße. Cremerie Gérard (Limburgstraat 36) – berühmte Eisdiele.`,
+    },
   },
   {
     id: 5, lat: 51.0527, lon: 3.7217, extension: false,
@@ -103,6 +151,18 @@ const TOUR_STOPS = [
     fr: {
       name: `Beffroi & Halle aux Draps`,
       desc: `La construction du Beffroi de Gand a commencé en 1314 ; en 1377 le légendaire dragon cracheur de feu fut hissé au sommet. Les cloches, dont la Klokke Roeland, scandaient la journée de travail et sonnaient aux fêtes, tempêtes ou dangers. Site du patrimoine mondial de l'UNESCO — vous pouvez grimper la tour. La Halle aux Draps fut ajoutée un demi-siècle plus tard ; au-dessus d'un portail figure la légende du 'Mammelokker' — un père sauvé de la faim en prison grâce à l'allaitement de sa fille.`,
+      beer: `Bier Central – Botermarkt 11.`,
+      food: ``,
+    },
+    es: {
+      name: `Campanario y Lonja de los Paños`,
+      desc: `La construcción del Campanario de Gante comenzó en 1314; en 1377 se izó en lo alto el legendario dragón que escupe fuego. Guardaba los privilegios de la ciudad y sus campanas, entre ellas 'Klokke Roeland', marcaban la jornada laboral y sonaban en fiestas, tormentas o peligros. Es Patrimonio Mundial de la UNESCO — se puede subir a la torre. Medio siglo después se añadió la Lonja de los Paños (Lakenhalle); sobre una puerta de la esquina se representa la historia del 'Mammelokker' — un padre salvado de morir de hambre en prisión gracias a la leche materna de su hija.`,
+      beer: `Bier Central – Botermarkt 11.`,
+      food: ``,
+    },
+    de: {
+      name: `Belfried & Tuchhalle`,
+      desc: `Der Bau des Genter Belfrieds begann 1314; 1377 wurde der legendäre feuerspeiende Drache auf die Spitze gehievt. Er bewahrte die Stadtprivilegien, und seine Glocken, darunter 'Klokke Roeland', gaben den Arbeitstag an und läuteten bei Festen, Stürmen oder Gefahr. Er ist UNESCO-Weltkulturerbe — man kann den Turm besteigen. Etwa ein halbes Jahrhundert später kam die Tuchhalle (Lakenhalle) hinzu; über einem Eckportal ist die Geschichte des 'Mammelokker' dargestellt — ein Vater, der im Gefängnis durch die Muttermilch seiner Tochter vor dem Hungertod gerettet wurde.`,
       beer: `Bier Central – Botermarkt 11.`,
       food: ``,
     },
@@ -127,6 +187,18 @@ const TOUR_STOPS = [
       beer: `Dragon – Klein Turkije 18.`,
       food: `Amadeus – the place for ribs.`,
     },
+    es: {
+      name: `Stadshal`,
+      desc: `El nuevo edificio entre el Campanario y la iglesia de San Nicolás es el Stadshal. Polémico desde el principio, algunos ganteses lo llaman despectivamente el 'Redil'. Es una nave abierta con un café debajo y 1.600 ventanitas en el techo que aportan luz dinámica. La gran campana de debajo es la 'Klokke Roeland', usada como campana del campanario en la Edad Media hasta 1659. En el pedestal hay un cuadro del artista gantés de fama mundial Michaël Borremans, 'La Virgen'.`,
+      beer: `Dragon – Klein Turkije 18.`,
+      food: `Amadeus – el sitio para las costillas.`,
+    },
+    de: {
+      name: `Stadshal`,
+      desc: `Der neue Bau zwischen dem Belfried und der Sankt-Nikolaus-Kirche ist die Stadshal. Von Anfang an umstritten, nennen manche Genter sie abschätzig den 'Schafstall'. Es ist eine offene Halle mit einem Café darunter und 1.600 kleinen Fenstern im Dach, die für dynamisches Licht sorgen. Die große Glocke darunter ist die 'Klokke Roeland', im Mittelalter bis 1659 als Belfriedglocke genutzt. Auf dem Sockel ein Gemälde des weltberühmten Genter Künstlers Michaël Borremans, 'Die Jungfrau'.`,
+      beer: `Dragon – Klein Turkije 18.`,
+      food: `Amadeus – die Adresse für Spareribs.`,
+    },
   },
   {
     id: 7, lat: 51.0534, lon: 3.7200, extension: false,
@@ -148,6 +220,18 @@ const TOUR_STOPS = [
       beer: ``,
       food: `Mokabon (Donkersteeg 35) – le tout premier coffee shop de Gand.`,
     },
+    es: {
+      name: `Korenmarkt`,
+      desc: `Desde los siglos X–XI, esta plaza era donde se comerciaba el grano que entraba en Gante por el Leie o el Escalda. Está rodeada de edificios históricos y es un importante centro turístico. Al salir del Donkersteeg verás enseguida una columna de arte moderno con un collar dorado cuyos motivos remiten a ventanas medievales. La casa 'De Cooremaete' (nº 7-8) servía para apilar grano; 'Het waepen van Zeelant' (nº 20), probablemente del siglo XIII, lleva la inscripción 'Vry huys, vry erve' ('Casa libre, propiedad libre').`,
+      beer: ``,
+      food: `Mokabon (Donkersteeg 35) – la primerísima cafetería de Gante.`,
+    },
+    de: {
+      name: `Korenmarkt`,
+      desc: `Seit dem 10.–11. Jahrhundert wurde auf diesem Platz das Getreide gehandelt, das über die Leie oder die Schelde nach Gent kam. Er ist von historischen Gebäuden umgeben und ein wichtiger Touristenknotenpunkt. Beim Verlassen des Donkersteeg sieht man sofort eine moderne Kunstsäule mit goldener Kette, deren Motive auf mittelalterliche Fenster verweisen. Das Haus 'De Cooremaete' (Nr. 7-8) diente der Getreidelagerung; 'Het waepen van Zeelant' (Nr. 20), vermutlich aus dem 13. Jahrhundert, trägt die Inschrift 'Vry huys, vry erve' ('Freies Haus, freies Gut').`,
+      beer: ``,
+      food: `Mokabon (Donkersteeg 35) – das allererste Kaffeehaus Gents.`,
+    },
   },
   {
     id: 8, lat: 51.0534, lon: 3.7193, extension: false,
@@ -166,6 +250,18 @@ const TOUR_STOPS = [
     fr: {
       name: `La Poste`,
       desc: `L'ancien bâtiment de la Poste, érigé entre 1898 et 1908, respire encore l'atmosphère historique — remarquez la belle tour de l'horloge de 52 m. À l'intérieur se trouve un centre commercial ; quelques vestiges de l'ancien intérieur sont encore visibles (regardez en haut). Le bâtiment abrite aussi l'hôtel iconique 1898 The Post.`,
+      beer: ``,
+      food: ``,
+    },
+    es: {
+      name: `La Oficina de Correos`,
+      desc: `La antigua oficina de correos, construida entre 1898 y 1908, conserva en su fachada exterior un aire histórico — fíjate en la bonita torre del reloj de 52 m. En el interior hay ahora un centro comercial; aún se ven algunos restos del interior original (mira hacia arriba). El edificio también alberga el icónico hotel 1898 The Post.`,
+      beer: ``,
+      food: ``,
+    },
+    de: {
+      name: `De Post (Das Postgebäude)`,
+      desc: `Das ehemalige Postgebäude, errichtet zwischen 1898 und 1908, atmet an seiner Außenfassade noch historisches Flair — beachte den schönen 52 m hohen Uhrturm. Im Inneren befindet sich heute ein Einkaufszentrum; einige Reste des ursprünglichen Interieurs sind noch zu entdecken (Blick nach oben). Das Gebäude beherbergt auch das ikonische Hotel 1898 The Post.`,
       beer: ``,
       food: ``,
     },
@@ -190,6 +286,18 @@ const TOUR_STOPS = [
       beer: ``,
       food: `Het Pakhuis – ancien entrepôt transformé en restaurant (Jan van Stopenberghstraat, à gauche).`,
     },
+    es: {
+      name: `Iglesia de San Nicolás`,
+      desc: `Los orígenes lejanos de la iglesia de San Nicolás se sitúan en el siglo XI. En 1120 la primera iglesia fue destruida por un incendio; una segunda apenas duró 75 años. En el siglo XIII se inició la iglesia actual, una obra que se prolongó durante siglos. El ayuntamiento dio a la torre la función de campanario hasta que el campanario propiamente dicho entró en uso. Fíjate en que la torre se sitúa en el centro del edificio. Dentro puedes admirar una riqueza de arte religioso.`,
+      beer: ``,
+      food: `Het Pakhuis – antiguo almacén convertido en restaurante (Jan van Stopenberghstraat, a la izquierda).`,
+    },
+    de: {
+      name: `Sankt-Nikolaus-Kirche`,
+      desc: `Die fernen Ursprünge der Sankt-Nikolaus-Kirche liegen im 11. Jahrhundert. 1120 wurde die erste Kirche durch Feuer zerstört; eine zweite hielt kaum 75 Jahre. Im 13. Jahrhundert begann der Bau der heutigen Kirche, der sich über Jahrhunderte hinzog. Der Stadtrat gab dem Kirchturm die Funktion des Belfrieds, bis der eigentliche Belfried in Gebrauch kam. Beachte, dass der Turm in der Mitte des Kirchengebäudes steht. Im Inneren kann man eine Fülle religiöser Kunst bewundern.`,
+      beer: ``,
+      food: `Het Pakhuis – ehemaliges Lagerhaus, heute Restaurant (Jan van Stopenberghstraat, links).`,
+    },
   },
   {
     id: 10, lat: 51.0530, lon: 3.7192, extension: false,
@@ -208,6 +316,18 @@ const TOUR_STOPS = [
     fr: {
       name: `Graffiti – L'Agneau Mystique`,
       desc: `Sur le mur, une reproduction du célèbre chef-d'œuvre 'Het Lam Gods' par Smates (Bart Smeets, www.smates.be), réalisée pour la sortie du film 'Monuments Men'. Du pont au-dessus, vous jouissez de deux des plus belles vues de Gand : les trois tours en enfilade (Saint-Nicolas, Beffroi, Saint-Bavon) et en contrebas le Graslei, l'une des plus belles rangées de maisons du monde.`,
+      beer: ``,
+      food: ``,
+    },
+    es: {
+      name: `Grafiti – El Cordero Místico`,
+      desc: `En el muro puedes ver una parte de la famosa obra maestra 'Het Lam Gods' (El Cordero Místico) reproducida por el artista urbano Smates (Bart Smeets, www.smates.be). La creó con motivo del estreno de la película 'The Monuments Men'. Desde el puente de arriba se obtienen dos de los panoramas más bellos de Gante: al girarte ves el famoso trío de torres (San Nicolás, el Campanario y San Bavón) en perfecta hilera; abajo se extiende el Graslei con una de las hileras de casas más bonitas del mundo.`,
+      beer: ``,
+      food: ``,
+    },
+    de: {
+      name: `Graffiti – Das Genter Altarbild`,
+      desc: `An der Wand siehst du einen Teil des berühmten Meisterwerks 'Het Lam Gods' (Das Genter Altarbild), nachgemalt vom Streetart-Künstler Smates (Bart Smeets, www.smates.be). Er schuf es zum Kinostart von 'The Monuments Men'. Von der Brücke darüber hast du zwei der schönsten Panoramen Gents: Wenn du dich umdrehst, siehst du das berühmte Türmetrio (Sankt-Nikolaus, Belfried, Sankt-Bavo) in perfekter Reihe; darunter liegt der Graslei mit einer der schönsten Häuserzeilen der Welt.`,
       beer: ``,
       food: ``,
     },
@@ -232,6 +352,18 @@ const TOUR_STOPS = [
       beer: `Café Bornhem – Sint-Michielsstraat 1. Hotsy Totsy – Hoogstraat 1.`,
       food: ``,
     },
+    es: {
+      name: `Iglesia de San Miguel`,
+      desc: `En 1440 comenzó la construcción de la iglesia de San Miguel; antes había aquí una capilla. Los iconoclastas derribaron el edificio en el siglo XVI, así que en 1619 se construyó una nueva iglesia — la actual. Por falta de dinero, las obras se detuvieron en 1672 y desde entonces la torre carece de aguja. ¡La intención era una torre de 134 metros! 'Cristo en la cruz' de Antoon Van Dyck es la obra de arte más importante de aquí.`,
+      beer: `Café Bornhem – Sint-Michielsstraat 1. Hotsy Totsy – Hoogstraat 1.`,
+      food: ``,
+    },
+    de: {
+      name: `Sankt-Michaels-Kirche`,
+      desc: `1440 begann der Bau der Sankt-Michaels-Kirche; zuvor stand hier eine Kapelle. Bilderstürmer zerstörten das Gebäude im 16. Jahrhundert, sodass 1619 eine neue Kirche errichtet wurde — die heutige. Aus Geldmangel wurden die Arbeiten 1672 eingestellt, und der Turm ist seitdem ohne Spitze. Geplant war ein Turm von sage und schreibe 134 Metern! 'Christus am Kreuz' von Antoon Van Dyck ist das wichtigste Kunstwerk hier.`,
+      beer: `Café Bornhem – Sint-Michielsstraat 1. Hotsy Totsy – Hoogstraat 1.`,
+      food: ``,
+    },
   },
   {
     id: 12, lat: 51.0535, lon: 3.7208, extension: false,
@@ -250,6 +382,18 @@ const TOUR_STOPS = [
     fr: {
       name: `Korenlei & Graslei`,
       desc: `Marchez sur le Korenlei et admirez le majestueux Graslei. Gand possédait le droit d'entrepôt de grain : le grain devait y être stocké deux semaines avant d'être commercialisé. Le Graslei présente de magnifiques bâtiments anciens : le Cooremetershuys (n°12-13) était la salle de réunion des artisans dockers ; le Tolhuisje (n°11) est la plus petite maison de la ville ; le Korenstapelhuis (n°10, 'Het Spijker') aurait le plus vieux pignon à gradins du monde. Sur le Korenlei, l'hôtel Marriott se cache derrière une façade historique préservée — deux cygnes sur la façade rappellent son passé médiéval de maison close.`,
+      beer: ``,
+      food: ``,
+    },
+    es: {
+      name: `Korenlei & Graslei`,
+      desc: `Camina por el Korenlei y admira el majestuoso Graslei. Gante tenía el derecho de almacenaje de grano: el grano del norte de Francia debía pasar por aquí y guardarse dos semanas antes de comerciarse. El Graslei muestra una serie de hermosos edificios antiguos: el Cooremetershuys (nº 12-13) fue en el siglo XIV el lugar de reunión de los estibadores; el Tolhuisje (nº 11) es la casa más pequeña de la ciudad; el Korenstapelhuis (nº 10, también 'Het Spijker', de Spica = grano en latín) tiene, según se dice, el hastial escalonado más antiguo del mundo. En el Korenlei, el hotel Marriott se esconde tras una fachada histórica conservada — dos cisnes en el hastial recuerdan su pasado medieval como burdel.`,
+      beer: ``,
+      food: ``,
+    },
+    de: {
+      name: `Korenlei & Graslei`,
+      desc: `Gehe über den Korenlei und bewundere den majestätischen Graslei. Gent besaß das Getreidestapelrecht: Getreide aus Nordfrankreich musste hier durch und zwei Wochen gelagert werden, bevor es gehandelt wurde. Der Graslei zeigt eine Reihe schöner alter Gebäude: das Cooremetershuys (Nr. 12-13) war im 14. Jahrhundert der Versammlungsort der Lastträger; das Tolhuisje (Nr. 11) ist das kleinste Haus der Stadt; das Korenstapelhuis (Nr. 10, auch 'Het Spijker', von Spica = lateinisch für Getreide) hat angeblich den ältesten Treppengiebel der Welt. Am Korenlei verbirgt sich das Hotel Marriott hinter einer erhaltenen historischen Fassade — zwei Schwäne am Giebel deuten auf seine mittelalterliche Vergangenheit als Bordell hin.`,
       beer: ``,
       food: ``,
     },
