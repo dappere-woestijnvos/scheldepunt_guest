@@ -10,13 +10,13 @@
     <link href="https://scheldepunt.be"><text>Scheldepunt Guest Guide</text></link>
     <time>2025-01-01T00:00:00Z</time>
     <keywords>Ghent, Gent, walking tour, city walk, self-guided</keywords>
-    <bounds minlat="51.0380" minlon="3.7068" maxlat="51.0590" maxlon="3.7259"/>
+    <bounds minlat="51.0368" minlon="3.7150" maxlat="51.0590" maxlon="3.7360"/>
   </metadata>
 
   <!-- Waypoints for all 43 stops -->
-  <wpt lat="51.0383" lon="3.7068"><name>01 Scheldepunt (Start &amp; Finish)</name><desc>The name 'Scheldepunt' refers to the junction of the Scheldt river right at this building. The walk begins by following the left arm via Ter Plaeten, walking under the bridge past the Kinepolis.</desc><sym>Flag, Green</sym></wpt>
-  <wpt lat="51.0380" lon="3.7082"><name>02 Kinepolis</name><desc>When it was built in 1980, this was the largest cinema complex in the world. Today the 12 screens serve Ghent's film-lovers.</desc><sym>Flag, Blue</sym></wpt>
-  <wpt lat="51.0389" lon="3.7145"><name>03 Muinkpark</name><desc>1.3-hectare park in English landscape style, the only remnant of the 19th-century Ghent zoo. Lions, parrots, ostriches, a crocodile and an elephant were real crowd-pullers.</desc><sym>Flag, Blue</sym></wpt>
+  <wpt lat="51.0368" lon="3.7360"><name>01 Scheldepunt (Start &amp; Finish)</name><desc>The name 'Scheldepunt' refers to the junction of the Scheldt river right at this building. The walk begins by following the left arm via Ter Plaeten, walking under the bridge past the Kinepolis.</desc><sym>Flag, Green</sym></wpt>
+  <wpt lat="51.0378" lon="3.7340"><name>02 Kinepolis</name><desc>When it was built in 1980, this was the largest cinema complex in the world. Today the 12 screens serve Ghent's film-lovers.</desc><sym>Flag, Blue</sym></wpt>
+  <wpt lat="51.0390" lon="3.7315"><name>03 Muinkpark</name><desc>1.3-hectare park in English landscape style, the only remnant of the 19th-century Ghent zoo. Lions, parrots, ostriches, a crocodile and an elephant were real crowd-pullers.</desc><sym>Flag, Blue</sym></wpt>
   <wpt lat="51.0440" lon="3.7215"><name>04 Het Zuid – Woodrow Wilsonplein</name><desc>'t Zuid is the vibrant neighbourhood around the neo-baroque Zuidpark. The name refers to the former South Railway Station, closed in 1928.</desc><sym>Flag, Blue</sym></wpt>
   <wpt lat="51.0527" lon="3.7217"><name>05 Belfry &amp; Cloth Hall</name><desc>Construction of the Ghent Belfry began in 1314. UNESCO World Heritage site — you can climb the tower. The Cloth Hall (Lakenhalle) was added half a century later.</desc><sym>Flag, Blue</sym></wpt>
   <wpt lat="51.0533" lon="3.7213"><name>06 Stadshal (City Hall)</name><desc>The new building between the Belfry and Saint-Nicholas Church. Controversial 'Sheepfold' with 1,600 small windows. Houses Klokke Roeland and a Michaël Borremans painting.</desc><sym>Flag, Blue</sym></wpt>
@@ -63,9 +63,9 @@
     <name>Ghent City Walk — Full Route (11.5 km, 43 stops)</name>
     <desc>Complete self-guided walking tour from Scheldepunt through Ghent's historic centre. Includes optional extension stops 15–18 through Oud Begijnhof and Prinsenhof.</desc>
     <trkseg>
-      <trkpt lat="51.0383" lon="3.7068"><name>01 Scheldepunt</name></trkpt>
-      <trkpt lat="51.0380" lon="3.7082"><name>02 Kinepolis</name></trkpt>
-      <trkpt lat="51.0389" lon="3.7145"><name>03 Muinkpark</name></trkpt>
+      <trkpt lat="51.0368" lon="3.7360"><name>01 Scheldepunt</name></trkpt>
+      <trkpt lat="51.0378" lon="3.7340"><name>02 Kinepolis</name></trkpt>
+      <trkpt lat="51.0390" lon="3.7315"><name>03 Muinkpark</name></trkpt>
       <trkpt lat="51.0440" lon="3.7215"><name>04 Het Zuid</name></trkpt>
       <trkpt lat="51.0527" lon="3.7217"><name>05 Belfry</name></trkpt>
       <trkpt lat="51.0533" lon="3.7213"><name>06 Stadshal</name></trkpt>
@@ -106,7 +106,7 @@
       <trkpt lat="51.0451" lon="3.7237"><name>41 Boekentoren</name></trkpt>
       <trkpt lat="51.0438" lon="3.7248"><name>42 Sint-Pietersplein</name></trkpt>
       <trkpt lat="51.0435" lon="3.7252"><name>43 Wereld van Kina</name></trkpt>
-      <trkpt lat="51.0383" lon="3.7068"><name>Scheldepunt (Finish)</name></trkpt>
+      <trkpt lat="51.0368" lon="3.7360"><name>Scheldepunt (Finish)</name></trkpt>
     </trkseg>
   </trk>
 
@@ -115,9 +115,9 @@
     <name>Ghent City Walk — Short Route (9.3 km, skip stops 15–18)</name>
     <desc>Shortened self-guided walking tour. Skips the optional extension through Oud Begijnhof and Prinsenhof (stops 15–18, saves ~2.2 km).</desc>
     <trkseg>
-      <trkpt lat="51.0383" lon="3.7068"><name>01 Scheldepunt</name></trkpt>
-      <trkpt lat="51.0380" lon="3.7082"><name>02 Kinepolis</name></trkpt>
-      <trkpt lat="51.0389" lon="3.7145"><name>03 Muinkpark</name></trkpt>
+      <trkpt lat="51.0368" lon="3.7360"><name>01 Scheldepunt</name></trkpt>
+      <trkpt lat="51.0378" lon="3.7340"><name>02 Kinepolis</name></trkpt>
+      <trkpt lat="51.0390" lon="3.7315"><name>03 Muinkpark</name></trkpt>
       <trkpt lat="51.0440" lon="3.7215"><name>04 Het Zuid</name></trkpt>
       <trkpt lat="51.0527" lon="3.7217"><name>05 Belfry</name></trkpt>
       <trkpt lat="51.0533" lon="3.7213"><name>06 Stadshal</name></trkpt>
@@ -154,7 +154,7 @@
       <trkpt lat="51.0451" lon="3.7237"><name>41 Boekentoren</name></trkpt>
       <trkpt lat="51.0438" lon="3.7248"><name>42 Sint-Pietersplein</name></trkpt>
       <trkpt lat="51.0435" lon="3.7252"><name>43 Wereld van Kina</name></trkpt>
-      <trkpt lat="51.0383" lon="3.7068"><name>Scheldepunt (Finish)</name></trkpt>
+      <trkpt lat="51.0368" lon="3.7360"><name>Scheldepunt (Finish)</name></trkpt>
     </trkseg>
   </trk>
 

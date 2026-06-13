@@ -3,7 +3,7 @@ const { useState: useStateW, useRef: useRefW } = React;
 
 const TOUR_STOPS = [
   {
-    id: 1, lat: 51.0383, lon: 3.7068, extension: false,
+    id: 1, lat: 51.0368, lon: 3.7360, extension: false,
     en: {
       name: `Scheldepunt (Start & Finish)`,
       desc: `The name 'Scheldepunt' refers to the junction of the Scheldt river right at this building. The Scheldt originates in northern France (Gouy) and flows via Belgium and the Netherlands to the North Sea. The left arm here connects the Leie with the Scheldt and is called the Upper Scheldt. The walk begins by following the left arm via Ter Plaeten, walking under the bridge past the Kinepolis.`,
@@ -24,7 +24,7 @@ const TOUR_STOPS = [
     },
   },
   {
-    id: 2, lat: 51.0380, lon: 3.7082, extension: false,
+    id: 2, lat: 51.0378, lon: 3.7340, extension: false,
     en: {
       name: `Kinepolis`,
       desc: `When it was built in 1980, this was the largest cinema complex in the world. Today the 12 screens are only just enough to cater to Ghent's film-lovers.`,
@@ -45,7 +45,7 @@ const TOUR_STOPS = [
     },
   },
   {
-    id: 3, lat: 51.0389, lon: 3.7145, extension: false,
+    id: 3, lat: 51.0390, lon: 3.7315, extension: false,
     en: {
       name: `Muinkpark`,
       desc: `The Muinkpark (from the word 'monk') is 1.3 hectares, landscaped in English style, and is the only remnant of the 19th-century Ghent zoo. Lions, parrots, ostriches, a crocodile and an elephant were real crowd-pullers. The surrounding streets still recall this past: Zebrastraat, Olifantstraat, Tijgerstraat, Leeuwstraat… Folk legend says a bear ended up on the BBQ after the zoo's bankruptcy — the elephant was turned into sausages in the Netherlands.`,
