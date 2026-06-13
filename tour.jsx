@@ -1012,6 +1012,18 @@ const TOUR_STOPS = [
       beer: ``,
       food: ``,
     },
+    es: {
+      name: `Werregarenstraat (Callejón del Grafiti)`,
+      desc: `Oficialmente Werregarenstraatje, pero más conocido como el Callejón del Grafiti, entre Hoogpoort y Onderstraat. Desde 1995, cualquiera que se sienta llamado a dejar una creación aquí puede hacerlo — con una regla: no ataques obras mejores que lo que tú puedas sacar de tu spray. Su aspecto cambia con regularidad. Es uno de los cuatro lugares de grafiti oficialmente tolerados en Gante. La ciudad organiza además proyectos de grafiti, talleres y una jam anual.`,
+      beer: ``,
+      food: ``,
+    },
+    de: {
+      name: `Werregarenstraat (Graffiti-Gasse)`,
+      desc: `Offiziell die Werregarenstraatje, besser bekannt als Graffiti-Gasse, zwischen Hoogpoort und Onderstraat. Seit 1995 darf jeder, der sich berufen fühlt, hier eine Kreation hinterlassen — mit einer Regel: Greif keine Werke an, die besser sind als das, was du aus deiner Spraydose schüttelst. Das Erscheinungsbild ändert sich ständig. Es ist einer von vier offiziell geduldeten Graffiti-Orten in Gent. Die Stadt veranstaltet auch Graffiti-Projekte, Workshops und eine jährliche Jam.`,
+      beer: ``,
+      food: ``,
+    },
   },
   {
     id: 32, lat: 51.0524, lon: 3.7227, extension: false,
@@ -1030,6 +1042,18 @@ const TOUR_STOPS = [
     fr: {
       name: `Hôtel de Ville`,
       desc: `La partie centrale de l'Hôtel de Ville date du XVe siècle, avec diverses adjonctions dans différents styles architecturaux. Le côté Hoogpoort est particulièrement riche — les niches représentent les comtes de Flandre. Le côté Botermarkt montre le style Renaissance (fin XVIe – début XVIIe s.) avec trois types de colonnes (dorique, ionique, corinthien). Un remarquable tuyau bleu et blanc — coloré depuis 2002 — semble référencer les couleurs du club de foot AA Gent, mais la protection des monuments affirme qu'il s'agit d'une reconstruction authentique.`,
+      beer: `Café Den Turk – Botermarkt 3. Artevelde Brewery – Botermarkt 5.`,
+      food: ``,
+    },
+    es: {
+      name: `Ayuntamiento`,
+      desc: `La parte central del Ayuntamiento data del siglo XV, con diversas ampliaciones en distintos estilos arquitectónicos. El lado de la Hoogpoort luce especialmente rico — las hornacinas representan a los condes de Flandes. El lado de la Botermarkt muestra el estilo renacentista (finales del XVI – principios del XVII) con tres tipos de columna (dórica, jónica, corintia). Una llamativa bajante azul y blanca del edificio — coloreada desde 2002 — parece aludir a los colores del club de fútbol AA Gent, pero Patrimonio afirma que es una reconstrucción auténtica.`,
+      beer: `Café Den Turk – Botermarkt 3. Artevelde Brewery – Botermarkt 5.`,
+      food: ``,
+    },
+    de: {
+      name: `Rathaus`,
+      desc: `Der zentrale Teil des Rathauses stammt aus dem 15. Jahrhundert, mit diversen Anbauten in verschiedenen Baustilen. Die Seite zur Hoogpoort wirkt besonders prächtig — Nischen zeigen die Grafen von Flandern. Die Seite zur Botermarkt zeigt den Renaissancestil (spätes 16. – frühes 17. Jh.) mit drei Säulenarten (dorisch, ionisch, korinthisch). Ein auffälliges blau-weißes Fallrohr am Gebäude — seit 2002 so gefärbt — scheint auf die Farben des Fußballclubs AA Gent zu verweisen, doch der Denkmalschutz sagt, es sei eine authentische Rekonstruktion.`,
       beer: `Café Den Turk – Botermarkt 3. Artevelde Brewery – Botermarkt 5.`,
       food: ``,
     },
@@ -1054,6 +1078,18 @@ const TOUR_STOPS = [
       beer: ``,
       food: ``,
     },
+    es: {
+      name: `Biezekapel`,
+      desc: `La Biezekapel es una de las capillas más antiguas de la ciudad. La capilla actual data de principios del siglo XVIII, pero ya en 1608 Jean-Baptiste de Rodoan colocó aquí una estatua de María en una hornacina. Bajo el dominio francés, en 1794, la capilla fue tapiada; tras su restauración se volvió a consagrar en 1931. Hay que pegar casi la nariz a la ventana para ver la hermosa estatua. En 1934 se rumoreó que el panel robado de los 'Jueces Justos' del Cordero Místico estaba escondido aquí.`,
+      beer: ``,
+      food: ``,
+    },
+    de: {
+      name: `Biezekapel`,
+      desc: `Die Biezekapel ist eine der ältesten Kapellen der Stadt. Die heutige Kapelle stammt vom Anfang des 18. Jahrhunderts, doch schon 1608 stellte Jean-Baptiste de Rodoan hier eine Marienstatue in einer Nische auf. Unter französischer Herrschaft wurde die Kapelle 1794 zugemauert; nach der Restaurierung wurde sie 1931 neu geweiht. Man muss die Nase fast an die Scheibe drücken, um die schöne Statue zu sehen. 1934 ging das Gerücht um, die gestohlene Tafel der 'Gerechten Richter' aus dem Genter Altarbild sei hier versteckt.`,
+      beer: ``,
+      food: ``,
+    },
   },
   {
     id: 34, lat: 51.0518, lon: 3.7239, extension: false,
@@ -1072,6 +1108,18 @@ const TOUR_STOPS = [
     fr: {
       name: `Cathédrale Sint-Baaf`,
       desc: `La prédécesseure 'Sint-Janskerk' existait dès le Xe siècle. La cathédrale actuelle ne reçut ce titre qu'à la fondation du diocèse de Gand en 1559. Des éléments gothiques furent ajoutés dès la fin du XIIIe siècle ; la cathédrale entièrement rénovée fut consacrée en 1659. Charles Quint y fut baptisé en 1500. À ne pas manquer : la chaire rococo, le maître-autel baroque, les stalles avec trompe-l'œil époustouflants, des peintures de Rubens et Joos van Wassenhover. Surtout : 'L'Agneau Mystique' des frères Van Eyck, l'un des tableaux les plus célèbres du monde — et l'histoire fascinante du panneau volé ('les Juges Équitables') en 1934.`,
+      beer: ``,
+      food: ``,
+    },
+    es: {
+      name: `Catedral de San Bavón`,
+      desc: `La predecesora 'Sint-Janskerk' existía ya en el siglo X. La catedral actual solo obtuvo ese rango al fundarse la diócesis de Gante en 1559. Se añadieron elementos góticos desde finales del siglo XIII; la catedral, totalmente renovada, se consagró en 1659. Carlos V fue bautizado aquí en 1500. No te pierdas: el púlpito rococó, el altar mayor barroco, la sillería del coro con asombrosos trampantojos, cuadros de Rubens y Joos van Wassenhover. Sobre todo: 'El Cordero Místico' de los hermanos Van Eyck, uno de los cuadros más famosos del mundo — y la apasionante historia del panel robado ('los Jueces Justos') en 1934.`,
+      beer: ``,
+      food: ``,
+    },
+    de: {
+      name: `Sankt-Bavo-Kathedrale`,
+      desc: `Die Vorgängerin 'Sint-Janskerk' existierte bereits im 10. Jahrhundert. Die heutige Kathedrale erhielt diesen Rang erst mit Gründung des Bistums Gent 1559. Ab dem späten 13. Jahrhundert kamen gotische Elemente hinzu; die völlig erneuerte Kathedrale wurde 1659 geweiht. Karl V. wurde hier 1500 getauft. Nicht verpassen: die Rokoko-Kanzel, der barocke Hochaltar, das Chorgestühl mit verblüffenden Trompe-l'œil, Gemälde von Rubens und Joos van Wassenhover. Vor allem: 'Das Genter Altarbild' der Brüder Van Eyck, eines der berühmtesten Gemälde der Welt — und die fesselnde Geschichte einer gestohlenen Tafel ('die Gerechten Richter') 1934.`,
       beer: ``,
       food: ``,
     },
@@ -1096,6 +1144,18 @@ const TOUR_STOPS = [
       beer: ``,
       food: ``,
     },
+    es: {
+      name: `Palacio Episcopal`,
+      desc: `La construcción del Palacio Episcopal comenzó en 1843 y se completó apenas dos años después. Sobre la puerta principal está el escudo de su constructor, el obispo Louis Joseph Delbecque. Cruza el cercano Wijdenaardbrug ('amplio embarcadero') — desde finales de 2018 el agua del Bajo Escalda vuelve a fluir bajo este puente hacia Portus Ganda, donde antaño se unían el Leie y el Escalda.`,
+      beer: ``,
+      food: ``,
+    },
+    de: {
+      name: `Bischofspalast`,
+      desc: `Der Bau des Bischofspalastes begann 1843 und war schon zwei Jahre später vollendet. Über dem Haupteingang prangt das Wappen seines Bauherrn, Bischof Louis Joseph Delbecque. Überquere den nahen Wijdenaardbrug ('breiter Anlegeplatz') — seit Ende 2018 fließt das Wasser der Unterschelde wieder unter dieser Brücke hindurch Richtung Portus Ganda, wo einst Leie und Schelde zusammenflossen.`,
+      beer: ``,
+      food: ``,
+    },
   },
   {
     id: 36, lat: 51.0499, lon: 3.7219, extension: false,
@@ -1114,6 +1174,18 @@ const TOUR_STOPS = [
     fr: {
       name: `Geraard de Duivelsteen`,
       desc: `Malgré le nom, aucun diable ne vécut jamais dans cette 'Steen' (bâtiment en pierre). Elle doit son nom à Gérard de Gand, un personnage douteux né vers 1210 qui possédait cet édifice au XIIIe siècle. Il se faisait appeler 'le chevalier Gérard de Gand, surnommé le Diable'. La légende dit qu'il tua son père, mit son fils à mort à coups de pied, et s'occupait de 'débauches, honte et horreurs'. Après sa mort, l'édifice passa à la ville : il fut successivement arsenal, école, monastère, prison, maison de correction et asile.`,
+      beer: ``,
+      food: ``,
+    },
+    es: {
+      name: `Geraard de Duivelsteen`,
+      desc: `A pesar del nombre, ningún diablo vivió jamás en este 'Steen' (edificio de piedra). Debe su nombre a Geraard de Gante, un personaje turbio nacido hacia 1210 que poseyó el edificio en el siglo XIII. Se hacía llamar 'el caballero Geraard de Gante, apodado el Diablo'. La leyenda dice que mató a su padre, mató a patadas a su hijo y se entregaba a 'libertinaje, vergüenza y horrores'. Tras su muerte el edificio pasó a la ciudad: desde entonces ha sido arsenal, escuela, monasterio, prisión, casa de corrección y manicomio.`,
+      beer: ``,
+      food: ``,
+    },
+    de: {
+      name: `Geraard de Duivelsteen`,
+      desc: `Trotz des Namens lebte nie ein Teufel in diesem 'Steen' (Steingebäude). Es verdankt seinen Namen Geraard von Gent, einem zwielichtigen Mann, geboren um 1210, dem das Gebäude im 13. Jahrhundert gehörte. Er nannte sich 'Ritter Geraard von Gent, genannt der Teufel'. Der Legende nach tötete er seinen Vater, trat seinen Sohn zu Tode und gab sich 'Ausschweifungen, Schande und Greueln' hin. Nach seinem Tod ging das Gebäude an die Stadt: Seither war es Arsenal, Schule, Kloster, Gefängnis, Zuchthaus und Irrenhaus.`,
       beer: ``,
       food: ``,
     },
