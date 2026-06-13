@@ -814,6 +814,18 @@ const TOUR_STOPS = [
       beer: `'t Einde der beschaving – Sint-Veerleplein 8. Waterhuis aan de Bierkant – Groentenmarkt 9.`,
       food: ``,
     },
+    es: {
+      name: `Veerleplein`,
+      desc: `En la esquina se alza la histórica puerta de la Antigua Lonja del Pescado. Neptuno vigila el Leie (mujer) y el Escalda (hombre). La oficina de turismo está en el edificio. La larga mesa blanca es una creación única para descubrir Gante. Las farolas de la Sint-Veerleplein son una obra de Alberto Garutti — cada vez que nace un bebé en un hospital de Gante, los padres pueden pulsar un botón y las farolas se iluminan brevemente. Esta plaza fue antaño el lugar donde se quemaba a las brujas en la hoguera en los siglos XVI–XVII.`,
+      beer: `'t Einde der beschaving – Sint-Veerleplein 8. Waterhuis aan de Bierkant – Groentenmarkt 9.`,
+      food: ``,
+    },
+    de: {
+      name: `Veerleplein`,
+      desc: `In der Ecke steht das historische Tor zur Alten Fischhalle. Neptun überwacht die Leie (Frau) und die Schelde (Mann). Das Touristenbüro befindet sich im Gebäude. Der lange weiße Tisch ist eine einzigartige Kreation, um Gent zu entdecken. Die Laternen am Sint-Veerleplein sind ein Kunstwerk von Alberto Garutti — jedes Mal, wenn in einem Genter Krankenhaus ein Baby geboren wird, können die Eltern einen Knopf drücken, und die Laternen leuchten kurz auf. Auf diesem Platz wurden im 16.–17. Jahrhundert einst Hexen auf dem Scheiterhaufen verbrannt.`,
+      beer: `'t Einde der beschaving – Sint-Veerleplein 8. Waterhuis aan de Bierkant – Groentenmarkt 9.`,
+      food: ``,
+    },
   },
   {
     id: 26, lat: 51.0568, lon: 3.7214, extension: false,
@@ -832,6 +844,18 @@ const TOUR_STOPS = [
     fr: {
       name: `Grande Boucherie & Groentemarkt`,
       desc: `Une halle médiévale du début du XVe siècle proposant près de 200 produits régionaux de Flandre orientale — à consommer sur place. Au-dessus, les fameux 'Gandahammen'. À côté : 't Galgenhuis, le plus petit café de Gand — on y vendait des abats à ceux qui n'avaient pas les moyens d'acheter de la viande ; 'galg' (potence) rappelle les condamnés qui attendaient à la façade arrière. Le Groentemarkt est réputé pour ses stands de cuberdons ('Neuzekes') et la moutarderie historique Vve Tierenteyn-Verlent ; aussi siège de la plus ancienne boulangerie de Gand Oud Huis Himschoot et du Centre Artisanal Belge BAM.`,
+      beer: `'t Galgenhuis – Groentenmarkt 5.`,
+      food: ``,
+    },
+    es: {
+      name: `Groot Vleeshuis & Groentemarkt`,
+      desc: `Una nave medieval de principios del siglo XV donde encuentras casi 200 productos y especialidades regionales de Flandes Oriental — y puedes consumirlos allí mismo. Sobre tu cabeza cuelgan los famosos 'Gandahammen' (jamones) de Gante. Al lado: 't Galgenhuis, el café más pequeño de Gante — aquí se vendían vísceras a quienes no podían permitirse carne; la 'galg' (horca) del nombre alude a los condenados que esperaban en la fachada trasera. El Groentemarkt es famoso por los puestos de cuberdones ('Neuzekes') y la histórica mostacería Vve Tierenteyn-Verlent; también acoge la panadería más antigua de Gante, Oud Huis Himschoot, y el Centro Artesanal Belga BAM.`,
+      beer: `'t Galgenhuis – Groentenmarkt 5.`,
+      food: ``,
+    },
+    de: {
+      name: `Groot Vleeshuis & Groentemarkt`,
+      desc: `Eine mittelalterliche Halle vom Beginn des 15. Jahrhunderts, in der du fast 200 ostflämische Regionalprodukte und Spezialitäten findest — und vor Ort verzehren kannst. Über deinem Kopf hängen die berühmten Genter 'Gandahammen' (Schinken). Nebenan: 't Galgenhuis, das kleinste Café Gents — hier wurden Innereien an jene verkauft, die sich kein Fleisch leisten konnten; der 'galg' (Galgen) im Namen verweist auf Verurteilte, die an der Rückfassade warteten. Der Groentemarkt ist berühmt für seine Cuberdon-Stände ('Neuzekes') und das historische Senfhaus Vve Tierenteyn-Verlent; auch die älteste Bäckerei Gents, Oud Huis Himschoot, und das Belgian Artisan Centre BAM sind hier.`,
       beer: `'t Galgenhuis – Groentenmarkt 5.`,
       food: ``,
     },
@@ -856,6 +880,18 @@ const TOUR_STOPS = [
       beer: `Gitane – Meerseniersstraat 9. 't Kanon – Meerseniersstraat 17. Barrazza – Hoefslagstraatje 6.`,
       food: ``,
     },
+    es: {
+      name: `Dulle Griet`,
+      desc: `La Dulle Griet ('Mujer Furiosa') de hierro mide 5 metros y pesa 12.500 kg. Pintada de rojo buey, lo que le valió el apodo de 'gran diablo rojo'. Poco se sabe de esta bombarda (un tipo de cañón). Se dice que el duque Felipe el Bueno la mandó fabricar hacia 1430 y que pudo usarse en el asedio de Oudenaarde en 1452 — aunque otras fuentes dicen que nunca disparó un solo proyectil. La abertura acabó sellándose porque se usaba con demasiada frecuencia para tirar basura o como lugar para dormir de estudiantes borrachos.`,
+      beer: `Gitane – Meerseniersstraat 9. 't Kanon – Meerseniersstraat 17. Barrazza – Hoefslagstraatje 6.`,
+      food: ``,
+    },
+    de: {
+      name: `Dulle Griet`,
+      desc: `Die eiserne Dulle Griet ('Tolle Grete') ist 5 Meter lang und wiegt 12.500 kg. Ochsenrot gestrichen, was ihr den Spitznamen 'großer roter Teufel' einbrachte. Über diese Bombarde (eine Art Kanone) ist wenig bekannt. Es heißt, Herzog Philipp der Gute habe sie um 1430 anfertigen lassen, und sie sei vielleicht bei der Belagerung von Oudenaarde 1452 eingesetzt worden — andere Quellen sagen, sie habe nie ein einziges Geschoss abgefeuert. Die Öffnung wurde schließlich verschlossen, weil sie zu oft für Müll oder als Schlafplatz betrunkener Studenten genutzt wurde.`,
+      beer: `Gitane – Meerseniersstraat 9. 't Kanon – Meerseniersstraat 17. Barrazza – Hoefslagstraatje 6.`,
+      food: ``,
+    },
   },
   {
     id: 28, lat: 51.0574, lon: 3.7259, extension: false,
@@ -875,6 +911,18 @@ const TOUR_STOPS = [
       name: `Vrijdagmarkt`,
       desc: `La statue de Jacob Van Artevelde domine la place. Au XIVe siècle, ce Gantois négocia un accord commercial avec Édouard III d'Angleterre pour maintenir l'industrie textile gantoise. Il fut ensuite assassiné par des tisserands. Il pointe vers l'Angleterre — un clin d'œil à ses liens avec le roi Édouard III. Un marché hebdomadaire se tient ici tous les vendredis depuis 1199. Le Toreken (XVe s.) était la guilde des tanneurs ; il abrite aujourd'hui le Centre de Poésie de Flandre. Une statue du chanteur populaire Karel Waeri se dresse à proximité.`,
       beer: `De Dulle Griet – Vrijdagmarkt : sélection de 500+ bières régionales belges. Commandez une 'kwak' dans un verre spécial — votre chaussure en caution! De Afsnis – café traditionnel, apparu dans le film 'Belgica'.`,
+      food: ``,
+    },
+    es: {
+      name: `Vrijdagmarkt`,
+      desc: `La estatua de Jacob Van Artevelde domina la plaza desde lo alto. En la primera mitad del siglo XIV este estadista nacido en Gante negoció un acuerdo comercial con Eduardo III de Inglaterra que mantuvo viva la industria textil gantesa. Más tarde fue asesinado por los tejedores. Señala hacia Inglaterra — un guiño a sus lazos con el rey Eduardo III. Desde 1199 se celebra aquí un mercado semanal cada viernes. El Toreken (siglo XV) fue la casa gremial de los curtidores; hoy alberga el Centro de Poesía de Flandes. Cerca hay una estatua del cantante popular Karel Waeri, que cantaba sobre la pobreza de los obreros.`,
+      beer: `De Dulle Griet – Vrijdagmarkt: amplia selección de más de 500 cervezas regionales belgas. ¡Pide una 'kwak' en un vaso especial y deja tu zapato como fianza! De Afsnis – sólido café tradicional, que aparece en la película 'Belgica'.`,
+      food: ``,
+    },
+    de: {
+      name: `Vrijdagmarkt`,
+      desc: `Die Statue von Jacob Van Artevelde überblickt den Platz von oben. In der ersten Hälfte des 14. Jahrhunderts handelte dieser in Gent geborene Staatsmann ein Handelsabkommen mit Eduard III. von England aus, das die Genter Textilindustrie am Leben hielt. Später wurde er von Webern ermordet. Er weist nach England — ein Verweis auf seine Verbindung zu König Eduard III. Seit 1199 findet hier jeden Freitag ein Wochenmarkt statt. Das Toreken (15. Jh.) war das Gildehaus der Gerber; heute beherbergt es das Poesiezentrum für Flandern. In der Nähe steht eine Statue des Volkssängers Karel Waeri, der über die Armut der Arbeiter sang.`,
+      beer: `De Dulle Griet – Vrijdagmarkt: große Auswahl von über 500 belgischen Regionalbieren. Bestell ein 'Kwak' im Spezialglas und hinterlege deinen Schuh als Pfand! De Afsnis – solides traditionelles Café, zu sehen im Film 'Belgica'.`,
       food: ``,
     },
   },
@@ -898,6 +946,18 @@ const TOUR_STOPS = [
       beer: `Gruut Stadsbrouwerij – café-brasserie sur place.`,
       food: ``,
     },
+    es: {
+      name: `Gentse Gruut (Cervecería Urbana)`,
+      desc: `Fundada en 2009 por Annick De Splenter, que se crió en el mundo cervecero. Hay cinco variedades de cerveza, cuatro de ellas elaboradas con hierbas en lugar de lúpulo — reviviendo una tradición medieval. Tanto el café como la cervecería (visita gratuita) están bajo un mismo techo.`,
+      beer: `Gruut Stadsbrouwerij – café-cervecería en el propio local.`,
+      food: ``,
+    },
+    de: {
+      name: `Gentse Gruut (Stadtbrauerei)`,
+      desc: `Gegründet 2009 von Annick De Splenter, die in der Brauwelt aufwuchs. Es gibt fünf Biersorten, vier davon mit Kräutern statt Hopfen gebraut — eine wiederbelebte mittelalterliche Tradition. Café und Brauerei (kostenlos zu besichtigen) sind unter einem Dach.`,
+      beer: `Gruut Stadsbrouwerij – Brauerei-Café vor Ort.`,
+      food: ``,
+    },
   },
   {
     id: 30, lat: 51.0558, lon: 3.7249, extension: false,
@@ -916,6 +976,18 @@ const TOUR_STOPS = [
     fr: {
       name: `Église Saint-Jacques`,
       desc: `Vers le milieu du XIIe siècle, l'actuelle église Saint-Jacques a été construite. L'une des plus belles œuvres est un tabernacle Renaissance en marbre noir et cuivre. L'église n'est ouverte que les vendredi et samedi matin. Un marché aux puces s'y tient chaque vendredi, samedi et dimanche matin. Chaque juillet pendant dix jours, Sint-Jacobs est le cœur vibrant des Gentse Feesten.`,
+      beer: `Trollekelder – Walter De Buckplein 4. Trefpunt – Walter De Buckplein 5.`,
+      food: ``,
+    },
+    es: {
+      name: `Iglesia de Santiago`,
+      desc: `Hacia mediados del siglo XII se inició la actual iglesia de Santiago. Una de sus obras más bellas es un tabernáculo renacentista de mármol negro y cobre. La iglesia solo abre los viernes y sábados por la mañana. Cada viernes, sábado y domingo por la mañana hay un mercadillo junto a la iglesia. Cada julio, durante diez días, estalla aquí la gran fiesta popular de Gante: Sint-Jacobs es el vibrante núcleo de las Gentse Feesten.`,
+      beer: `Trollekelder – Walter De Buckplein 4. Trefpunt – Walter De Buckplein 5.`,
+      food: ``,
+    },
+    de: {
+      name: `Sankt-Jakobs-Kirche`,
+      desc: `Um die Mitte des 12. Jahrhunderts wurde mit der heutigen Sankt-Jakobs-Kirche begonnen. Eines der schönsten Kunstwerke ist ein Renaissance-Tabernakel aus schwarzem Marmor und Kupfer. Die Kirche ist nur freitags und samstags vormittags geöffnet. Jeden Freitag, Samstag und Sonntag findet morgens ein Flohmarkt an der Kirche statt. Jeden Juli zehn Tage lang bricht hier Gents großes Volksfest los: Sint-Jacobs ist das pulsierende Herz der Gentse Feesten.`,
       beer: `Trollekelder – Walter De Buckplein 4. Trefpunt – Walter De Buckplein 5.`,
       food: ``,
     },
