@@ -57,15 +57,15 @@ function applyFont(fKey) {
 // ─── NAV ─────────────────────────────────────────────────────
 const NAV_ITEMS = [
   { k: "welcome",      icon: "home",    tKey: "nav.welcome" },
-  { k: "apartment",    icon: "key",     tKey: "nav.apartment" },
   { k: "wifi",         icon: "wifi",    tKey: "nav.wifi" },
-  { k: "ghent",        icon: "compass", tKey: "nav.ghent" },
+  { k: "apartment",    icon: "key",     tKey: "nav.apartment" },
   { k: "neighborhood", icon: "map",     tKey: "nav.neighborhood" },
+  { k: "ghent",        icon: "compass", tKey: "nav.ghent" },
+  { k: "faq",          icon: "spark",   tKey: "nav.faq" },
+  { k: "walk",         icon: "pin",     tKey: "nav.walk" },
   { k: "tours",        icon: "star",    tKey: "nav.tours" },
   { k: "guestbook",    icon: "book",    tKey: "nav.guestbook" },
-  { k: "faq",          icon: "spark",   tKey: "nav.faq" },
   { k: "contact",      icon: "mail",    tKey: "nav.contact" },
-  { k: "walk",         icon: "pin",     tKey: "nav.walk" },
 ];
 
 const LANGS = [

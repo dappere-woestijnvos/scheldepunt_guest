@@ -173,7 +173,13 @@ const APARTMENT_RAW = {
       "El apartamento tiene dos dormitorios, cada uno con su propio baño. Hay un amplio salón, una cocina totalmente equipada y una terraza con vistas al Escalda. Incluye parking subterráneo cerrado — también se pueden guardar bicicletas en el garaje. Se proporcionan toallas y ropa de cama.",
       "Die Wohnung hat zwei Schlafzimmer mit jeweils eigenem Bad. Es gibt ein geräumiges Wohnzimmer, eine voll ausgestattete Küche und eine Terrasse mit Blick auf die Schelde. Ein geschlossener Tiefgaragenplatz ist inbegriffen — auch Fahrräder können in der Garage abgestellt werden. Handtücher und Bettwäsche sind vorhanden.",
     ),
-    heating: "……",
+    heating: T(
+      "The thermostat for the heating is in the living room — turn the dial to set the temperature. The bedrooms also have air conditioning; the remote is in each room. Please keep windows closed while the heating or AC is on, and switch both off when you head out for the day. Just ask us if anything is unclear.",
+      "De thermostaat voor de verwarming bevindt zich in de woonkamer — draai aan de knop om de temperatuur in te stellen. De slaapkamers hebben ook airconditioning; de afstandsbediening ligt in de kamer. Hou de ramen gesloten terwijl de verwarming of airco aanstaat, en zet beide uit wanneer je voor de dag vertrekt. Vraag het ons gerust als iets onduidelijk is.",
+      "Le thermostat du chauffage se trouve dans le salon — tournez le bouton pour régler la température. Les chambres disposent aussi de la climatisation ; la télécommande est dans chaque pièce. Merci de garder les fenêtres fermées lorsque le chauffage ou la climatisation fonctionne, et d'éteindre les deux en partant pour la journée. N'hésitez pas à nous demander si besoin.",
+      "El termostato de la calefacción está en el salón — gira la rueda para ajustar la temperatura. Los dormitorios también tienen aire acondicionado; el mando está en cada habitación. Por favor, mantén las ventanas cerradas mientras la calefacción o el aire estén encendidos, y apaga ambos al salir durante el día. Pregúntanos si algo no queda claro.",
+      "Der Thermostat für die Heizung befindet sich im Wohnzimmer — dreht am Regler, um die Temperatur einzustellen. Die Schlafzimmer haben außerdem eine Klimaanlage; die Fernbedienung liegt im jeweiligen Zimmer. Bitte haltet die Fenster geschlossen, während Heizung oder Klimaanlage laufen, und schaltet beides aus, wenn ihr für den Tag aus dem Haus geht. Fragt uns einfach, wenn etwas unklar ist.",
+    ),
     trash: T(
       "Please sort your waste. Yellow bag (PMD): plastic bottles, metal cans, and drink cartons. Blue bin: paper and cardboard. Glass container (in the building entrance area): glass bottles and jars. Black bag: residual/non-recyclable waste. Bags are in the kitchen cabinet under the sink. Ask if you have any questions.",
       "Sorteer het afval. Gele zak (PMD): plastic flessen, metalen blikjes en drankkartons. Blauwe bak: papier en karton. Glasbak (bij de inkom van het gebouw): glazen flessen en bokalen. Zwarte zak: restafval. De zakken liggen in de keukenkast onder de gootsteen. Vraag het gerust als je vragen hebt.",
@@ -314,14 +320,6 @@ const APARTMENT_RAW = {
   },
 
   neighborhood: [
-    { kind: T("Bakery", "Bakkerij", "Boulangerie", "Panadería", "Bäckerei"), name: "Bakkerij Mertens", dist: "750 m",
-      note: T(
-        "François Benardstraat 4. Walk past the Kinépolis crossroads, turn right.",
-        "François Benardstraat 4. Loop voorbij het kruispunt aan de Kinépolis en sla rechtsaf.",
-        "François Benardstraat 4. Dépassez le carrefour du Kinépolis et tournez à droite.",
-        "François Benardstraat 4. Pasa el cruce del Kinépolis y gira a la derecha.",
-        "François Benardstraat 4. Geht über die Kreuzung am Kinépolis hinaus und biegt rechts ab.",
-      ), mapsUrl: mapsUrl("Bakkerij Mertens, François Benardstraat 4, Gent") },
     { kind: T("Bakery", "Bakkerij", "Boulangerie", "Panadería", "Bäckerei"), name: "Smørbrod", dist: "1.4 km",
       note: T(
         "Guldenspoorstraat 29. Scandinavian-inspired open sandwiches and seasonal bakes.",
@@ -488,14 +486,23 @@ const APARTMENT_RAW = {
         "Guías oficiales de Gante. Tours privados y de grupo, itinerarios a medida. www.gentsegidsen.be",
         "Offizielle lizenzierte Gästeführer von Gent. Privat- und Gruppentouren, maßgeschneiderte Routen. www.gentsegidsen.be",
       ) },
+    { name: T("Walking in Ghent (Guided Tours)", "Walking in Gent (rondleidingen)", "Walking in Gent (visites guidées)", "Walking in Gent (visitas guiadas)", "Walking in Gent (Führungen)"),
+      duration: T("Varies", "Variabel", "Variable", "Variable", "Variabel"), price: T("Varies", "Variabel", "Variable", "Variable", "Variabel"),
+      note: T(
+        "Themed guided walking tours of Ghent by local guides. Book online: www.walkingent.be/rondleidingen",
+        "Thematische geleide stadswandelingen door lokale gidsen. Boek online: www.walkingent.be/rondleidingen",
+        "Visites à pied thématiques de Gand par des guides locaux. Réservez en ligne : www.walkingent.be/rondleidingen",
+        "Visitas a pie temáticas por Gante con guías locales. Reserva en línea: www.walkingent.be/rondleidingen",
+        "Thematische geführte Stadtrundgänge durch lokale Guides. Online buchen: www.walkingent.be/rondleidingen",
+      ) },
   ],
 
   toursHostNote: T(
-    "For any tips or help booking activities, just ask via the contact page or WhatsApp. The free walking tour is genuinely the best introduction to the city. For deeper dives, the licensed Gentse Gidsen offer wonderful private tours.",
-    "Voor tips of hulp bij het boeken van activiteiten, vraag het gerust via de contactpagina of WhatsApp. De gratis stadswandeling is echt de beste kennismaking met de stad. Wil je dieper gaan, dan bieden de erkende Gentse Gidsen prachtige privétours.",
-    "Pour des conseils ou de l'aide à réserver des activités, demandez via la page de contact ou WhatsApp. La visite à pied gratuite est vraiment la meilleure introduction à la ville. Pour aller plus loin, les Gentse Gidsen agréés proposent de superbes visites privées.",
-    "Para consejos o ayuda con la reserva de actividades, pregúntanos por la página de contacto o WhatsApp. El tour a pie gratuito es realmente la mejor introducción a la ciudad. Para profundizar, los Gentse Gidsen oficiales ofrecen magníficos tours privados.",
-    "Für Tipps oder Hilfe bei der Buchung von Aktivitäten fragt einfach über die Kontaktseite oder WhatsApp. Die kostenlose Stadtführung ist wirklich die beste Einführung in die Stadt. Für mehr Tiefe bieten die lizenzierten Gentse Gidsen wunderbare Privattouren.",
+    "Our own self-guided City Walk (see the Walk tab) is the loveliest way to discover Ghent at your own pace. The free walking tour is also a great introduction to the city, and for deeper dives the licensed Gentse Gidsen offer wonderful private tours.",
+    "Onze eigen zelfgeleide Stadswandeling (zie het tabblad Wandeling) is de fijnste manier om Gent op je eigen tempo te ontdekken. De gratis stadswandeling is ook een mooie kennismaking met de stad, en wil je dieper gaan, dan bieden de erkende Gentse Gidsen prachtige privétours.",
+    "Notre propre Promenade en ville autoguidée (voir l'onglet Balade) est la plus belle façon de découvrir Gand à votre rythme. La visite à pied gratuite est aussi une belle introduction, et pour aller plus loin, les Gentse Gidsen agréés proposent de superbes visites privées.",
+    "Nuestro propio Paseo autoguiado por la ciudad (ver la pestaña Paseo) es la forma más bonita de descubrir Gante a tu ritmo. El tour a pie gratuito también es una buena introducción, y para profundizar, los Gentse Gidsen oficiales ofrecen magníficos tours privados.",
+    "Unser eigener selbstgeführter Stadtrundgang (siehe Reiter Rundgang) ist die schönste Art, Gent in eigenem Tempo zu entdecken. Die kostenlose Stadtführung ist ebenfalls eine gute Einführung, und für mehr Tiefe bieten die lizenzierten Gentse Gidsen wunderbare Privattouren.",
   ),
 
   transport: {
@@ -507,11 +514,11 @@ const APARTMENT_RAW = {
       "Geht über Ter Plaeten zur Plaetenbrug. Nehmt die Treppe nach oben und überquert am Zebrastreifen. Auf der anderen Seite gibt es zwei Bushaltestellen an der Tentoonstellingslaan:\n• Rechte Haltestelle (Richtung Zentrum): Busse 33, 55, 70, 76, 78\n• Linke Haltestelle (Richtung Bahnhof Sint-Pieters): Busse 34, 55, 70, 71, 76, 78\nBusse fahren alle 7–10 Minuten.",
     ),
     dayTicket: T(
-      "€7.50 (12+ years). Buy at a ticket machine, Lijnwinkel store, De Lijn app, or text DLD to 4884 (+€0.15 operator charge). Valid 24 hours. Children 6–11 years: €4.",
-      "€7,50 (12+ jaar). Koop aan een ticketautomaat, in een Lijnwinkel, via de De Lijn-app of sms DLD naar 4884 (+€0,15 operatorkosten). 24 uur geldig. Kinderen 6–11 jaar: €4.",
-      "7,50 € (12 ans et +). Achetez à un distributeur, en Lijnwinkel, via l'app De Lijn ou par SMS DLD au 4884 (+0,15 € de frais d'opérateur). Valable 24 heures. Enfants de 6 à 11 ans : 4 €.",
-      "7,50 € (mayores de 12 años). Cómpralo en una máquina expendedora, en una tienda Lijnwinkel, en la app De Lijn o enviando DLD al 4884 (+0,15 € de gastos de operador). Válido 24 horas. Niños de 6 a 11 años: 4 €.",
-      "7,50 € (ab 12 Jahren). Erhältlich am Ticketautomaten, im Lijnwinkel, über die De-Lijn-App oder per SMS DLD an 4884 (+0,15 € Betreibergebühr). 24 Stunden gültig. Kinder von 6–11 Jahren: 4 €.",
+      "Buy a ticket on the De Lijn website (delijn.be/nl/tickets), via the De Lijn app, or by texting DLD to 4884. Plan your route at delijn.be/nl/routeplanner.",
+      "Koop een ticket via de website (delijn.be/nl/tickets), de De Lijn-app of sms DLD naar 4884. Routeplanner: delijn.be/nl/routeplanner.",
+      "Achetez un ticket sur le site De Lijn (delijn.be/nl/tickets), via l'app De Lijn ou par SMS DLD au 4884. Itinéraires : delijn.be/nl/routeplanner.",
+      "Compra un billete en la web de De Lijn (delijn.be/nl/tickets), en la app De Lijn o enviando DLD al 4884. Planifica tu ruta en delijn.be/nl/routeplanner.",
+      "Kauft ein Ticket auf der De-Lijn-Website (delijn.be/nl/tickets), über die De-Lijn-App oder per SMS DLD an 4884. Routenplaner: delijn.be/nl/routeplanner.",
     ),
   },
 
@@ -580,11 +587,11 @@ const APARTMENT_RAW = {
     {
       q: T("How do I get to the city centre?", "Hoe geraak ik in het stadscentrum?", "Comment rejoindre le centre-ville ?", "¿Cómo llego al centro de la ciudad?", "Wie komme ich ins Stadtzentrum?"),
       a: T(
-        "Walk via Ter Plaeten to the Plaetenbrug, take the stairs up and cross at the zebra crossing. Buses on Tentoonstellingslaan: towards city centre (right stop): 33, 55, 70, 76, 78. Towards station Sint-Pieters (left stop): 34, 55, 70, 71, 76, 78. Buses run every 7–10 minutes. A day ticket costs €7.50.",
-        "Loop via Ter Plaeten naar de Plaetenbrug, neem de trap omhoog en steek over aan het zebrapad. Bussen op de Tentoonstellingslaan: richting centrum (rechtse halte): 33, 55, 70, 76, 78. Richting station Sint-Pieters (linkse halte): 34, 55, 70, 71, 76, 78. Bussen rijden om de 7–10 minuten. Een dagticket kost €7,50.",
-        "Rejoignez le Plaetenbrug via Ter Plaeten, montez les escaliers et traversez au passage piéton. Bus sur la Tentoonstellingslaan : vers le centre-ville (arrêt de droite) : 33, 55, 70, 76, 78. Vers la gare Sint-Pieters (arrêt de gauche) : 34, 55, 70, 71, 76, 78. Les bus passent toutes les 7 à 10 minutes. Un ticket journalier coûte 7,50 €.",
-        "Camina por Ter Plaeten hasta el Plaetenbrug, sube las escaleras y cruza por el paso de cebra. Autobuses en Tentoonstellingslaan: hacia el centro (parada derecha): 33, 55, 70, 76, 78. Hacia la estación Sint-Pieters (parada izquierda): 34, 55, 70, 71, 76, 78. Los autobuses pasan cada 7–10 minutos. Un billete de día cuesta 7,50 €.",
-        "Geht über Ter Plaeten zur Plaetenbrug, nehmt die Treppe nach oben und überquert am Zebrastreifen. Busse an der Tentoonstellingslaan: Richtung Zentrum (rechte Haltestelle): 33, 55, 70, 76, 78. Richtung Bahnhof Sint-Pieters (linke Haltestelle): 34, 55, 70, 71, 76, 78. Busse fahren alle 7–10 Minuten. Eine Tageskarte kostet 7,50 €.",
+        "Walk via Ter Plaeten to the Plaetenbrug, take the stairs up and cross at the zebra crossing. Buses on Tentoonstellingslaan: towards city centre (right stop): 33, 55, 70, 76, 78. Towards station Sint-Pieters (left stop): 34, 55, 70, 71, 76, 78. Buses run every 7–10 minutes. Buy a ticket via the De Lijn website, the app, or by texting DLD to 4884.",
+        "Loop via Ter Plaeten naar de Plaetenbrug, neem de trap omhoog en steek over aan het zebrapad. Bussen op de Tentoonstellingslaan: richting centrum (rechtse halte): 33, 55, 70, 76, 78. Richting station Sint-Pieters (linkse halte): 34, 55, 70, 71, 76, 78. Bussen rijden om de 7–10 minuten. Koop een ticket via de website van De Lijn, de app of sms DLD naar 4884.",
+        "Rejoignez le Plaetenbrug via Ter Plaeten, montez les escaliers et traversez au passage piéton. Bus sur la Tentoonstellingslaan : vers le centre-ville (arrêt de droite) : 33, 55, 70, 76, 78. Vers la gare Sint-Pieters (arrêt de gauche) : 34, 55, 70, 71, 76, 78. Les bus passent toutes les 7 à 10 minutes. Achetez un ticket via le site De Lijn, l'app ou par SMS DLD au 4884.",
+        "Camina por Ter Plaeten hasta el Plaetenbrug, sube las escaleras y cruza por el paso de cebra. Autobuses en Tentoonstellingslaan: hacia el centro (parada derecha): 33, 55, 70, 76, 78. Hacia la estación Sint-Pieters (parada izquierda): 34, 55, 70, 71, 76, 78. Los autobuses pasan cada 7–10 minutos. Compra un billete en la web de De Lijn, la app o enviando DLD al 4884.",
+        "Geht über Ter Plaeten zur Plaetenbrug, nehmt die Treppe nach oben und überquert am Zebrastreifen. Busse an der Tentoonstellingslaan: Richtung Zentrum (rechte Haltestelle): 33, 55, 70, 76, 78. Richtung Bahnhof Sint-Pieters (linke Haltestelle): 34, 55, 70, 71, 76, 78. Busse fahren alle 7–10 Minuten. Kauft ein Ticket über die De-Lijn-Website, die App oder per SMS DLD an 4884.",
       ),
     },
     {

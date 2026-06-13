@@ -56,9 +56,6 @@ const WelcomeSection = ({ go }) => {
       </div>
 
       <div style={{ marginTop: 16 }}>
-        <div className="serif-i" style={{ fontSize: 22, color: "var(--terra-deep)", lineHeight: 1 }}>
-          {t('welcome.to')}
-        </div>
         <h1 className="serif" style={{
           fontSize: 76, lineHeight: 0.92, margin: "4px 0 0",
           letterSpacing: "-0.03em", color: "var(--ink)",
@@ -66,7 +63,7 @@ const WelcomeSection = ({ go }) => {
           Schelde<br/><span className="serif-i" style={{ color: "var(--moss)" }}>punt</span>
         </h1>
         <div style={{ marginTop: 10, fontSize: 14, color: "var(--ink-soft)", maxWidth: 320 }}>
-          {A.tagline} · {A.district}
+          Ter Plaeten 99 · {A.tagline}
         </div>
       </div>
 
@@ -119,8 +116,13 @@ const WelcomeSection = ({ go }) => {
         {[
           { k: "wifi",         t: t('welcome.link.wifi'),         sub: t('welcome.link.wifi_sub') },
           { k: "apartment",    t: t('welcome.link.apartment'),    sub: t('welcome.link.apartment_sub') },
-          { k: "ghent",        t: t('welcome.link.ghent'),        sub: t('welcome.link.ghent_sub') },
           { k: "neighborhood", t: t('welcome.link.neighborhood'), sub: t('welcome.link.neighborhood_sub') },
+          { k: "ghent",        t: t('welcome.link.ghent'),        sub: t('welcome.link.ghent_sub') },
+          { k: "faq",          t: t('welcome.link.faq'),          sub: t('welcome.link.faq_sub') },
+          { k: "walk",         t: t('welcome.link.walk'),         sub: t('welcome.link.walk_sub') },
+          { k: "tours",        t: t('welcome.link.tours'),        sub: t('welcome.link.tours_sub') },
+          { k: "guestbook",    t: t('welcome.link.guestbook'),    sub: t('welcome.link.guestbook_sub') },
+          { k: "contact",      t: t('welcome.link.contact'),      sub: t('welcome.link.contact_sub') },
         ].map((q) => (
           <button key={q.k} onClick={() => go(q.k)} style={{
             display: "flex", alignItems: "center", gap: 12, width: "100%",
@@ -143,15 +145,18 @@ const WelcomeSection = ({ go }) => {
 const ApartmentSection = () => {
   const A = window.APARTMENT;
   const t = window.t;
+  // Order requested by the owner: apartment → keys → parking → house rules →
+  // coffee → heating → trash → laundry → TV. House rules are a collapsible item.
   const items = [
     { k: "layout",  label: t('apartment.layout') },
+    { k: "keys",    label: t('apartment.keys') },
+    { k: "parking", label: t('apartment.parking') },
+    { k: "rules",   label: t('apartment.house_rules') },
+    { k: "coffee",  label: t('apartment.coffee') },
     { k: "heating", label: t('apartment.heating') },
     { k: "trash",   label: t('apartment.trash') },
-    { k: "keys",    label: t('apartment.keys') },
-    { k: "tv",      label: t('apartment.tv') },
     { k: "laundry", label: t('apartment.laundry') },
-    { k: "coffee",  label: t('apartment.coffee') },
-    { k: "parking", label: t('apartment.parking') },
+    { k: "tv",      label: t('apartment.tv') },
   ];
   const [open, setOpen] = useState("layout");
 
@@ -159,28 +164,14 @@ const ApartmentSection = () => {
     <Page>
       <PageHeader no={t('apartment.no')} eyebrow={t('apartment.eyebrow')} title={t('apartment.title')} italic={t('apartment.italic')} />
 
-      <ol style={{ margin: 0, padding: 0, listStyle: "none", borderTop: "1px solid var(--ink)" }}>
-        {A.rules.map((r, i) => (
-          <li key={i} style={{
-            display: "flex", gap: 14, padding: "14px 0",
-            borderBottom: "1px solid var(--rule)",
-          }}>
-            <span className="mono" style={{
-              fontSize: 11, color: "var(--terra)", paddingTop: 4, minWidth: 22,
-            }}>{String(i + 1).padStart(2, "0")}</span>
-            <span className="serif" style={{ fontSize: 18, lineHeight: 1.35 }}>{r}</span>
-          </li>
-        ))}
-      </ol>
-
-      <div style={{ marginTop: 36 }}>
+      <div style={{ marginTop: 4 }}>
         <div className="eyebrow" style={{ display: "flex", alignItems: "center", gap: 10 }}>
           <span>{t('apartment.how_things')}</span>
           <span style={{ flex: 1, height: 1, background: "var(--ink)" }} />
         </div>
       </div>
 
-      <div style={{ marginTop: 14 }}>
+      <div style={{ marginTop: 14, borderTop: "1px solid var(--rule)" }}>
         {items.map((it) => {
           const isOpen = open === it.k;
           return (
@@ -197,12 +188,26 @@ const ApartmentSection = () => {
                   transform: isOpen ? "rotate(45deg)" : "none",
                 }}>+</span>
               </button>
-              {isOpen && (
+              {isOpen && (it.k === "rules" ? (
+                <ol style={{ margin: "0 0 16px", padding: 0, listStyle: "none" }}>
+                  {A.rules.map((r, i) => (
+                    <li key={i} style={{
+                      display: "flex", gap: 14, padding: "10px 0",
+                      borderTop: i === 0 ? "none" : "1px solid var(--rule)",
+                    }}>
+                      <span className="mono" style={{
+                        fontSize: 11, color: "var(--terra)", paddingTop: 4, minWidth: 22,
+                      }}>{String(i + 1).padStart(2, "0")}</span>
+                      <span style={{ fontSize: 15, lineHeight: 1.5, color: "var(--ink-soft)" }}>{r}</span>
+                    </li>
+                  ))}
+                </ol>
+              ) : (
                 <div style={{
                   paddingBottom: 16, fontSize: 15, lineHeight: 1.55,
                   color: "var(--ink-soft)",
                 }}>{A.howThings[it.k]}</div>
-              )}
+              ))}
             </div>
           );
         })}
@@ -289,26 +294,24 @@ const WifiSection = () => {
       </div>
 
       <div style={{ marginTop: 28 }}>
-        <div className="eyebrow">{t('wifi.useful')}</div>
-        <div style={{ marginTop: 10, borderTop: "1px solid var(--rule)" }}>
-          {[
-            { l: t('wifi.hospital'), v: A.emergency.hospital },
-            { l: t('wifi.taxi'),     v: `${A.taxi.phone1}  ·  ${A.taxi.phone2}` },
-          ].map((r) => (
-            <div key={r.l} style={{ padding: "14px 0", borderBottom: "1px solid var(--rule)" }}>
-              <div style={{ fontSize: 12, color: "var(--ink-mute)" }}>{r.l}</div>
-              <div className="serif" style={{ fontSize: 16, marginTop: 2, lineHeight: 1.4 }}>{r.v}</div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div style={{ marginTop: 28 }}>
         <div className="eyebrow" style={{ display: "flex", gap: 10, alignItems: "center" }}>
           <span>{t('wifi.transport_title')}</span>
           <span style={{ flex: 1, height: 1, background: "var(--rule)" }} />
         </div>
-        <div style={{ marginTop: 12, padding: "16px", background: "var(--cream-soft)", border: "1px solid var(--rule)" }}>
+
+        {/* Taxi first */}
+        <a href={`tel:${(A.taxi.phone1 || '').replace(/\s/g, "")}`} style={{
+          display: "block", marginTop: 12, padding: "14px 16px",
+          background: "var(--paper)", border: "1px solid var(--rule)",
+          textDecoration: "none", color: "var(--ink)",
+        }}>
+          <div className="eyebrow" style={{ fontSize: 10 }}>{t('wifi.taxi')}</div>
+          <div className="serif" style={{ fontSize: 18, marginTop: 4 }}>{A.taxi.phone1}  ·  {A.taxi.phone2}</div>
+        </a>
+
+        {/* Bus + ticket */}
+        <div style={{ marginTop: 10, padding: "16px", background: "var(--cream-soft)", border: "1px solid var(--rule)" }}>
+          <div className="eyebrow" style={{ fontSize: 10, marginBottom: 8 }}>{t('wifi.bus')}</div>
           <div style={{ fontSize: 14, lineHeight: 1.65, color: "var(--ink-soft)", whiteSpace: "pre-line" }}>
             {A.transport.bus}
           </div>
@@ -369,23 +372,23 @@ const GhentSection = ({ visitorTips, setVisitorTips }) => {
         {A.ghent.bestTimes}
       </p>
 
-      {/* Tabs */}
-      <div style={{ display: "flex", marginTop: 22, borderBottom: "1px solid var(--ink)", overflowX: "auto" }}>
+      {/* Tabs — sized to fit on one line so visitor tips are visible without scrolling */}
+      <div style={{ display: "flex", marginTop: 22, borderBottom: "1px solid var(--ink)" }}>
         {[
           { k: "must",     l: t('ghent.must_see') },
           { k: "hidden",   l: t('ghent.hidden') },
           { k: "visitors", l: t('ghent.visitor_title') },
         ].map((tb) => (
           <button key={tb.k} onClick={() => setTab(tb.k)} style={{
-            flex: "0 0 auto", padding: "12px 14px", background: "transparent",
+            flex: 1, minWidth: 0, padding: "11px 4px", background: "transparent",
             border: "none",
             borderBottom: tab === tb.k ? "2px solid var(--terra)" : "2px solid transparent",
             marginBottom: -1,
-            fontFamily: "Geist, sans-serif", fontSize: 12,
-            letterSpacing: "0.06em", textTransform: "uppercase",
+            fontFamily: "Geist, sans-serif", fontSize: 10.5,
+            letterSpacing: "0.04em", textTransform: "uppercase",
             color: tab === tb.k ? "var(--ink)" : "var(--ink-mute)",
             fontWeight: tab === tb.k ? 600 : 500,
-            whiteSpace: "nowrap", cursor: "pointer",
+            lineHeight: 1.15, textAlign: "center", cursor: "pointer",
           }}>{tb.l}</button>
         ))}
       </div>
