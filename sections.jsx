@@ -1,6 +1,34 @@
 // ─── Shared layout ───────────────────────────────────────────
 const { useState, useEffect, useRef } = React;
 
+// Turns bare URLs (http/https/www…) inside a plain-text string into tappable
+// links, leaving the rest of the text untouched. Used wherever owner-written
+// notes contain website addresses.
+const _URL_RE = /(https?:\/\/[^\s]+|www\.[^\s]+)/gi;
+const Linkify = ({ text }) => {
+  if (text == null) return null;
+  const str = String(text);
+  const out = [];
+  let last = 0, m, i = 0;
+  _URL_RE.lastIndex = 0;
+  while ((m = _URL_RE.exec(str)) !== null) {
+    if (m.index > last) out.push(str.slice(last, m.index));
+    let token = m[0], trail = "";
+    const tm = token.match(/[).,;:!?]+$/);
+    if (tm) { trail = tm[0]; token = token.slice(0, -trail.length); }
+    const href = token.startsWith("http") ? token : "https://" + token;
+    out.push(
+      <a key={i++} href={href} target="_blank" rel="noreferrer"
+        style={{ color: "var(--terra)", textDecoration: "underline" }}>{token}</a>
+    );
+    if (trail) out.push(trail);
+    last = m.index + m[0].length;
+  }
+  if (last < str.length) out.push(str.slice(last));
+  return out;
+};
+window.Linkify = Linkify;
+
 const Page = ({ children }) => (
   <div style={{ padding: "0 22px 120px", minHeight: "100%" }}>{children}</div>
 );
@@ -316,7 +344,7 @@ const WifiSection = () => {
             {A.transport.bus}
           </div>
           <div style={{ marginTop: 10, fontSize: 12.5, color: "var(--ink-mute)", lineHeight: 1.5 }}>
-            {A.transport.dayTicket}
+            <Linkify text={A.transport.dayTicket} />
           </div>
         </div>
       </div>
@@ -369,7 +397,7 @@ const GhentSection = ({ visitorTips, setVisitorTips }) => {
         fontSize: 17, color: "var(--ink-soft)", lineHeight: 1.45,
         marginTop: 4, maxWidth: 340,
       }}>
-        {A.ghent.bestTimes}
+        <Linkify text={A.ghent.bestTimes} />
       </p>
 
       {/* Tabs — sized to fit on one line so visitor tips are visible without scrolling */}
@@ -409,7 +437,7 @@ const GhentSection = ({ visitorTips, setVisitorTips }) => {
                 <p style={{
                   margin: "6px 0 0", fontSize: 14.5, lineHeight: 1.5,
                   color: "var(--ink-soft)", textWrap: "pretty",
-                }}>{s.note}</p>
+                }}><Linkify text={s.note} /></p>
               </div>
             </article>
           ))}
@@ -617,7 +645,7 @@ const NeighborhoodSection = () => {
               <p style={{
                 margin: 0, gridColumn: "1 / -1",
                 fontSize: 13.5, color: "var(--ink-soft)", lineHeight: 1.5,
-              }}>{n.note}</p>
+              }}><Linkify text={n.note} /></p>
               <div style={{
                 gridColumn: "1 / -1", marginTop: 4,
                 fontSize: 11, color: "var(--terra)",
@@ -658,7 +686,7 @@ const ToursSection = () => {
             <p style={{
               margin: "10px 0 0", fontSize: 14.5, lineHeight: 1.5,
               color: "var(--ink-soft)",
-            }}>{tour.note}</p>
+            }}><Linkify text={tour.note} /></p>
           </article>
         ))}
       </div>
