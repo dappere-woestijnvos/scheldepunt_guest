@@ -1210,6 +1210,18 @@ const TOUR_STOPS = [
       beer: ``,
       food: ``,
     },
+    es: {
+      name: `De Kouter`,
+      desc: `Gracias al mercado de flores diario, en el Kouter puedes ver un colorido mosaico de flores todos los días del año. En el Quiosco Azul, hacia las once, se reúnen los auténticos sibaritas — este monumento convertido en bar de aperitivos ofrece una copa de cava, ostras frescas y otros entrantes. Los amantes de la música también deben venir: aquí están la Ópera de Gante del siglo XIX y la sala de conciertos De Handelsbeurs.`,
+      beer: ``,
+      food: ``,
+    },
+    de: {
+      name: `De Kouter`,
+      desc: `Dank des täglichen Blumenmarktes siehst du auf dem Kouter an jedem Tag des Jahres ein buntes Blütenmosaik. Am Blauen Kiosk versammeln sich gegen elf Uhr die echten Genießer — dieses zur Aperitif-Bar umgewandelte Denkmal bietet ein Glas Cava, frische Austern und andere Häppchen. Auch Musikliebhaber sollten herkommen: Hier befinden sich die Genter Oper aus dem 19. Jahrhundert und der Konzertsaal De Handelsbeurs.`,
+      beer: ``,
+      food: ``,
+    },
   },
   {
     id: 38, lat: 51.0474, lon: 3.7236, extension: false,
@@ -1228,6 +1240,18 @@ const TOUR_STOPS = [
     fr: {
       name: `De Krook (Bibliothèque)`,
       desc: `De Krook est bien plus qu'une bibliothèque — un remarquable mélange d'acier et de béton où l'on peut simplement entrer. Il y a une cafétéria avec terrasse vue imprenable, une salle de lecture, de travail, polyvalente ; vous pouvez utiliser une imprimante 3D, découvrir la réalité virtuelle, surfer sur internet. Le mot 'krook' est un vieux terme pour pli ou coude, référençant le coude que fait l'Escaut autour de la Waalse Krook, où les navires déchargeaient jadis du charbon de Wallonie.`,
+      beer: ``,
+      food: ``,
+    },
+    es: {
+      name: `De Krook (Biblioteca)`,
+      desc: `De Krook es mucho más que una biblioteca — una llamativa mezcla de acero y hormigón en la que puedes entrar sin más. Hay una cafetería con terraza y bonitas vistas, una sala de lectura, una de estudio, una sala polivalente; puedes usar una impresora 3D, conocer la realidad virtual, navegar por internet. El nombre 'krook' es una palabra antigua para pliegue o doblez, en alusión al recodo que hace el Escalda en torno a la Waalse Krook, donde los barcos descargaban antaño carbón de Valonia.`,
+      beer: ``,
+      food: ``,
+    },
+    de: {
+      name: `De Krook (Bibliothek)`,
+      desc: `De Krook ist weit mehr als eine Bibliothek — eine markante Mischung aus Stahl und Beton, in die man einfach hineinspazieren kann. Es gibt eine Cafeteria mit Terrasse und schöner Aussicht, einen Lesesaal, einen Arbeitsraum, einen Mehrzweckraum; man kann mit einem 3D-Drucker arbeiten, Virtual Reality kennenlernen, im Internet surfen. Der Name 'krook' ist ein altes Wort für Knick oder Falte und verweist auf die Biegung, die die Schelde um die Waalse Krook macht, wo Schiffe einst Kohle aus Wallonien löschten.`,
       beer: ``,
       food: ``,
     },
@@ -1252,6 +1276,18 @@ const TOUR_STOPS = [
       beer: ``,
       food: `Bakker Klaas – pain frais. Sakas by chef Yoshi – sushi sublimes. Bar Bougie ou Rooftopbar Bassie – boissons revigorantes.`,
     },
+    es: {
+      name: `Het Wintercircus`,
+      desc: `En 1885 se construyó aquí el 'Nieuw Cirkus', uno de varios circos de piedra erigidos en las ciudades belgas del siglo XIX. Tras un incendio en 1920 y su reconstrucción, se convirtió en un garaje después de la Segunda Guerra Mundial y luego, durante 20 años, en depósito de coches clásicos. La ciudad lo compró en 2005 y, tras cinco años de intensa renovación, el edificio reabrió en 2024. La pista central es ahora una plaza cubierta de acceso público; el Club Wintercircus (sala de conciertos para 500) se aloja debajo. Ganador del Premio del Monumento de Gante 2022.`,
+      beer: ``,
+      food: `Bakker Klaas – pan recién hecho. Sakas by chef Yoshi – sushi sublime. Bar Bougie o Rooftopbar Bassie – bebidas refrescantes.`,
+    },
+    de: {
+      name: `Het Wintercircus`,
+      desc: `1885 wurde hier das 'Nieuw Cirkus' gebaut, einer von mehreren Steinzirkussen in belgischen Städten des 19. Jahrhunderts. Nach einem Brand 1920 und Wiederaufbau wurde es nach dem Zweiten Weltkrieg eine Garage und dann 20 Jahre lang ein Oldtimer-Depot. Die Stadt kaufte es 2005, und nach fünf Jahren intensiver Renovierung wurde das Gebäude 2024 wiedereröffnet. Die zentrale Arena ist heute ein öffentlich zugänglicher überdachter Platz; der Club Wintercircus (Konzertsaal für 500) liegt darunter. Gewinner des Genter Denkmalpreises 2022.`,
+      beer: ``,
+      food: `Bakker Klaas – frisches Brot. Sakas by chef Yoshi – sublime Sushi. Bar Bougie oder Rooftopbar Bassie – erfrischende Getränke.`,
+    },
   },
   {
     id: 40, lat: 51.0462, lon: 3.7240, extension: false,
@@ -1270,6 +1306,18 @@ const TOUR_STOPS = [
     fr: {
       name: `De Vooruit`,
       desc: `Le Vooruit est un complexe de salles historiques de 1913, à l'origine le centre culturel et festif du mouvement ouvrier gantois, avec une salle de bal, un cinéma et une troupe de théâtre. Depuis 1982, le Kunstencentrum Vooruit vzw utilise les 5 salles principales (Ballroom, Theaterzaal, Domzaal, Concertzaal et Café) pour des débats, soirées littéraires, concerts, fêtes, danse et spectacles.`,
+      beer: ``,
+      food: ``,
+    },
+    es: {
+      name: `De Vooruit`,
+      desc: `El Vooruit es un histórico complejo de salas de 1913, originalmente el centro festivo y artístico del movimiento obrero gantés, con una sala de baile, cine y grupo de teatro. Desde 1982, el centro de artes Vooruit vzw usa las 5 salas principales (Balzaal, Theaterzaal, Domzaal, Concertzaal y el Café) para debates, veladas literarias, conciertos, fiestas, danza y espectáculos.`,
+      beer: ``,
+      food: ``,
+    },
+    de: {
+      name: `De Vooruit`,
+      desc: `Das Vooruit ist ein historischer Saalkomplex von 1913, ursprünglich das Fest- und Kulturzentrum der Genter Arbeiterbewegung, mit Ballsaal, Kino und Theatergruppe. Seit 1982 nutzt das Kunstzentrum Vooruit vzw die 5 Hauptsäle (Ballsaal, Theaterzaal, Domzaal, Concertzaal und das Café) für Debatten, Literaturabende, Konzerte, Partys, Tanz und Bühnenaufführungen.`,
       beer: ``,
       food: ``,
     },
@@ -1294,6 +1342,18 @@ const TOUR_STOPS = [
       beer: ``,
       food: ``,
     },
+    es: {
+      name: `Boekentoren (Torre de los Libros)`,
+      desc: `La Torre de los Libros, de 64 metros, fue diseñada por el arquitecto belga Henry Van de Velde y es el ejemplo más llamativo de arquitectura modernista de la ciudad. Como principal depósito de la Biblioteca de la Universidad de Gante, la torre alberga unos 3 millones de libros — 46 kilómetros de estanterías. Es un símbolo importante tanto para la universidad como para la ciudad de Gante.`,
+      beer: ``,
+      food: ``,
+    },
+    de: {
+      name: `Boekentoren (Bücherturm)`,
+      desc: `Der 64 Meter hohe Bücherturm wurde vom belgischen Architekten Henry Van de Velde entworfen und ist das markanteste Beispiel modernistischer Architektur der Stadt. Als Hauptmagazin der Genter Universitätsbibliothek beherbergt der Turm rund 3 Millionen Bücher — 46 Kilometer Regale. Er ist ein wichtiges Symbol für die Universität und die Stadt Gent.`,
+      beer: ``,
+      food: ``,
+    },
   },
   {
     id: 42, lat: 51.0438, lon: 3.7248, extension: false,
@@ -1315,6 +1375,18 @@ const TOUR_STOPS = [
       beer: `De Geus van Gent – Kantienberg 9 (à proximité).`,
       food: ``,
     },
+    es: {
+      name: `Sint-Pietersplein & Abadía de San Pedro`,
+      desc: `La Sint-Pietersplein está en el corazón del barrio estudiantil. Cada julio se instala aquí la Feria de Mediados de Cuaresma; también ha acogido conciertos íntimos de Prince, Björk y otros. La abadía benedictina de San Pedro, del siglo VII, creció hasta convertirse en un auténtico pueblo abacial con granjas, jardines y tierras de labor. La planta baja de la abadía es gratuita; con la singular guía cinematográfica 'Alison' — 17 episodios con el monje digital Alison. El jardín de la abadía, con su viñedo y sus ruinas, es un oasis verde muy querido por los estudiantes. Si sales a la derecha por la Overpoort encontrarás más de 35 cafés estudiantiles uno junto a otro — el jueves es la gran noche estudiantil.`,
+      beer: `De Geus van Gent – Kantienberg 9 (cerca).`,
+      food: ``,
+    },
+    de: {
+      name: `Sint-Pietersplein & Sankt-Peters-Abtei`,
+      desc: `Die Sint-Pietersplein liegt im Herzen des Studentenviertels. Jeden Juli baut hier der Halbfastenmarkt auf; sie war auch Schauplatz intimer Konzerte von Prince, Björk und anderen. Die benediktinische Sankt-Peters-Abtei aus dem 7. Jahrhundert wuchs zu einem echten Abteidorf mit Höfen, Gärten und Ackerland. Das Erdgeschoss der Abtei ist kostenlos; geführt mit dem einzigartigen Filmguide 'Alison' — 17 Episoden mit dem digitalen Mönch Alison. Der Abteigarten mit Weinberg und Ruine ist eine grüne Oase, bei Studenten beliebt. Gehst du rechts zur Overpoort, findest du 35+ Studentencafés nebeneinander — der Donnerstag ist der große Studentenabend.`,
+      beer: `De Geus van Gent – Kantienberg 9 (in der Nähe).`,
+      food: ``,
+    },
   },
   {
     id: 43, lat: 51.0435, lon: 3.7252, extension: false,
@@ -1333,6 +1405,18 @@ const TOUR_STOPS = [
     fr: {
       name: `Wereld van Kina – La Maison`,
       desc: `La Maison est un musée où enfants et adultes passent d'une surprise à l'autre : un fossile unique d'un reptile préhistorique, une magnifique salle diorama avec des oiseaux indigènes, et une exposition interactive avec des milliers de roches et minéraux. Le jardin abbatial se rejoint via la cour du Wereld van Kina — sur votre gauche se trouve un portail. De là, traversez l'eau et tournez à gauche dans Ter Plaeten — retour au Scheldepunt.`,
+      beer: ``,
+      food: ``,
+    },
+    es: {
+      name: `Wereld van Kina – La Casa`,
+      desc: `La Casa es un museo donde niños y adultos van de sorpresa en sorpresa: un fósil único de un reptil prehistórico, una preciosa sala de dioramas con aves autóctonas y una exposición interactiva con miles de rocas y minerales. Al jardín de la abadía se llega por el patio del Wereld van Kina — entra en el patio y a la izquierda hay una puerta que da acceso a este oasis verde. Desde aquí, cruza el agua y gira a la izquierda hacia Ter Plaeten — de vuelta al Scheldepunt.`,
+      beer: ``,
+      food: ``,
+    },
+    de: {
+      name: `Wereld van Kina – Das Haus`,
+      desc: `Das Haus ist ein Museum, in dem Kinder und Erwachsene von einer Überraschung zur nächsten kommen: ein einzigartiges Fossil eines prähistorischen Reptils, ein wunderschöner Diorama-Saal mit heimischen Vögeln und eine interaktive Ausstellung mit Tausenden von Gesteinen und Mineralien. Der Abteigarten ist über den Innenhof des Wereld van Kina zu erreichen — betritt den Hof, und auf der linken Seite gibt es ein Tor zu dieser grünen Oase. Von hier aus überquere das Wasser und biege links in Ter Plaeten ein — zurück zum Scheldepunt.`,
       beer: ``,
       food: ``,
     },
