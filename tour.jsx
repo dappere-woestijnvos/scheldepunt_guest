@@ -418,6 +418,18 @@ const TOUR_STOPS = [
       beer: ``,
       food: ``,
     },
+    es: {
+      name: `Museo del Diseño de Gante`,
+      desc: `El Museo del Diseño de Gante ocupa el Hotel De Coninck del siglo XVIII. El diseño moderno de un edificio nuevo se combina con acierto con la estructura histórica. En el ala antigua encuentras los salones de la aristocracia gantesa del siglo XVIII; en el edificio nuevo te espera un mundo totalmente distinto. No te pierdas el ala de los aseos — construida como desafío tras negar la ciudad repetidamente fondos para la ampliación. El museo la convirtió en un monumental rollo de papel higiénico, mandando literalmente al ayuntamiento 'de pot op' (a paseo).`,
+      beer: ``,
+      food: ``,
+    },
+    de: {
+      name: `Designmuseum Gent`,
+      desc: `Das Genter Designmuseum ist im Hotel De Coninck aus dem 18. Jahrhundert untergebracht. Modernes Design eines Neubaus wird gelungen mit dem historischen Bau verbunden. Im alten Flügel findest du die Salons der Genter Aristokratie des 18. Jahrhunderts; im neuen Gebäude erwartet dich eine völlig andere Welt. Verpasse nicht den Toilettenflügel — aus Trotz errichtet, nachdem die Stadt wiederholt Mittel für die Erweiterung verweigert hatte. Das Museum machte daraus eine monumentale Klorolle und schickte den Stadtrat damit buchstäblich 'de pot op' (zum Teufel).`,
+      beer: ``,
+      food: ``,
+    },
   },
   {
     id: 14, lat: 51.0568, lon: 3.7197, extension: false,
@@ -436,6 +448,18 @@ const TOUR_STOPS = [
     fr: {
       name: `Gravensteen (Château des Comtes)`,
       desc: `La construction de l'actuel Château des Comtes débuta en 1180 sous le comte Philippe d'Alsace. Jusqu'au milieu du XVe siècle, les comtes de Flandre y séjournèrent ; puis il servit de salle de réunion, tribunal et filature de coton. Le château expose armes et instruments de torture. Le 16 novembre 1949, des étudiants gantois l'occupèrent — soi-disant pour protester contre la hausse du prix de la bière, mais en réalité une simple farce d'étudiant. Cette 'plus grande farce étudiante de tous les temps' est célébrée chaque année au Gravensteenfestival.`,
+      beer: ``,
+      food: ``,
+    },
+    es: {
+      name: `Gravensteen (Castillo de los Condes)`,
+      desc: `La construcción del actual Castillo de los Condes comenzó en 1180 bajo el conde Felipe de Alsacia. Hasta mediados del siglo XV fue residencia de los condes de Flandes; más tarde sala de reuniones, tribunal e hilandería de algodón. El castillo exhibe armas e instrumentos de tortura. El 16 de noviembre de 1949 unos estudiantes de Gante ocuparon el castillo — supuestamente para protestar por la subida del precio de la cerveza y los nuevos cascos de la policía, pero en realidad una simple broma estudiantil nacida del aburrimiento. Esta 'mayor broma estudiantil de todos los tiempos' aún se celebra cada año con el Gravensteenfestival.`,
+      beer: ``,
+      food: ``,
+    },
+    de: {
+      name: `Gravensteen (Grafenburg)`,
+      desc: `Der Bau der heutigen Grafenburg begann 1180 unter Graf Philipp von Elsass. Bis Mitte des 15. Jahrhunderts diente sie als Residenz der Grafen von Flandern; später als Versammlungssaal, Gericht und Baumwollspinnerei. Die Burg zeigt Waffen und Folterwerkzeuge. Am 16. November 1949 besetzten Genter Studenten die Burg — angeblich aus Protest gegen steigende Bierpreise und neue Polizeihelme, in Wahrheit aber nur ein aus Langeweile geborener Studentenstreich. Dieser 'größte Studentenstreich aller Zeiten' wird bis heute jährlich mit dem Gravensteenfestival gefeiert.`,
       beer: ``,
       food: ``,
     },
@@ -460,6 +484,18 @@ const TOUR_STOPS = [
       beer: ``,
       food: `Mémé Gusta – cuisine belge traditionnelle dans un cadre agréable (Burgstraat).`,
     },
+    es: {
+      name: `Paters Karmelieten (Monasterio Carmelita)`,
+      desc: `En medio de la Burgstraat, a la derecha, ves la iglesia 'Paters Karmelieten'. Puedes entrar libremente y la visita es muy recomendable. Junto a la iglesia está el jardín del claustro, solo abierto previa petición. El monasterio es conocido por los huéspedes que vienen buscando 'paz, silencio y sosiego'.`,
+      beer: ``,
+      food: `Mémé Gusta – cocina belga tradicional en un ambiente acogedor (Burgstraat).`,
+    },
+    de: {
+      name: `Paters Karmelieten (Karmeliterkloster)`,
+      desc: `In der Mitte der Burgstraat, rechts, siehst du die Kirche 'Paters Karmelieten'. Du kannst frei eintreten, ein Besuch ist sehr zu empfehlen. Neben der Kirche liegt der Klostergarten, nur auf Anfrage geöffnet. Das Kloster ist bekannt für Gäste, die wegen 'Ruhe, Stille und Entschleunigung' kommen.`,
+      beer: ``,
+      food: `Mémé Gusta – traditionelle belgische Küche in gemütlichem Rahmen (Burgstraat).`,
+    },
   },
   {
     id: 16, lat: 51.0582, lon: 3.7163, extension: true,
@@ -478,6 +514,18 @@ const TOUR_STOPS = [
     fr: {
       name: `Ancien Béguinage – Sint-Elisabethkerk`,
       desc: `Considéré comme l'un des plus anciens béguinages de Flandre, l'atmosphère se savoure dans la Proveniersterstraat. La Sint-Elisabethkerk est le bâtiment central de l'Oud-begijnhof. Remarquablement, elle accueille des offices catholiques romains et anglicans. Ce quartier s'appelle 'The Holy Corner' — quatre religions sont pratiquées dans trois églises à proximité. Un lieu de tolérance. Dans la Sophie Van Akenstraat, une nouvelle église orthodoxe décorée de fresques selon la technique byzantine authentique.`,
+      beer: ``,
+      food: ``,
+    },
+    es: {
+      name: `Antiguo Beguinaje – Sint-Elisabethkerk`,
+      desc: `Considerado uno de los beguinajes más antiguos de Flandes, el ambiente se respira mejor en la Proveniersterstraat. La Sint-Elisabethkerk es el edificio central del Oud-begijnhof. Algo insólito: acoge tanto oficios católicos romanos como anglicanos. Este barrio se conoce como 'The Holy Corner' — cuatro religiones se practican en tres iglesias a corta distancia. Un lugar de tolerancia. Una llamativa iglesia ortodoxa nueva en la Sophie Van Akenstraat fue pintada por dentro con frescos en auténtica técnica bizantina.`,
+      beer: ``,
+      food: ``,
+    },
+    de: {
+      name: `Altes Beginenhof – Sint-Elisabethkerk`,
+      desc: `Es gilt als einer der ältesten Beginenhöfe Flanderns; die Atmosphäre genießt man am besten in der Proveniersterstraat. Die Sint-Elisabethkerk ist das zentrale Gebäude des Oud-begijnhof. Ungewöhnlich: Hier finden sowohl römisch-katholische als auch anglikanische Gottesdienste statt. Dieses Viertel heißt 'The Holy Corner' — vier Religionen werden in drei Kirchen auf engem Raum praktiziert. Ein Ort der Toleranz. Eine markante neue orthodoxe Kirche in der Sophie Van Akenstraat wurde innen mit Fresken in authentischer byzantinischer Technik bemalt.`,
       beer: ``,
       food: ``,
     },
@@ -502,6 +550,18 @@ const TOUR_STOPS = [
       beer: ``,
       food: ``,
     },
+    es: {
+      name: `Prinsenhof`,
+      desc: `La 'Donkere Poort' (Puerta Oscura) a tu izquierda es el único vestigio del 'Hof ten Walle', antaño un castillo fortificado. La plaza, el Prinsenhof, formaba parte del gran dominio de los condes flamencos. Nada menos que Carlos V nació aquí en 1500. La estatua representa al orgulloso Carlos. Es gracias a Carlos V que a los ganteses se les llama 'portadores de soga' — después de que obligara a todos los funcionarios y nobles a hacer una marcha penitencial por las calles con una soga al cuello y descalzos.`,
+      beer: ``,
+      food: ``,
+    },
+    de: {
+      name: `Prinsenhof`,
+      desc: `Die 'Donkere Poort' (Dunkles Tor) zu deiner Linken ist das einzige Überbleibsel des 'Hof ten Walle', einst eine befestigte Burg. Der Platz, der Prinsenhof, gehörte zum großen Besitz der flämischen Grafen. Kein Geringerer als Karl V. wurde hier 1500 geboren. Die Statue stellt den stolzen Karl dar. Karl V. ist es zu verdanken, dass die Genter 'Strickträger' genannt werden — nachdem er alle Beamten und Adligen zwang, barfuß und mit einem Strick um den Hals einen Bußgang durch die Straßen zu machen.`,
+      beer: ``,
+      food: ``,
+    },
   },
   {
     id: 18, lat: 51.0577, lon: 3.7171, extension: true,
@@ -520,6 +580,18 @@ const TOUR_STOPS = [
     fr: {
       name: `Pont des Délices Impériaux`,
       desc: `Le Pont des Délices Impériaux fut construit en 2000 (l'année du centenaire de Charles Quint) sur la rivière Lieve, avec des statues du sculpteur et artiste de cabaret gantois Walter De Buck (1934–2014). Elles font référence à des légendes sur la vie de Charles Quint. Le navire évoque l'histoire du 'tireur de bateau' : l'empereur gêna un batelier sur un chemin de halage, causant l'échouement du navire ; le capitaine força Charles à le renflouer, qui lui offrit ensuite un nouveau bateau.`,
+      beer: `'t Floere Foefke – Molenaarsstraat 3.`,
+      food: ``,
+    },
+    es: {
+      name: `Puente de los Placeres Imperiales`,
+      desc: `El Puente de los Placeres Imperiales se construyó en 2000 (año del centenario de Carlos V) sobre el río Lieve, con estatuas del escultor y artista de cabaré gantés Walter De Buck (1934–2014), que aluden a varias leyendas sobre la vida de Carlos V. El barco de un extremo remite a la historia del 'remolcador de barcos': el emperador hizo encallar sin querer una gabarra en un camino de sirga; el capitán obligó a Carlos a soltarla, tras lo cual Carlos le regaló un barco nuevo.`,
+      beer: `'t Floere Foefke – Molenaarsstraat 3.`,
+      food: ``,
+    },
+    de: {
+      name: `Brücke der kaiserlichen Genüsse`,
+      desc: `Die Brücke der kaiserlichen Genüsse wurde 2000 (im Karl-V.-Jubiläumsjahr) über die Lieve gebaut, mit Statuen des Genter Bildhauers und Kleinkünstlers Walter De Buck (1934–2014), die auf verschiedene Legenden über Karl V. verweisen. Das Schiff an einem Ende bezieht sich auf die Geschichte des 'Schiffsziehers': Der Kaiser brachte auf einem Treidelpfad versehentlich einen Kahn zum Stranden; der Kapitän zwang Karl, ihn freizuziehen, woraufhin Karl ihm ein neues Boot schenkte.`,
       beer: `'t Floere Foefke – Molenaarsstraat 3.`,
       food: ``,
     },
@@ -544,6 +616,18 @@ const TOUR_STOPS = [
       beer: `Folklore – Lange Steenstraat 69.`,
       food: ``,
     },
+    es: {
+      name: `De Lieve`,
+      desc: `El Lieve se excavó entre 1251 y 1269 para conectar la ciudad con el Zwin en Damme. Desde allí podían enviarse a Inglaterra mercancías como tejidos finos. Los neerlandeses también usaban este canal para comerciar. La Sint-Widostraat, en una curva, ofrece una vista del teatro Arca (NTG) y una bonita perspectiva hacia el Gravensteen.`,
+      beer: `Folklore – Lange Steenstraat 69.`,
+      food: ``,
+    },
+    de: {
+      name: `De Lieve`,
+      desc: `Die Lieve wurde zwischen 1251 und 1269 gegraben, um die Stadt mit dem Zwin bei Damme zu verbinden. Von dort konnten Waren wie feines Tuch nach England verschifft werden. Auch die Niederländer nutzten diesen Kanal für den Handel. Die Sint-Widostraat bietet in einer Kurve einen Blick auf das Theater Arca (NTG) und eine schöne Sicht zum Gravensteen.`,
+      beer: `Folklore – Lange Steenstraat 69.`,
+      food: ``,
+    },
   },
   {
     id: 20, lat: 51.0566, lon: 3.7182, extension: false,
@@ -562,6 +646,18 @@ const TOUR_STOPS = [
     fr: {
       name: `Caermersklooster`,
       desc: `Cet ancien monastère carmélitain était en usage dès la fin du XIIIe siècle. Outre les bâtiments monastiques, il possédait aussi une brasserie. Après la Révolution française, il passa en mains privées ; plus tard la ville de Gand racheta les bâtiments. Transformé en espace d'exposition pour des expositions temporaires de prestige, souvent gratuites. Dans un des logements, une immense peinture murale avec vestiges de fresque peut être visitée (payant).`,
+      beer: ``,
+      food: ``,
+    },
+    es: {
+      name: `Caermersklooster`,
+      desc: `Este antiguo monasterio carmelita estuvo en uso desde finales del siglo XIII. Además de los edificios habituales del monasterio, había también una cervecería. Tras la Revolución francesa pasó a manos privadas; más tarde la ciudad de Gante compró los edificios. Se ha transformado en un espacio expositivo donde tienen lugar sobre todo prestigiosas exposiciones temporales, a menudo de entrada gratuita. En una de las viviendas puede verse una enorme pintura mural con restos de un fresco (de pago).`,
+      beer: ``,
+      food: ``,
+    },
+    de: {
+      name: `Caermersklooster`,
+      desc: `Dieses ehemalige Karmeliterkloster war ab Ende des 13. Jahrhunderts in Gebrauch. Neben den üblichen Klostergebäuden gab es auch eine Brauerei. Nach der Französischen Revolution ging es in Privatbesitz über; später kaufte die Stadt Gent die Gebäude. Es wurde zu einem Ausstellungsraum umgebaut, in dem vor allem renommierte Wechselausstellungen stattfinden, oft bei freiem Eintritt. In einem der Wohnräume ist ein riesiges Wandgemälde mit Resten eines Freskos zu besichtigen (gegen Gebühr).`,
       beer: ``,
       food: ``,
     },
@@ -586,6 +682,18 @@ const TOUR_STOPS = [
       beer: ``,
       food: ``,
     },
+    es: {
+      name: `Iglesia de San Esteban`,
+      desc: `La iglesia de San Esteban también tiene relación con el Cordero Místico. Durante la Segunda Guerra Mundial se ocultaron aquí, a los ocupantes, varios paneles del mundialmente famoso 'Cordero Místico' de los hermanos Van Eyck. Se puede entrar temprano, de 6:30 a 12:30, y de 14:00 a 18:30.`,
+      beer: ``,
+      food: ``,
+    },
+    de: {
+      name: `Sankt-Stephanus-Kirche`,
+      desc: `Auch die Sankt-Stephanus-Kirche hat eine Verbindung zum Genter Altarbild. Während des Zweiten Weltkriegs wurden hier mehrere Tafeln des weltberühmten 'Lam Gods' der Brüder Van Eyck vor den Besatzern versteckt. Die Kirche kann früh betreten werden, von 6:30 bis 12:30 und von 14:00 bis 18:30 Uhr.`,
+      beer: ``,
+      food: ``,
+    },
   },
   {
     id: 22, lat: 51.0560, lon: 3.7177, extension: false,
@@ -604,6 +712,18 @@ const TOUR_STOPS = [
     fr: {
       name: `Graffiti – Roa (Lapins Géants)`,
       desc: `Ces lapins géants ne laissent que peu de place à l'imagination. L'artiste de street art gantois Roa a peint des animaux sur des murs en plusieurs endroits dans le monde, toujours en grand format et souvent en noir et blanc. On peut voir son œuvre à d'autres endroits dans Gand.`,
+      beer: `Café de Welkom – Oudburg 70a. Yo's Place – Oudburg 15. Aba-jour – Oudburg 20.`,
+      food: `Soeplounge – Zuivelbrugstraat 4.`,
+    },
+    es: {
+      name: `Grafiti – Roa (Conejos Gigantes)`,
+      desc: `Estos conejos gigantes dejan poco a la imaginación. El artista urbano gantés Roa ha pintado animales en muros en varios lugares del mundo, siempre en gran formato y a menudo en blanco y negro. También puedes encontrar obra suya en otros puntos de Gante.`,
+      beer: `Café de Welkom – Oudburg 70a. Yo's Place – Oudburg 15. Aba-jour – Oudburg 20.`,
+      food: `Soeplounge – Zuivelbrugstraat 4.`,
+    },
+    de: {
+      name: `Graffiti – Roa (Riesenkaninchen)`,
+      desc: `Diese Riesenkaninchen lassen wenig der Fantasie übrig. Der Genter Streetart-Künstler Roa hat an mehreren Orten weltweit Tiere auf Wände gebracht, stets im Großformat und oft in Schwarz-Weiß. Auch an anderen Stellen in Gent findest du seine Werke.`,
       beer: `Café de Welkom – Oudburg 70a. Yo's Place – Oudburg 15. Aba-jour – Oudburg 20.`,
       food: `Soeplounge – Zuivelbrugstraat 4.`,
     },
@@ -628,6 +748,18 @@ const TOUR_STOPS = [
       beer: ``,
       food: `Julie's House – Cupcakes.`,
     },
+    es: {
+      name: `Huis van Alijn & Kraanlei`,
+      desc: `La acogedora posada del Huis van Alijn (también accesible sin visitar el museo) y su jardín interior son un agradable punto de descanso. El museo, en el edificio del siglo XIV, surgió del Museo del Folclore — dentro, objetos, fotos y películas dan una buena idea de la vida popular gantesa anterior a mediados del siglo XX. La casa guarda el 'Manneke Pis de Gante' original; la estatua tiene ahora dos compañeras, las niñas Luna y Lena. Cerca está la confitería más antigua de Gante, Huis Temmerman, que vende golosinas con nombres típicamente ganteses.`,
+      beer: ``,
+      food: `Julie's House – Cupcakes.`,
+    },
+    de: {
+      name: `Huis van Alijn & Kraanlei`,
+      desc: `Das gemütliche Wirtshaus des Huis van Alijn (auch ohne Museumsbesuch zugänglich) und sein Innenhofgarten sind ein angenehmer Rastpunkt. Das Museum im Gebäude aus dem 14. Jahrhundert ging aus dem Volkskundemuseum hervor — drinnen vermitteln Objekte, Fotos und Filme einen guten Eindruck des Genter Volkslebens vor Mitte des 20. Jahrhunderts. Das Haus bewahrt das originale 'Genter Manneke Pis'; die Statue hat heute zwei Begleiterinnen, die Mädchen Luna und Lena. In der Nähe liegt der älteste Süßwarenladen Gents, Huis Temmerman, mit Leckereien mit typisch Genter Namen.`,
+      beer: ``,
+      food: `Julie's House – Cupcakes.`,
+    },
   },
   {
     id: 24, lat: 51.0572, lon: 3.7203, extension: false,
@@ -646,6 +778,18 @@ const TOUR_STOPS = [
     fr: {
       name: `Patershol`,
       desc: `Les ruelles médiévales derrière le Kraanlei forment le Patershol. Dans ce vieux quartier, les anciens habitants ont été remplacés par de nombreux restaurants. Au XVIIIe siècle y vivaient des magistrats ; au XIXe siècle des ouvriers des filatures. Aujourd'hui : cuisine japonaise, indonésienne, turque, italienne, espagnole et flamande traditionnelle — côte à côte dans les ruelles pavées. Qu'il soit branché, romantique, un peu fou ou exclusif, vous ne repartirez pas le ventre vide.`,
+      beer: ``,
+      food: ``,
+    },
+    es: {
+      name: `Patershol`,
+      desc: `Las estrechas calles medievales detrás del Kraanlei forman el Patershol. En este viejo barrio, los antiguos habitantes han sido sustituidos por numerosos restaurantes. En el siglo XVIII vivían aquí magistrados; en el XIX, obreros de las fábricas de algodón. Hoy: comida japonesa e indonesia, turca, italiana, española y cocina flamenca tradicional — todo codo con codo en calles adoquinadas. Sea moderno, romántico, excéntrico o exclusivo, no te irás con el estómago vacío.`,
+      beer: ``,
+      food: ``,
+    },
+    de: {
+      name: `Patershol`,
+      desc: `Die engen mittelalterlichen Gassen hinter dem Kraanlei bilden das Patershol. In diesem alten Viertel wurden die einstigen Bewohner durch zahlreiche Restaurants verdrängt. Im 18. Jahrhundert wohnten hier Magistrate; im 19. Jahrhundert Arbeiter der Baumwollfabriken. Heute: japanische und indonesische Küche, türkische, italienische, spanische und traditionelle flämische — alles dicht an dicht in Kopfsteinpflastergassen. Ob modern, romantisch, exzentrisch oder exklusiv, mit leerem Magen gehst du nicht.`,
       beer: ``,
       food: ``,
     },
