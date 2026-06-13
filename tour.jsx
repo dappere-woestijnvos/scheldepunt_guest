@@ -970,6 +970,7 @@ const StopCard = ({ stop, open, onToggle }) => {
   const lang = getStopLang(stop);
   const isExt = stop.extension;
   const mapsUrl = stopMapsUrl(stop);
+  const LinkText = window.Linkify || (({ text }) => text);
 
   return (
     <div style={{
@@ -1011,14 +1012,14 @@ const StopCard = ({ stop, open, onToggle }) => {
       {open && (
         <div style={{ padding: '0 14px 14px 50px' }}>
           <p style={{ fontSize: 13.5, lineHeight: 1.6, color: 'var(--ink-soft)', margin: '0 0 10px', whiteSpace: 'pre-wrap' }}>
-            {lang.desc}
+            <LinkText text={lang.desc} />
           </p>
           {lang.beer && (
             <div style={{ marginBottom: 8 }}>
               <span className="mono" style={{ fontSize: 10, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--terra)', display: 'block', marginBottom: 3 }}>
                 🍺 {window.t('walk.beer')}
               </span>
-              <span style={{ fontSize: 13, color: 'var(--ink-soft)', lineHeight: 1.5 }}>{lang.beer}</span>
+              <span style={{ fontSize: 13, color: 'var(--ink-soft)', lineHeight: 1.5 }}><LinkText text={lang.beer} /></span>
             </div>
           )}
           {lang.food && (
@@ -1026,7 +1027,7 @@ const StopCard = ({ stop, open, onToggle }) => {
               <span className="mono" style={{ fontSize: 10, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--moss)', display: 'block', marginBottom: 3 }}>
                 🍽 {window.t('walk.food')}
               </span>
-              <span style={{ fontSize: 13, color: 'var(--ink-soft)', lineHeight: 1.5 }}>{lang.food}</span>
+              <span style={{ fontSize: 13, color: 'var(--ink-soft)', lineHeight: 1.5 }}><LinkText text={lang.food} /></span>
             </div>
           )}
           <a
@@ -1073,6 +1074,19 @@ const WalkSection = () => {
         <p style={{ fontSize: 14, color: 'var(--ink-soft)', margin: '0 0 14px', lineHeight: 1.5 }}>
           {window.t('walk.subtitle')}
         </p>
+
+        {/* The story behind the name */}
+        <div style={{
+          background: 'rgba(184,74,44,0.06)', border: '1px solid rgba(184,74,44,0.18)',
+          padding: '12px 14px', marginBottom: 16,
+        }}>
+          <div className="eyebrow" style={{ color: 'var(--terra-deep)', marginBottom: 6 }}>
+            {window.t('walk.story_title')}
+          </div>
+          <p className="serif" style={{ fontSize: 15, lineHeight: 1.5, margin: 0, color: 'var(--ink)' }}>
+            {window.t('walk.story')}
+          </p>
+        </div>
 
         {/* Distance badges */}
         <div style={{ display: 'flex', gap: 8, marginBottom: 14, flexWrap: 'wrap' }}>
