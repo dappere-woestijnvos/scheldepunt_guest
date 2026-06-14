@@ -59,6 +59,14 @@ const APARTMENT_RAW = {
   // Leave empty to disable (guests will be directed to contact you directly).
   apiKey: "",
 
+  // Supabase connection — enables guestbook, visitor tips, contact form, and
+  // issue reports to persist to a real database.
+  // 1. Create a free project at https://supabase.com
+  // 2. Run the SQL schema in db.jsx (paste into Supabase SQL Editor)
+  // 3. Copy Project URL and anon/public API key from Project Settings → API
+  supabaseUrl: "https://rkyasgxmntkqagpunmpr.supabase.co",
+  supabaseKey: "sb_publishable_K6TqzY6uZ2OnVnBKtBk-MA_YuoHtcBX",
+
   welcomeText: T(
     "Welcome to Scheldepunt!\n\nHow lovely that you are here. We hope you have a wonderful stay in our apartment and can fully enjoy everything Ghent has to offer: charming little streets, beautiful historic buildings, cosy cafés and of course the typical Ghent atmosphere.\n\nMake yourself completely at home, take time to relax and turn it into a lovely weekend. In the apartment you will find everything you need for a comfortable stay. Should you have any questions, we are always happy to help.\n\nEnjoy your weekend in Ghent and have a wonderful time!",
     "Welkom in het Scheldepunt!\n\nWat fijn dat jullie er zijn. We hopen dat jullie een heerlijk verblijf hebben in ons appartement en volop kunnen genieten van alles wat Gent te bieden heeft: gezellige straatjes, mooie historische gebouwen, leuke cafés en natuurlijk de typische Gentse sfeer.\n\nVoel je hier vooral thuis, neem de tijd om te ontspannen en maak er een gezellig weekend van. In het appartement vinden jullie alles wat nodig is voor een comfortabel verblijf. Mochten er toch vragen zijn, dan helpen we graag verder.\n\nGeniet van jullie weekend in Gent en veel plezier!",
@@ -174,11 +182,11 @@ const APARTMENT_RAW = {
       "Die Wohnung hat zwei Schlafzimmer mit jeweils eigenem Bad. Es gibt ein geräumiges Wohnzimmer, eine voll ausgestattete Küche und eine Terrasse mit Blick auf die Schelde. Ein geschlossener Tiefgaragenplatz ist inbegriffen — auch Fahrräder können in der Garage abgestellt werden. Handtücher und Bettwäsche sind vorhanden.",
     ),
     heating: T(
-      "The thermostat for the heating is in the living room — turn the dial to set the temperature. The bedrooms also have air conditioning; the remote is in each room. Please keep windows closed while the heating or AC is on, and switch both off when you head out for the day. Just ask us if anything is unclear.",
-      "De thermostaat voor de verwarming bevindt zich in de woonkamer — draai aan de knop om de temperatuur in te stellen. De slaapkamers hebben ook airconditioning; de afstandsbediening ligt in de kamer. Hou de ramen gesloten terwijl de verwarming of airco aanstaat, en zet beide uit wanneer je voor de dag vertrekt. Vraag het ons gerust als iets onduidelijk is.",
-      "Le thermostat du chauffage se trouve dans le salon — tournez le bouton pour régler la température. Les chambres disposent aussi de la climatisation ; la télécommande est dans chaque pièce. Merci de garder les fenêtres fermées lorsque le chauffage ou la climatisation fonctionne, et d'éteindre les deux en partant pour la journée. N'hésitez pas à nous demander si besoin.",
-      "El termostato de la calefacción está en el salón — gira la rueda para ajustar la temperatura. Los dormitorios también tienen aire acondicionado; el mando está en cada habitación. Por favor, mantén las ventanas cerradas mientras la calefacción o el aire estén encendidos, y apaga ambos al salir durante el día. Pregúntanos si algo no queda claro.",
-      "Der Thermostat für die Heizung befindet sich im Wohnzimmer — dreht am Regler, um die Temperatur einzustellen. Die Schlafzimmer haben außerdem eine Klimaanlage; die Fernbedienung liegt im jeweiligen Zimmer. Bitte haltet die Fenster geschlossen, während Heizung oder Klimaanlage laufen, und schaltet beides aus, wenn ihr für den Tag aus dem Haus geht. Fragt uns einfach, wenn etwas unklar ist.",
+      "The thermostat for the heating is in the living room — turn the dial to set the temperature. The living room also has air conditioning; the remote is on the TV cabinet. Please keep windows closed while the heating or AC is on, and switch off when you head out for the day. Just ask us if anything is unclear.",
+      "De thermostaat voor de verwarming bevindt zich in de woonkamer — draai aan de knop om de temperatuur in te stellen. De woonkamer heeft ook airconditioning; de afstandsbediening ligt op het tv-meubel. Hou de ramen gesloten terwijl de verwarming of airco aanstaat, en zet uit wanneer je voor de dag vertrekt. Vraag het ons gerust als iets onduidelijk is.",
+      "Le thermostat du chauffage se trouve dans le salon — tournez le bouton pour régler la température. Le salon dispose aussi de la climatisation ; la télécommande est sur le meuble TV. Merci de garder les fenêtres fermées lorsque le chauffage ou la climatisation fonctionne, et d'éteindre en partant pour la journée. N'hésitez pas à nous demander si besoin.",
+      "El termostato de la calefacción está en el salón — gira la rueda para ajustar la temperatura. El salón también tiene aire acondicionado; el mando está en el mueble del televisor. Por favor, mantén las ventanas cerradas mientras la calefacción o el aire estén encendidos, y apaga al salir durante el día. Pregúntanos si algo no queda claro.",
+      "Der Thermostat für die Heizung befindet sich im Wohnzimmer — dreht am Regler, um die Temperatur einzustellen. Das Wohnzimmer hat außerdem eine Klimaanlage; die Fernbedienung liegt auf dem TV-Schrank. Bitte haltet die Fenster geschlossen, während Heizung oder Klimaanlage laufen, und schaltet aus, wenn ihr für den Tag aus dem Haus geht. Fragt uns einfach, wenn etwas unklar ist.",
     ),
     trash: T(
       "Please sort your waste. Yellow bag (PMD): plastic bottles, metal cans, and drink cartons. Blue bin: paper and cardboard. Glass container (in the building entrance area): glass bottles and jars. Black bag: residual/non-recyclable waste. Bags are in the kitchen cabinet under the sink. Ask if you have any questions.",

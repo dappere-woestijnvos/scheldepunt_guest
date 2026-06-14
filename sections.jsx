@@ -257,7 +257,7 @@ const WifiSection = () => {
 
   return (
     <Page>
-      <PageHeader no={t('wifi.no')} eyebrow={t('wifi.eyebrow')} title={t('wifi.title')} italic={t('wifi.italic')} />
+      <PageHeader no={t('wifi.no')} eyebrow={t('wifi.eyebrow')} title={t('wifi.title')} />
 
       <div style={{
         background: "var(--terra)", color: "var(--paper)",
@@ -360,7 +360,7 @@ const GhentSection = ({ visitorTips, setVisitorTips }) => {
   const [tipForm, setTipForm] = useState({ name: "", place: "", desc: "" });
   const list = tab === "must" ? A.ghent.mustSee : A.ghent.hidden;
 
-  const submitTip = (e) => {
+  const submitTip = async (e) => {
     e.preventDefault();
     if (!tipForm.place.trim() || !tipForm.desc.trim()) return;
     const newTip = {
@@ -372,12 +372,29 @@ const GhentSection = ({ visitorTips, setVisitorTips }) => {
     };
     setVisitorTips((prev) => [newTip, ...prev]);
     setTipForm({ name: "", place: "", desc: "" });
+    if (window.DB.ready()) {
+      try {
+        const [saved] = await window.DB.addTip({ name: newTip.name, place: newTip.place, description: newTip.desc });
+        if (saved) {
+          // Replace the optimistic entry with the real DB id
+          setVisitorTips((prev) => prev.map((t) =>
+            t.id === newTip.id ? { ...t, id: saved.id } : t
+          ));
+        }
+      } catch (e) { /* keep optimistic entry */ }
+    }
   };
 
-  const vote = (id, delta) => {
-    setVisitorTips((prev) => prev.map((tip) =>
-      tip.id === id ? { ...tip, votes: tip.votes + delta } : tip
+  const vote = async (id, delta) => {
+    const tip = visitorTips.find((t) => t.id === id);
+    if (!tip) return;
+    setVisitorTips((prev) => prev.map((t) =>
+      t.id === id ? { ...t, votes: Math.max(0, t.votes + delta) } : t
     ));
+    if (window.DB.ready()) {
+      try { await window.DB.vote(id, tip.votes, delta); }
+      catch (e) { /* optimistic update stays */ }
+    }
   };
 
   const sortedTips = [...(visitorTips || [])].sort((a, b) => b.votes - a.votes);
@@ -713,18 +730,26 @@ const seedEntries = [
 const GuestbookSection = ({ entries, setEntries }) => {
   const t = window.t;
   const [form, setForm] = useState({ name: "", from: "", text: "" });
-  const submit = (e) => {
+  const [saving, setSaving] = useState(false);
+  const submit = async (e) => {
     e.preventDefault();
-    if (!form.name.trim() || !form.text.trim()) return;
+    if (!form.name.trim() || !form.text.trim() || saving) return;
     const newEntry = {
       name: form.name.trim(),
       from: form.from.trim() || "Somewhere",
-      date: new Date().toLocaleDateString(undefined, { month: "long", year: "numeric" }),
+      date: new Date().toLocaleDateString('en-GB', { month: "long", year: "numeric" }),
       text: form.text.trim(),
       fresh: true,
     };
     setEntries([newEntry, ...entries]);
     setForm({ name: "", from: "", text: "" });
+    if (window.DB.ready()) {
+      setSaving(true);
+      try {
+        await window.DB.addEntry({ name: newEntry.name, from: newEntry.from, text: newEntry.text });
+      } catch (e) { /* keep local copy on failure */ }
+      finally { setSaving(false); }
+    }
   };
 
   return (
@@ -841,9 +866,14 @@ const ContactSection = () => {
   const t = window.t;
   const [form, setForm] = useState({ name: "", phone: "", message: "" });
   const [sent, setSent] = useState(false);
-  const submit = (e) => {
+  const submit = async (e) => {
     e.preventDefault();
     if (!form.name.trim() || !form.message.trim()) return;
+    if (window.DB.ready()) {
+      try {
+        await window.DB.sendMessage({ name: form.name.trim(), phone: form.phone.trim(), message: form.message.trim() });
+      } catch (e) { /* still show sent — don't penalise guest for backend issues */ }
+    }
     setSent(true);
   };
 
@@ -953,11 +983,149 @@ const contactLink = {
   textDecoration: "none", color: "var(--ink)",
 };
 
+// ─── REPORT AN ISSUE (floating modal) ────────────────────────
+const ISSUE_CATEGORIES = () => [
+  { k: "maintenance",  label: window.t('issue.maintenance'),  emoji: "🔧" },
+  { k: "cleanliness",  label: window.t('issue.cleanliness'),  emoji: "🧹" },
+  { k: "missing",      label: window.t('issue.missing'),      emoji: "📦" },
+  { k: "noise",        label: window.t('issue.noise'),        emoji: "🔊" },
+  { k: "other",        label: window.t('issue.other'),        emoji: "💬" },
+];
+const ISSUE_ROOMS = () => [
+  window.t('issue.room_general'),
+  window.t('issue.room_living'),
+  window.t('issue.room_bedroom1'),
+  window.t('issue.room_bedroom2'),
+  window.t('issue.room_kitchen'),
+  window.t('issue.room_bathroom1'),
+  window.t('issue.room_bathroom2'),
+  window.t('issue.room_terrace'),
+  window.t('issue.room_parking'),
+];
+
+const ReportIssueModal = ({ open, onClose }) => {
+  const t = window.t;
+  const [cat, setCat] = useState("maintenance");
+  const [room, setRoom] = useState("");
+  const [desc, setDesc] = useState("");
+  const [state, setState] = useState("idle"); // idle | sending | done | error
+
+  if (!open) return null;
+
+  const submit = async (e) => {
+    e.preventDefault();
+    if (!desc.trim() || state === "sending") return;
+    setState("sending");
+    try {
+      if (window.DB.ready()) {
+        await window.DB.reportIssue({ category: cat, description: desc.trim(), room: room || null });
+      }
+      setState("done");
+    } catch (err) {
+      setState("error");
+    }
+  };
+
+  const reset = () => { setCat("maintenance"); setRoom(""); setDesc(""); setState("idle"); onClose(); };
+
+  return (
+    <div onClick={(e) => { if (e.target === e.currentTarget) reset(); }} style={{
+      position: "fixed", inset: 0, zIndex: 110,
+      background: "rgba(31,24,20,0.45)",
+      display: "flex", alignItems: "flex-end", justifyContent: "center",
+    }}>
+      <div style={{
+        width: "100%", maxWidth: 440,
+        background: "var(--paper)",
+        borderRadius: "16px 16px 0 0",
+        padding: "28px 20px 32px",
+        boxShadow: "0 -12px 40px -8px rgba(31,24,20,0.25)",
+        animation: "slideUp .25s ease",
+      }}>
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 20 }}>
+          <div>
+            <div className="eyebrow" style={{ marginBottom: 4 }}>{t('issue.eyebrow')}</div>
+            <div className="serif" style={{ fontSize: 22 }}>{t('issue.title')}</div>
+          </div>
+          <button onClick={reset} style={{ background: "none", border: "none", padding: 8, cursor: "pointer", color: "var(--ink-mute)", fontSize: 20, lineHeight: 1 }}>✕</button>
+        </div>
+
+        {state === "done" ? (
+          <div style={{ textAlign: "center", padding: "20px 0" }}>
+            <div style={{ fontSize: 36, marginBottom: 12 }}>✓</div>
+            <div className="serif" style={{ fontSize: 19, marginBottom: 8 }}>{t('issue.done_title')}</div>
+            <div style={{ fontSize: 14, color: "var(--ink-mute)", marginBottom: 20 }}>{t('issue.done_body')}</div>
+            <button onClick={reset} style={{
+              padding: "10px 24px", background: "var(--ink)", color: "var(--paper)",
+              border: "none", fontFamily: "Geist Mono, monospace", fontSize: 10,
+              letterSpacing: "0.16em", textTransform: "uppercase", cursor: "pointer",
+            }}>{t('issue.done_close')}</button>
+          </div>
+        ) : (
+          <form onSubmit={submit}>
+            {/* Category pills */}
+            <div className="eyebrow" style={{ marginBottom: 10 }}>{t('issue.category')}</div>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: 18 }}>
+              {ISSUE_CATEGORIES().map((c) => (
+                <button key={c.k} type="button" onClick={() => setCat(c.k)} style={{
+                  padding: "7px 13px", border: "1px solid",
+                  borderColor: cat === c.k ? "var(--ink)" : "var(--rule)",
+                  background: cat === c.k ? "var(--ink)" : "transparent",
+                  color: cat === c.k ? "var(--paper)" : "var(--ink-soft)",
+                  fontFamily: "Geist, sans-serif", fontSize: 13, cursor: "pointer",
+                  display: "flex", alignItems: "center", gap: 5,
+                }}>
+                  <span>{c.emoji}</span> {c.label}
+                </button>
+              ))}
+            </div>
+
+            {/* Room select */}
+            <label style={labelStyle}>{t('issue.room')}
+              <select value={room} onChange={(e) => setRoom(e.target.value)} style={{ ...inputStyle, marginTop: 6 }}>
+                <option value="">—</option>
+                {ISSUE_ROOMS().map((r) => <option key={r} value={r}>{r}</option>)}
+              </select>
+            </label>
+
+            {/* Description */}
+            <label style={labelStyle}>{t('issue.desc')}
+              <textarea
+                value={desc}
+                onChange={(e) => setDesc(e.target.value)}
+                rows={3}
+                placeholder={t('issue.desc_placeholder')}
+                style={{ ...inputStyle, resize: "vertical", minHeight: 80, marginTop: 6 }}
+                required
+              />
+            </label>
+
+            {state === "error" && (
+              <div style={{ fontSize: 13, color: "var(--terra)", marginBottom: 10 }}>{t('issue.error')}</div>
+            )}
+
+            <button type="submit" disabled={state === "sending"} style={{
+              width: "100%", padding: "14px", background: "var(--terra)", color: "var(--paper)",
+              border: "none", fontFamily: "Geist Mono, monospace", fontSize: 11,
+              letterSpacing: "0.18em", textTransform: "uppercase", cursor: "pointer",
+              opacity: state === "sending" ? 0.6 : 1,
+            }}>
+              {state === "sending" ? "…" : t('issue.submit')}
+            </button>
+          </form>
+        )}
+      </div>
+      <style>{`@keyframes slideUp { from { transform: translateY(100%); } to { transform: none; } }`}</style>
+    </div>
+  );
+};
+
 const seedVisitorTips = [];
 
 Object.assign(window, {
   WelcomeSection, ApartmentSection, WifiSection,
   GhentSection, NeighborhoodSection, ToursSection,
   GuestbookSection, FAQSection, ContactSection,
+  ReportIssueModal,
   seedEntries, seedVisitorTips,
 });
