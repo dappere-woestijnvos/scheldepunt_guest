@@ -31,7 +31,9 @@ const DB = (() => {
     });
     if (!res.ok) {
       const err = await res.json().catch(() => ({}));
-      throw new Error(err.message || `HTTP ${res.status}`);
+      const msg = err.message || err.hint || err.details || `HTTP ${res.status}`;
+      console.error(`[DB] ${method} ${path} → ${res.status}:`, msg, '\nHint: if 401, check supabaseKey in data.jsx (use the anon JWT from Supabase → Settings → API, not the publishable key)');
+      throw new Error(msg);
     }
     if (res.status === 204) return null;
     return res.json();
