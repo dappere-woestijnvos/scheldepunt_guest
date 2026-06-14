@@ -162,9 +162,15 @@ const TWEAKS_DEFAULTS = /*EDITMODE-BEGIN*/{
   "showQuickNav": true
 }/*EDITMODE-END*/;
 
+const fmt = (iso) => {
+  try { return new Date(iso).toLocaleDateString('en-GB', { month: 'long', year: 'numeric' }); }
+  catch { return ''; }
+};
+
 const App = () => {
   const [active, setActive] = useStateApp("welcome");
   const [chatOpen, setChatOpen] = useStateApp(false);
+  const [reportOpen, setReportOpen] = useStateApp(false);
   const [entries, setEntries] = useStateApp(window.seedEntries);
   const [visitorTips, setVisitorTips] = useStateApp(window.seedVisitorTips);
   const [lang, setLang] = useStateApp("en");
@@ -174,6 +180,27 @@ const App = () => {
 
   useEffectApp(() => { applyPalette(tweaks.palette); }, [tweaks.palette]);
   useEffectApp(() => { applyFont(tweaks.displayFont); }, [tweaks.displayFont]);
+
+  // Load persisted data from Supabase on mount
+  useEffectApp(() => {
+    if (!window.DB || !window.DB.ready()) return;
+    window.DB.getEntries().then((rows) => {
+      if (rows && rows.length) {
+        setEntries(rows.map((r) => ({
+          name: r.name, from: r.from || 'Somewhere',
+          date: fmt(r.created_at), text: r.text,
+        })));
+      }
+    }).catch(() => {});
+    window.DB.getTips().then((rows) => {
+      if (rows) {
+        setVisitorTips(rows.map((r) => ({
+          id: r.id, name: r.name, place: r.place,
+          desc: r.description, votes: r.votes,
+        })));
+      }
+    }).catch(() => {});
+  }, []);
 
   const changeLang = (code) => {
     window.currentLang = code;
@@ -217,6 +244,25 @@ const App = () => {
           onClose={() => setChatOpen(false)}
           openContact={() => { setChatOpen(false); go("contact"); }}
         />
+        {/* Report an issue — subtle flag button above the concierge bubble */}
+        <button
+          onClick={() => setReportOpen(true)}
+          title={window.t('issue.title')}
+          aria-label={window.t('issue.title')}
+          style={{
+            position: "fixed",
+            right: "max(16px, calc(50vw - 220px + 16px))",
+            bottom: "calc(78px + env(safe-area-inset-bottom, 0) + 70px)",
+            width: 36, height: 36,
+            background: "var(--paper)", color: "var(--ink-mute)",
+            border: "1px solid var(--rule)",
+            borderRadius: "50%",
+            boxShadow: "0 4px 12px -4px rgba(31,24,20,0.18)",
+            display: "flex", alignItems: "center", justifyContent: "center",
+            cursor: "pointer", zIndex: 60, fontSize: 15,
+          }}
+        >⚑</button>
+        <ReportIssueModal key={"report-" + lang} open={reportOpen} onClose={() => setReportOpen(false)} />
       </div>
 
       {/* Tweaks panel */}
