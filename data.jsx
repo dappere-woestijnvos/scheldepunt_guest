@@ -64,8 +64,8 @@ const APARTMENT_RAW = {
   // 1. Create a free project at https://supabase.com
   // 2. Run the SQL schema in db.jsx (paste into Supabase SQL Editor)
   // 3. Copy Project URL and anon/public API key from Project Settings → API
-  supabaseUrl: "",
-  supabaseKey: "",
+  supabaseUrl: "https://rkyasgxmntkqagpunmpr.supabase.co",
+  supabaseKey: "sb_publishable_K6TqzY6uZ2OnVnBKtBk-MA_YuoHtcBX",
 
   welcomeText: T(
     "Welcome to Scheldepunt!\n\nHow lovely that you are here. We hope you have a wonderful stay in our apartment and can fully enjoy everything Ghent has to offer: charming little streets, beautiful historic buildings, cosy cafés and of course the typical Ghent atmosphere.\n\nMake yourself completely at home, take time to relax and turn it into a lovely weekend. In the apartment you will find everything you need for a comfortable stay. Should you have any questions, we are always happy to help.\n\nEnjoy your weekend in Ghent and have a wonderful time!",
