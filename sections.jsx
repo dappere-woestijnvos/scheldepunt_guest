@@ -870,6 +870,7 @@ const ContactSection = () => {
   const t = window.t;
   const [form, setForm] = useState({ name: "", phone: "", message: "" });
   const [sent, setSent] = useState(false);
+  const [sendOptions, setSendOptions] = useState(null);
   const submit = async (e) => {
     e.preventDefault();
     if (!form.name.trim() || !form.message.trim()) return;
@@ -878,13 +879,13 @@ const ContactSection = () => {
       window.DB.sendMessage({ name: form.name.trim(), phone: form.phone.trim(), message: form.message.trim() })
         .catch((err) => console.warn('contact message not saved to DB:', err));
     }
-    // Open WhatsApp with the message pre-filled
     const waNumber = A.contact.whatsapp.replace(/[^0-9]/g, "");
-    const waText = encodeURIComponent(
-      `${form.name.trim()} (${form.phone.trim() || t('contact.no_phone')})\n\n${form.message.trim()}`
-    );
-    window.open(`https://api.whatsapp.com/send?phone=${waNumber}&text=${waText}`, '_blank');
-    setSent(true);
+    const msgBody = `${form.name.trim()} (${form.phone.trim() || t('contact.no_phone')})\n\n${form.message.trim()}`;
+    const waText = encodeURIComponent(msgBody);
+    const smsText = encodeURIComponent(msgBody);
+    const waUrl = `https://api.whatsapp.com/send?phone=${waNumber}&text=${waText}`;
+    const smsUrl = `sms:+${waNumber}?body=${smsText}`;
+    setSendOptions({ waUrl, smsUrl });
   };
 
   return (
@@ -929,12 +930,42 @@ const ContactSection = () => {
           <div className="serif-i" style={{ fontSize: 16, marginTop: 6, opacity: 0.85 }}>
             {t('contact.sent_body')} — {A.contact.owner}
           </div>
-          <button onClick={() => { setSent(false); setForm({ name: "", phone: "", message: "" }); }} style={{
+          <button onClick={() => { setSent(false); setSendOptions(null); setForm({ name: "", phone: "", message: "" }); }} style={{
             marginTop: 18, padding: "10px 18px", background: "transparent",
             border: "1px solid var(--paper)", color: "var(--paper)",
             fontFamily: "Geist Mono, monospace", fontSize: 10,
             letterSpacing: "0.16em", textTransform: "uppercase", cursor: "pointer",
           }}>{t('contact.send_another')}</button>
+        </div>
+      ) : sendOptions ? (
+        <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+          <p style={{ fontSize: 14, color: "var(--ink-soft)", marginBottom: 4 }}>{t('contact.choose_method')}</p>
+          <a href={sendOptions.waUrl} target="_blank" rel="noreferrer"
+            onClick={() => setSent(true)}
+            style={{
+              padding: "16px 18px", background: "var(--moss)", color: "var(--paper)",
+              textDecoration: "none", display: "flex", alignItems: "center", gap: 12,
+              fontFamily: "Geist Mono, monospace", fontSize: 11,
+              letterSpacing: "0.14em", textTransform: "uppercase",
+            }}>
+            <span style={{ fontSize: 20 }}>💬</span> WhatsApp
+          </a>
+          <a href={sendOptions.smsUrl}
+            onClick={() => setSent(true)}
+            style={{
+              padding: "16px 18px", background: "var(--ink)", color: "var(--paper)",
+              textDecoration: "none", display: "flex", alignItems: "center", gap: 12,
+              fontFamily: "Geist Mono, monospace", fontSize: 11,
+              letterSpacing: "0.14em", textTransform: "uppercase",
+            }}>
+            <span style={{ fontSize: 20 }}>✉️</span> SMS
+          </a>
+          <button onClick={() => setSendOptions(null)} style={{
+            padding: "10px 18px", background: "transparent",
+            border: "1px solid var(--rule)", color: "var(--ink-mute)",
+            fontFamily: "Geist Mono, monospace", fontSize: 10,
+            letterSpacing: "0.14em", textTransform: "uppercase", cursor: "pointer",
+          }}>{t('contact.back')}</button>
         </div>
       ) : (
         <form onSubmit={submit}>

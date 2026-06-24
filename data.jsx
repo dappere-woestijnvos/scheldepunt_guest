@@ -61,8 +61,7 @@ const APARTMENT_RAW = {
     "Beim Check-in gibt es einen persönlichen Empfang, bei dem ihr alle nötigen Informationen erhaltet. Die beim Check-in hinterlegte Kaution wird beim Check-out zurückerstattet.",
   ),
 
-  // Paste your Google Gemini API key here to enable the AI Concierge.
-  // Get a free key at https://aistudio.google.com/apikey
+  // Groq API key for the AI Concierge (free at https://console.groq.com)
   apiKey: localStorage.getItem("concierge_api_key") || "",
 
   // Supabase connection — enables guestbook, visitor tips, contact form, and
