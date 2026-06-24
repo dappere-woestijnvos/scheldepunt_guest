@@ -85,7 +85,7 @@ const BottomNav = ({ active, onChange }) => (
   }}>
     <div style={{
       display: "flex", overflowX: "auto", padding: "8px 6px",
-      gap: 2, scrollbarWidth: "none",
+      gap: 2, scrollbarWidth: "none", WebkitOverflowScrolling: "touch",
     }}>
       {NAV_ITEMS.map((n) => {
         const isActive = n.k === active;
