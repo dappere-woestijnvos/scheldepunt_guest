@@ -6,7 +6,7 @@ Deno.serve(async (req) => {
   if (req.method === "OPTIONS") {
     return new Response(null, {
       headers: {
-        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Origin": Deno.env.get("ALLOWED_ORIGIN") || "*",
         "Access-Control-Allow-Methods": "POST, OPTIONS",
         "Access-Control-Allow-Headers": "Content-Type, Authorization",
       },
@@ -21,7 +21,7 @@ Deno.serve(async (req) => {
   if (!apiKey) {
     return new Response(JSON.stringify({ error: "API key not configured" }), {
       status: 500,
-      headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "*" },
+      headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": Deno.env.get("ALLOWED_ORIGIN") || "*" },
     });
   }
 
@@ -45,12 +45,12 @@ Deno.serve(async (req) => {
 
     return new Response(JSON.stringify(data), {
       status: res.status,
-      headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "*" },
+      headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": Deno.env.get("ALLOWED_ORIGIN") || "*" },
     });
   } catch (e) {
     return new Response(JSON.stringify({ error: e.message }), {
       status: 500,
-      headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "*" },
+      headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": Deno.env.get("ALLOWED_ORIGIN") || "*" },
     });
   }
 });
