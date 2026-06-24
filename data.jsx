@@ -5,10 +5,14 @@
 // codes, coordinates) are left as plain strings. window.APARTMENT always returns
 // the content resolved for the currently selected language (window.currentLang).
 
-// Store concierge API key from URL param: ?apikey=YOUR_KEY
+// Load concierge API key from URL hash (#k=KEY) or query param (?apikey=KEY)
 (() => {
-  const p = new URLSearchParams(window.location.search).get('apikey');
-  if (p) { localStorage.setItem('concierge_api_key', p); history.replaceState(null, '', window.location.pathname); }
+  const hash = window.location.hash;
+  const hk = hash.startsWith('#k=') ? hash.slice(3) : null;
+  const qk = new URLSearchParams(window.location.search).get('apikey');
+  const key = hk || qk;
+  if (key) localStorage.setItem('concierge_api_key', key);
+  if (qk) history.replaceState(null, '', window.location.pathname + window.location.hash);
 })();
 
 function mapsUrl(query) {
