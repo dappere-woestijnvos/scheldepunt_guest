@@ -5,9 +5,6 @@
 // codes, coordinates) are left as plain strings. window.APARTMENT always returns
 // the content resolved for the currently selected language (window.currentLang).
 
-const _CK = ["gsk_","dzh3y1IuJq4stA2e","e6YzWGdyb3FY4G0r","XflNhp8BZUBDJgJoOANF"];
-const CONCIERGE_KEY = _CK[0] + _CK.slice(1).join("");
-
 function mapsUrl(query) {
   return 'https://maps.google.com/maps?q=' + encodeURIComponent(query);
 }
@@ -58,7 +55,6 @@ const APARTMENT_RAW = {
     "Beim Check-in gibt es einen persönlichen Empfang, bei dem ihr alle nötigen Informationen erhaltet. Die beim Check-in hinterlegte Kaution wird beim Check-out zurückerstattet.",
   ),
 
-  apiKey: CONCIERGE_KEY,
 
   // Supabase connection — enables guestbook, visitor tips, contact form, and
   // issue reports to persist to a real database.
