@@ -328,6 +328,22 @@ const APARTMENT_RAW = {
   },
 
   neighborhood: [
+    { kind: T("Bakery", "Bakkerij", "Boulangerie", "Panadería", "Bäckerei"), name: "Mertens", dist: "400 m",
+      note: T(
+        "François Bernhardstraat 86/1. The nearest bakery — fresh bread, pastries and sandwiches.",
+        "François Bernhardstraat 86/1. De dichtste bakkerij — vers brood, gebak en broodjes.",
+        "François Bernhardstraat 86/1. La boulangerie la plus proche — pain frais, pâtisseries et sandwichs.",
+        "François Bernhardstraat 86/1. La panadería más cercana — pan fresco, bollería y bocadillos.",
+        "François Bernhardstraat 86/1. Die nächste Bäckerei — frisches Brot, Gebäck und belegte Brötchen.",
+      ), mapsUrl: mapsUrl("Bakkerij Mertens, François Bernhardstraat 86, Gent") },
+    { kind: T("Supermarket", "Supermarkt", "Supermarché", "Supermercado", "Supermarkt"), name: "Spar", dist: "450 m",
+      note: T(
+        "Leeuwstraat 60. The closest shop for groceries and daily essentials.",
+        "Leeuwstraat 60. De dichtstbijzijnde winkel voor boodschappen en dagelijkse benodigdheden.",
+        "Leeuwstraat 60. Le magasin le plus proche pour les courses et les produits du quotidien.",
+        "Leeuwstraat 60. La tienda más cercana para compras y artículos de uso diario.",
+        "Leeuwstraat 60. Der nächste Laden für Einkäufe und Tagesbedarf.",
+      ), mapsUrl: mapsUrl("Spar, Leeuwstraat 60, Gent") },
     { kind: T("Bakery", "Bakkerij", "Boulangerie", "Panadería", "Bäckerei"), name: "Smørbrod", dist: "1.4 km",
       note: T(
         "Guldenspoorstraat 29. Scandinavian-inspired open sandwiches and seasonal bakes.",

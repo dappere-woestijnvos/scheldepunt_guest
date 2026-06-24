@@ -873,13 +873,17 @@ const ContactSection = () => {
   const submit = async (e) => {
     e.preventDefault();
     if (!form.name.trim() || !form.message.trim()) return;
+    // Save to DB in the background
     if (window.DB.ready()) {
-      try {
-        await window.DB.sendMessage({ name: form.name.trim(), phone: form.phone.trim(), message: form.message.trim() });
-      } catch (err) {
-        console.warn('contact message not saved to DB:', err);
-      }
+      window.DB.sendMessage({ name: form.name.trim(), phone: form.phone.trim(), message: form.message.trim() })
+        .catch((err) => console.warn('contact message not saved to DB:', err));
     }
+    // Open WhatsApp with the message pre-filled
+    const waNumber = A.contact.whatsapp.replace(/[^0-9]/g, "");
+    const waText = encodeURIComponent(
+      `${form.name.trim()} (${form.phone.trim() || t('contact.no_phone')})\n\n${form.message.trim()}`
+    );
+    window.open(`https://wa.me/${waNumber}?text=${waText}`, '_blank');
     setSent(true);
   };
 
