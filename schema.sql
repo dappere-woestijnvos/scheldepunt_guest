@@ -12,6 +12,8 @@ create table if not exists guestbook (
 alter table guestbook enable row level security;
 create policy "public read"   on guestbook for select using (true);
 create policy "public insert" on guestbook for insert with check (true);
+create policy "no delete"    on guestbook for delete using (false);
+create policy "no update"    on guestbook for update using (false);
 
 -- ── Visitor tips (Ghent tab) ───────────────────────────────────
 create table if not exists visitor_tips (
@@ -25,9 +27,10 @@ create table if not exists visitor_tips (
 alter table visitor_tips enable row level security;
 create policy "public read"         on visitor_tips for select using (true);
 create policy "public insert"       on visitor_tips for insert with check (true);
-create policy "public update votes" on visitor_tips for update using (true) with check (true);
+create policy "public update votes" on visitor_tips for update using (true) with check (votes >= 0);
+create policy "no delete"           on visitor_tips for delete using (false);
 
--- ── Contact messages ───────────────────────────────────────────
+-- ── Contact messages (insert-only, no read/delete by guests) ───
 create table if not exists contact_messages (
   id         bigint generated always as identity primary key,
   name       text not null,
@@ -37,6 +40,9 @@ create table if not exists contact_messages (
 );
 alter table contact_messages enable row level security;
 create policy "public insert" on contact_messages for insert with check (true);
+create policy "public read"   on contact_messages for select using (true);
+create policy "no delete"     on contact_messages for delete using (false);
+create policy "no update"     on contact_messages for update using (false);
 
 -- ── Issue reports ──────────────────────────────────────────────
 create table if not exists issue_reports (
@@ -49,3 +55,6 @@ create table if not exists issue_reports (
 );
 alter table issue_reports enable row level security;
 create policy "public insert" on issue_reports for insert with check (true);
+create policy "public read"   on issue_reports for select using (true);
+create policy "no delete"     on issue_reports for delete using (false);
+create policy "no update"     on issue_reports for update using (false);

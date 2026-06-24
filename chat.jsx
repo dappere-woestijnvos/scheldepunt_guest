@@ -128,7 +128,7 @@ const ConciergePanel = ({ open, onClose, openContact }) => {
       const reply = data.choices?.[0]?.message?.content ?? "Sorry, I didn't catch that.";
       setMessages((m) => [...m, { role: "assistant", content: reply }]);
     } catch (e) {
-      console.error("Concierge error", e?.message || e, "| API key set:", !!apiKey, "| key prefix:", apiKey?.substring(0, 6));
+      console.error("Concierge error", e?.message || e);
       setError(window.t('concierge.error'));
     } finally {
       setThinking(false);
