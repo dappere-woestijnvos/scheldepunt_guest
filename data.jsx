@@ -5,6 +5,12 @@
 // codes, coordinates) are left as plain strings. window.APARTMENT always returns
 // the content resolved for the currently selected language (window.currentLang).
 
+// Store concierge API key from URL param: ?apikey=YOUR_KEY
+(() => {
+  const p = new URLSearchParams(window.location.search).get('apikey');
+  if (p) { localStorage.setItem('concierge_api_key', p); history.replaceState(null, '', window.location.pathname); }
+})();
+
 function mapsUrl(query) {
   return 'https://maps.google.com/maps?q=' + encodeURIComponent(query);
 }
@@ -55,9 +61,9 @@ const APARTMENT_RAW = {
     "Beim Check-in gibt es einen persönlichen Empfang, bei dem ihr alle nötigen Informationen erhaltet. Die beim Check-in hinterlegte Kaution wird beim Check-out zurückerstattet.",
   ),
 
-  // Paste your Anthropic API key here to enable the AI Concierge.
-  // Leave empty to disable (guests will be directed to contact you directly).
-  apiKey: "",
+  // Paste your Google Gemini API key here to enable the AI Concierge.
+  // Get a free key at https://aistudio.google.com/apikey
+  apiKey: localStorage.getItem("concierge_api_key") || "",
 
   // Supabase connection — enables guestbook, visitor tips, contact form, and
   // issue reports to persist to a real database.
@@ -65,7 +71,7 @@ const APARTMENT_RAW = {
   // 2. Run the SQL schema in db.jsx (paste into Supabase SQL Editor)
   // 3. Copy Project URL and anon/public API key from Project Settings → API
   supabaseUrl: "https://rkyasgxmntkqagpunmpr.supabase.co",
-  supabaseKey: "sb_publishable_K6TqzY6uZ2OnVnBKtBk-MA_YuoHtcBX",
+  supabaseKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJreWFzZ3htbnRrcWFncHVubXByIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODE0NDcxOTIsImV4cCI6MjA5NzAyMzE5Mn0.68aFVWMhBCYQ_noFpUkUzAWBuEYsEJ3mcQPvnFOfvvg",
 
   welcomeText: T(
     "Welcome to Scheldepunt!\n\nHow lovely that you are here. We hope you have a wonderful stay in our apartment and can fully enjoy everything Ghent has to offer: charming little streets, beautiful historic buildings, cosy cafés and of course the typical Ghent atmosphere.\n\nMake yourself completely at home, take time to relax and turn it into a lovely weekend. In the apartment you will find everything you need for a comfortable stay. Should you have any questions, we are always happy to help.\n\nEnjoy your weekend in Ghent and have a wonderful time!",
@@ -328,6 +334,22 @@ const APARTMENT_RAW = {
   },
 
   neighborhood: [
+    { kind: T("Bakery", "Bakkerij", "Boulangerie", "Panadería", "Bäckerei"), name: "Mertens", dist: "400 m",
+      note: T(
+        "François Bernhardstraat 86/1. The nearest bakery — fresh bread, pastries and sandwiches.",
+        "François Bernhardstraat 86/1. De dichtste bakkerij — vers brood, gebak en broodjes.",
+        "François Bernhardstraat 86/1. La boulangerie la plus proche — pain frais, pâtisseries et sandwichs.",
+        "François Bernhardstraat 86/1. La panadería más cercana — pan fresco, bollería y bocadillos.",
+        "François Bernhardstraat 86/1. Die nächste Bäckerei — frisches Brot, Gebäck und belegte Brötchen.",
+      ), mapsUrl: mapsUrl("Bakkerij Mertens, François Bernhardstraat 86, Gent") },
+    { kind: T("Supermarket", "Supermarkt", "Supermarché", "Supermercado", "Supermarkt"), name: "Spar", dist: "450 m",
+      note: T(
+        "Leeuwstraat 60. The closest shop for groceries and daily essentials.",
+        "Leeuwstraat 60. De dichtstbijzijnde winkel voor boodschappen en dagelijkse benodigdheden.",
+        "Leeuwstraat 60. Le magasin le plus proche pour les courses et les produits du quotidien.",
+        "Leeuwstraat 60. La tienda más cercana para compras y artículos de uso diario.",
+        "Leeuwstraat 60. Der nächste Laden für Einkäufe und Tagesbedarf.",
+      ), mapsUrl: mapsUrl("Spar, Leeuwstraat 60, Gent") },
     { kind: T("Bakery", "Bakkerij", "Boulangerie", "Panadería", "Bäckerei"), name: "Smørbrod", dist: "1.4 km",
       note: T(
         "Guldenspoorstraat 29. Scandinavian-inspired open sandwiches and seasonal bakes.",
@@ -702,9 +724,84 @@ ${A.tours.map((t) => `- ${t.name} (${t.duration}, ${t.price}): ${t.note}`).join(
 Owners: Luc Browaeys | WhatsApp: ${A.contact.whatsapp} | Tom: ${A.contact.phone2} | Email: ${A.contact.email}
 Response time: ${A.contact.responseTime}
 
+# GHENT — CITY KNOWLEDGE
+Ghent (Gent) is the capital of East Flanders, population ~265 000. A vibrant university city (Ghent University, ~50 000 students) with a medieval core at the confluence of the Leie and Scheldt rivers.
+
+## History
+Founded around a 7th-century abbey (Sint-Baafs). By the 14th century it was one of the largest cities in Europe, rivalling Paris, thanks to the cloth trade. The city rebelled against Emperor Charles V (born here in 1500) — the locals were nicknamed "Stroppendragers" (noose bearers) as punishment. Major landmarks date from this golden age: Gravensteen (1180), Sint-Baafs Cathedral, the Belfry (UNESCO), Sint-Niklaaskerk, and the medieval guild houses along the Graslei and Korenlei.
+
+## Must-know facts
+- The Adoration of the Mystic Lamb (Van Eyck, 1432) is in Sint-Baafs Cathedral — one of the world's most important artworks.
+- Ghent has more restaurants per capita than Paris. The Patershol neighbourhood is the foodie heart.
+- Every 10 years the "Gentse Floraliën" flower show takes place (since 1809).
+- "Gentse Feesten" is a 10-day free festival in July — one of Europe's largest street festivals.
+- Ghent was the first city in the world to have a weekly vegetarian day (Donderdag Veggiedag / Thursday Veggie Day).
+- The city has 400+ km of bike lanes. Cycling is the locals' main transport.
+
+## Food & drink
+- Cuberdons (neuzekes): purple cone-shaped candy, unique to Ghent. Try them at the Groentenmarkt stalls.
+- Gentse Waterzooi: creamy stew originally with fish, now often chicken. Traditional dish of Ghent.
+- Tierenteyn mustard: artisan mustard shop on the Groentenmarkt, open since 1790. Bring your own jar or buy one.
+- Gentse Mokken: anise-flavoured biscuits.
+- Stoverij / stoofvlees: Flemish beef stew braised in beer.
+- Speculoos: spiced shortcrust biscuits, served with coffee everywhere.
+- Kriek, Tripel, Dubbel: Belgian beer styles. Local breweries: Gruut (in-city, brews with herbs instead of hops), Huyghe (Delirium Tremens, brewed in Melle just outside Ghent).
+- De Dulle Griet bar: you leave a shoe as deposit for their Kwak glass.
+- Ghent has a large vegan/vegetarian scene — Komkommertijd, Greenway, Avalon are popular spots.
+
+## Neighbourhoods
+- Patershol: medieval alleys, packed with restaurants. Best for dinner.
+- Graslei / Korenlei: postcard waterfront. Best at sunset with a drink.
+- Sint-Pietersnieuwstraat / Overpoort: student nightlife area.
+- Coupure / Blaarmeersen: green areas, good for running or a walk.
+- Muinkpark / Citadelpark: large park near the SMAK (modern art museum) and MSK (fine arts).
+- Portus Ganda: marina area where Leie meets Scheldt. Nice for a walk.
+- Dok Noord / Oude Dokken: up-and-coming waterfront neighbourhood.
+
+## Day trips from Ghent (all easy by train)
+- Bruges (Brugge): 26 min by train. Medieval canals, Markt square, chocolate shops.
+- Brussels: 30 min by train. Grand Place, Magritte Museum, EU quarter, comic strip murals.
+- Antwerp: 50 min by train. Diamond district, MAS museum, fashion scene, Rubens House.
+- Oudenaarde: 30 min. Tour of Flanders cycling museum, Flemish Renaissance town hall.
+- Ypres (Ieper): 1h15. WWI history — Menin Gate Last Post ceremony every evening at 20:00.
+- Coastal tram: take the train to Ostend then the Kusttram — the world's longest tram line runs the full Belgian coast (67 km). Nice day out.
+
+## Practical
+- Currency: Euro (€). Contactless payment accepted almost everywhere; some small shops are cash-only.
+- Tipping: not mandatory in Belgium. Service is included. Rounding up or leaving €1-2 is appreciated.
+- Tap water is safe to drink everywhere in Ghent.
+- Shops: most open 10:00–18:00. Supermarkets until 20:00. Sundays most shops are closed except in tourist areas.
+- Language: Dutch (Flemish). Almost everyone speaks English. French is understood but locals prefer English.
+- Emergency: 112 (EU-wide). Police: 101.
+
+# FLANDERS — GENERAL KNOWLEDGE
+Flanders (Vlaanderen) is the Dutch-speaking northern region of Belgium. Population ~6.7 million.
+
+## Culture
+- Flemish Masters: Van Eyck, Rubens, Jordaens, Van Dyck — their works fill churches and museums across Flanders.
+- Cycling is a religion. The Tour of Flanders (Ronde van Vlaanderen) is a major Spring Classic.
+- Comic strips: Belgium is the comic strip capital of the world — Tintin (Hergé), The Smurfs (Peyo), Suske & Wiske.
+- Flemish cuisine is hearty: frites (fries, invented in Belgium, NOT France), vol-au-vent, mosselen-friet (mussels and fries), wafels (Liège and Brussels styles are different).
+
+## Beer
+Belgium has 300+ breweries. Flanders is home to:
+- Trappist beers: Westmalle, Westvleteren (often called world's best), Chimay, Achel.
+- Lambic/Geuze: spontaneously fermented, sour, from the Pajottenland region near Brussels.
+- Belgian beer culture is UNESCO Intangible Cultural Heritage.
+
+## Chocolate
+Belgium produces 220 000 tonnes of chocolate per year. Notable: Neuhaus (invented the praline in 1912), Côte d'Or, Leonidas, Pierre Marcolini, Dominique Persoone (The Chocolate Line, Bruges — has a shop in Ghent too).
+
+## Quirks
+- Belgium has the densest rail network in Europe — you can reach almost any town by train.
+- Fries are eaten with mayonnaise, not ketchup. A "frietkot" (fry stand) is a cultural institution.
+- Belgians have 3 official languages (Dutch, French, German) and 6 governments.
+- The Manneken Pis in Brussels has a wardrobe of 1000+ costumes.
+
 # RULES
-- Only use information above. If uncertain, say so and suggest contacting the host.
-- Never invent prices, hours, or facts.
+- You may use the Ghent and Flanders knowledge above to give rich, local recommendations.
+- For specific opening hours, prices, or availability — say these may change and suggest checking online or asking the host.
+- If uncertain about a fact, say so and suggest contacting the host.
 - Sound like a helpful local friend, not a brochure.`;
 }
 

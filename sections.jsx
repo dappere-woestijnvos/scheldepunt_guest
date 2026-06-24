@@ -363,8 +363,9 @@ const GhentSection = ({ visitorTips, setVisitorTips }) => {
   const submitTip = async (e) => {
     e.preventDefault();
     if (!tipForm.place.trim() || !tipForm.desc.trim()) return;
+    const tempId = Date.now();
     const newTip = {
-      id: Date.now(),
+      id: tempId,
       name: tipForm.name.trim() || "A guest",
       place: tipForm.place.trim(),
       desc: tipForm.desc.trim(),
@@ -374,14 +375,16 @@ const GhentSection = ({ visitorTips, setVisitorTips }) => {
     setTipForm({ name: "", place: "", desc: "" });
     if (window.DB.ready()) {
       try {
-        const [saved] = await window.DB.addTip({ name: newTip.name, place: newTip.place, description: newTip.desc });
-        if (saved) {
-          // Replace the optimistic entry with the real DB id
+        const rows = await window.DB.addTip({ name: newTip.name, place: newTip.place, description: newTip.desc });
+        const saved = Array.isArray(rows) ? rows[0] : rows;
+        if (saved && typeof saved.id === 'number') {
           setVisitorTips((prev) => prev.map((t) =>
-            t.id === newTip.id ? { ...t, id: saved.id } : t
+            t.id === tempId ? { ...t, id: saved.id } : t
           ));
         }
-      } catch (e) { /* keep optimistic entry */ }
+      } catch (err) {
+        console.warn('visitor tip not saved to DB:', err);
+      }
     }
   };
 
@@ -747,8 +750,9 @@ const GuestbookSection = ({ entries, setEntries }) => {
       setSaving(true);
       try {
         await window.DB.addEntry({ name: newEntry.name, from: newEntry.from, text: newEntry.text });
-      } catch (e) { /* keep local copy on failure */ }
-      finally { setSaving(false); }
+      } catch (err) {
+        console.warn('guestbook entry not saved to DB:', err);
+      } finally { setSaving(false); }
     }
   };
 
@@ -869,11 +873,17 @@ const ContactSection = () => {
   const submit = async (e) => {
     e.preventDefault();
     if (!form.name.trim() || !form.message.trim()) return;
+    // Save to DB in the background
     if (window.DB.ready()) {
-      try {
-        await window.DB.sendMessage({ name: form.name.trim(), phone: form.phone.trim(), message: form.message.trim() });
-      } catch (e) { /* still show sent — don't penalise guest for backend issues */ }
+      window.DB.sendMessage({ name: form.name.trim(), phone: form.phone.trim(), message: form.message.trim() })
+        .catch((err) => console.warn('contact message not saved to DB:', err));
     }
+    // Open WhatsApp with the message pre-filled
+    const waNumber = A.contact.whatsapp.replace(/[^0-9]/g, "");
+    const waText = encodeURIComponent(
+      `${form.name.trim()} (${form.phone.trim() || t('contact.no_phone')})\n\n${form.message.trim()}`
+    );
+    window.open(`https://wa.me/${waNumber}?text=${waText}`, '_blank');
     setSent(true);
   };
 
