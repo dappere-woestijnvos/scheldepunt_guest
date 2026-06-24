@@ -114,7 +114,7 @@ const ConciergePanel = ({ open, onClose, openContact }) => {
       ];
 
       const res = await fetch(
-        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`,
+        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-lite:generateContent?key=${apiKey}`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -128,7 +128,7 @@ const ConciergePanel = ({ open, onClose, openContact }) => {
       if (res.status === 429) {
         await new Promise((r) => setTimeout(r, 3000));
         const retry = await fetch(
-          `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`,
+          `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-lite:generateContent?key=${apiKey}`,
           { method: "POST", headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ contents: geminiMessages, generationConfig: { maxOutputTokens: 1024 } }) },
         );
