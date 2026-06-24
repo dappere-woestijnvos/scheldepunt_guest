@@ -78,7 +78,7 @@ const LANGS = [
 
 const BottomNav = ({ active, onChange }) => (
   <nav style={{
-    position: "sticky", bottom: 0, zIndex: 40,
+    flexShrink: 0, zIndex: 40,
     background: "var(--paper)",
     borderTop: "1px solid var(--rule)",
     paddingBottom: "env(safe-area-inset-bottom, 0)",
@@ -235,7 +235,7 @@ const App = () => {
     <div className="stage" data-screen-label={`App · ${active}`}>
       <div className="device">
         <TopBar active={active} onLogo={() => go("welcome")} lang={lang} changeLang={changeLang} />
-        <main key={active + "-" + lang} style={{ animation: "pageIn .35s ease" }}>{view}</main>
+        <main key={active + "-" + lang} style={{ flex: 1, overflowY: "auto", animation: "pageIn .35s ease" }}>{view}</main>
         <BottomNav active={active} onChange={go} />
         <ConciergeBubble onClick={() => setChatOpen(true)} />
         <ConciergePanel

@@ -883,7 +883,7 @@ const ContactSection = () => {
     const waText = encodeURIComponent(
       `${form.name.trim()} (${form.phone.trim() || t('contact.no_phone')})\n\n${form.message.trim()}`
     );
-    window.open(`https://wa.me/${waNumber}?text=${waText}`, '_blank');
+    window.open(`https://api.whatsapp.com/send?phone=${waNumber}&text=${waText}`, '_blank');
     setSent(true);
   };
 

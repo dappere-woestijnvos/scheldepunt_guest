@@ -53,14 +53,16 @@
     max-width: 440px;
     background: var(--paper);
     position: relative;
-    min-height: 100vh;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
     overflow-x: hidden;
     box-shadow: 0 30px 80px -30px rgba(31,24,20,0.35), 0 0 0 1px rgba(31,24,20,0.04);
   }
   @media (min-width: 720px) {
     .stage { padding: 24px 0; align-items: flex-start; }
     .device {
-      min-height: calc(100vh - 48px);
+      height: calc(100vh - 48px);
       border-radius: 28px;
       overflow: hidden;
     }
