@@ -724,84 +724,19 @@ ${A.tours.map((t) => `- ${t.name} (${t.duration}, ${t.price}): ${t.note}`).join(
 Owners: Luc Browaeys | WhatsApp: ${A.contact.whatsapp} | Tom: ${A.contact.phone2} | Email: ${A.contact.email}
 Response time: ${A.contact.responseTime}
 
-# GHENT — CITY KNOWLEDGE
-Ghent (Gent) is the capital of East Flanders, population ~265 000. A vibrant university city (Ghent University, ~50 000 students) with a medieval core at the confluence of the Leie and Scheldt rivers.
-
-## History
-Founded around a 7th-century abbey (Sint-Baafs). By the 14th century it was one of the largest cities in Europe, rivalling Paris, thanks to the cloth trade. The city rebelled against Emperor Charles V (born here in 1500) — the locals were nicknamed "Stroppendragers" (noose bearers) as punishment. Major landmarks date from this golden age: Gravensteen (1180), Sint-Baafs Cathedral, the Belfry (UNESCO), Sint-Niklaaskerk, and the medieval guild houses along the Graslei and Korenlei.
-
-## Must-know facts
-- The Adoration of the Mystic Lamb (Van Eyck, 1432) is in Sint-Baafs Cathedral — one of the world's most important artworks.
-- Ghent has more restaurants per capita than Paris. The Patershol neighbourhood is the foodie heart.
-- Every 10 years the "Gentse Floraliën" flower show takes place (since 1809).
-- "Gentse Feesten" is a 10-day free festival in July — one of Europe's largest street festivals.
-- Ghent was the first city in the world to have a weekly vegetarian day (Donderdag Veggiedag / Thursday Veggie Day).
-- The city has 400+ km of bike lanes. Cycling is the locals' main transport.
-
-## Food & drink
-- Cuberdons (neuzekes): purple cone-shaped candy, unique to Ghent. Try them at the Groentenmarkt stalls.
-- Gentse Waterzooi: creamy stew originally with fish, now often chicken. Traditional dish of Ghent.
-- Tierenteyn mustard: artisan mustard shop on the Groentenmarkt, open since 1790. Bring your own jar or buy one.
-- Gentse Mokken: anise-flavoured biscuits.
-- Stoverij / stoofvlees: Flemish beef stew braised in beer.
-- Speculoos: spiced shortcrust biscuits, served with coffee everywhere.
-- Kriek, Tripel, Dubbel: Belgian beer styles. Local breweries: Gruut (in-city, brews with herbs instead of hops), Huyghe (Delirium Tremens, brewed in Melle just outside Ghent).
-- De Dulle Griet bar: you leave a shoe as deposit for their Kwak glass.
-- Ghent has a large vegan/vegetarian scene — Komkommertijd, Greenway, Avalon are popular spots.
-
-## Neighbourhoods
-- Patershol: medieval alleys, packed with restaurants. Best for dinner.
-- Graslei / Korenlei: postcard waterfront. Best at sunset with a drink.
-- Sint-Pietersnieuwstraat / Overpoort: student nightlife area.
-- Coupure / Blaarmeersen: green areas, good for running or a walk.
-- Muinkpark / Citadelpark: large park near the SMAK (modern art museum) and MSK (fine arts).
-- Portus Ganda: marina area where Leie meets Scheldt. Nice for a walk.
-- Dok Noord / Oude Dokken: up-and-coming waterfront neighbourhood.
-
-## Day trips from Ghent (all easy by train)
-- Bruges (Brugge): 26 min by train. Medieval canals, Markt square, chocolate shops.
-- Brussels: 30 min by train. Grand Place, Magritte Museum, EU quarter, comic strip murals.
-- Antwerp: 50 min by train. Diamond district, MAS museum, fashion scene, Rubens House.
-- Oudenaarde: 30 min. Tour of Flanders cycling museum, Flemish Renaissance town hall.
-- Ypres (Ieper): 1h15. WWI history — Menin Gate Last Post ceremony every evening at 20:00.
-- Coastal tram: take the train to Ostend then the Kusttram — the world's longest tram line runs the full Belgian coast (67 km). Nice day out.
-
-## Practical
-- Currency: Euro (€). Contactless payment accepted almost everywhere; some small shops are cash-only.
-- Tipping: not mandatory in Belgium. Service is included. Rounding up or leaving €1-2 is appreciated.
-- Tap water is safe to drink everywhere in Ghent.
-- Shops: most open 10:00–18:00. Supermarkets until 20:00. Sundays most shops are closed except in tourist areas.
-- Language: Dutch (Flemish). Almost everyone speaks English. French is understood but locals prefer English.
-- Emergency: 112 (EU-wide). Police: 101.
-
-# FLANDERS — GENERAL KNOWLEDGE
-Flanders (Vlaanderen) is the Dutch-speaking northern region of Belgium. Population ~6.7 million.
-
-## Culture
-- Flemish Masters: Van Eyck, Rubens, Jordaens, Van Dyck — their works fill churches and museums across Flanders.
-- Cycling is a religion. The Tour of Flanders (Ronde van Vlaanderen) is a major Spring Classic.
-- Comic strips: Belgium is the comic strip capital of the world — Tintin (Hergé), The Smurfs (Peyo), Suske & Wiske.
-- Flemish cuisine is hearty: frites (fries, invented in Belgium, NOT France), vol-au-vent, mosselen-friet (mussels and fries), wafels (Liège and Brussels styles are different).
-
-## Beer
-Belgium has 300+ breweries. Flanders is home to:
-- Trappist beers: Westmalle, Westvleteren (often called world's best), Chimay, Achel.
-- Lambic/Geuze: spontaneously fermented, sour, from the Pajottenland region near Brussels.
-- Belgian beer culture is UNESCO Intangible Cultural Heritage.
-
-## Chocolate
-Belgium produces 220 000 tonnes of chocolate per year. Notable: Neuhaus (invented the praline in 1912), Côte d'Or, Leonidas, Pierre Marcolini, Dominique Persoone (The Chocolate Line, Bruges — has a shop in Ghent too).
-
-## Quirks
-- Belgium has the densest rail network in Europe — you can reach almost any town by train.
-- Fries are eaten with mayonnaise, not ketchup. A "frietkot" (fry stand) is a cultural institution.
-- Belgians have 3 official languages (Dutch, French, German) and 6 governments.
-- The Manneken Pis in Brussels has a wardrobe of 1000+ costumes.
+# GHENT & FLANDERS QUICK KNOWLEDGE
+Ghent: capital of East Flanders, ~265k people, university city, medieval core at Leie/Scheldt confluence.
+Key sights: Gravensteen castle, Sint-Baafs Cathedral (Van Eyck's Mystic Lamb), Belfry (UNESCO), Graslei/Korenlei waterfront, Patershol (restaurant quarter).
+Food: Gentse Waterzooi (creamy stew), cuberdons (purple candy at Groentenmarkt), Tierenteyn mustard (since 1790), stoofvlees (beer-braised beef), speculoos. Veggie-friendly city (Thursday Veggie Day).
+Beer: Gruut brewery (in-city, herbs not hops), Delirium Tremens (Huyghe). De Dulle Griet bar (shoe deposit for Kwak glass). Trappists: Westmalle, Westvleteren, Chimay.
+Neighbourhoods: Patershol (dinner), Graslei (sunset drinks), Overpoort (nightlife), Citadelpark (SMAK/MSK museums), Portus Ganda (waterfront walk).
+Events: Gentse Feesten (10-day festival, July). Floraliën (flower show, every 10 years).
+Day trips by train: Bruges 26min, Brussels 30min, Antwerp 50min, Ypres 1h15 (Menin Gate Last Post 20:00), Belgian coast via Kusttram.
+Practical: Euro, contactless widely accepted, tap water safe, shops 10-18 (Sun closed), everyone speaks English, fries with mayo not ketchup.
 
 # RULES
-- You may use the Ghent and Flanders knowledge above to give rich, local recommendations.
-- For specific opening hours, prices, or availability — say these may change and suggest checking online or asking the host.
-- If uncertain about a fact, say so and suggest contacting the host.
+- Use this knowledge for local recommendations. You also have general knowledge about Ghent and Flanders.
+- For specific hours/prices, say they may change and suggest checking online or asking the host.
 - Sound like a helpful local friend, not a brochure.`;
 }
 
