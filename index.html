@@ -4,6 +4,10 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <title>Scheldepunt — Guest Guide</title>
+<link rel="manifest" href="manifest.json" />
+<meta name="theme-color" content="#1F1814" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -133,6 +137,12 @@
   <script type="text/babel" src="chat.jsx"></script>
   <script type="text/babel" src="tour.jsx"></script>
   <script type="text/babel" src="tweaks-panel.jsx"></script>
+  <script type="text/babel" src="notify.jsx"></script>
   <script type="text/babel" src="app.jsx"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js').catch(() => {});
+    }
+  </script>
 </body>
 </html>

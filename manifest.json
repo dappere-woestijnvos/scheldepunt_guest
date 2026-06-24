@@ -1,0 +1,16 @@
+{
+  "name": "Scheldepunt Guest Guide",
+  "short_name": "Scheldepunt",
+  "description": "Your guest guide for Scheldepunt apartment in Ghent",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FBF6EB",
+  "theme_color": "#1F1814",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect width='192' height='192' rx='32' fill='%231F1814'/><text x='96' y='130' text-anchor='middle' font-family='serif' font-style='italic' font-weight='500' font-size='120' fill='%23FBF6EB'>S</text></svg>",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    }
+  ]
+}
