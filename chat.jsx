@@ -104,51 +104,29 @@ const ConciergePanel = ({ open, onClose, openContact }) => {
       .map((m) => ({ role: m.role, content: m.content }));
 
     try {
-      const geminiMessages = [
-        { role: "user", parts: [{ text: system }] },
-        { role: "model", parts: [{ text: "Understood. I am the Scheldepunt concierge. How can I help?" }] },
-        ...apiMessages.map((m) => ({
-          role: m.role === "assistant" ? "model" : "user",
-          parts: [{ text: m.content }],
-        })),
-      ];
-
-      const res = await fetch(
-        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-lite:generateContent?key=${apiKey}`,
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            contents: geminiMessages,
-            generationConfig: { maxOutputTokens: 1024 },
-          }),
+      const res = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${apiKey}`,
         },
-      );
+        body: JSON.stringify({
+          model: "llama-3.3-70b-versatile",
+          max_tokens: 1024,
+          messages: [
+            { role: "system", content: system },
+            ...apiMessages,
+          ],
+        }),
+      });
 
-      if (res.status === 429) {
-        await new Promise((r) => setTimeout(r, 3000));
-        const retry = await fetch(
-          `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-lite:generateContent?key=${apiKey}`,
-          { method: "POST", headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ contents: geminiMessages, generationConfig: { maxOutputTokens: 1024 } }) },
-        );
-        if (!retry.ok) {
-          const err = await retry.json().catch(() => ({}));
-          throw new Error(err.error?.message || `API error ${retry.status}`);
-        }
-        const rdata = await retry.json();
-        const rreply = rdata.candidates?.[0]?.content?.parts?.[0]?.text ?? "Sorry, I didn't catch that.";
-        setMessages((m) => [...m, { role: "assistant", content: rreply }]);
-        setThinking(false);
-        return;
-      }
       if (!res.ok) {
         const err = await res.json().catch(() => ({}));
         throw new Error(err.error?.message || `API error ${res.status}`);
       }
 
       const data = await res.json();
-      const reply = data.candidates?.[0]?.content?.parts?.[0]?.text ?? "Sorry, I didn't catch that.";
+      const reply = data.choices?.[0]?.message?.content ?? "Sorry, I didn't catch that.";
       setMessages((m) => [...m, { role: "assistant", content: reply }]);
     } catch (e) {
       console.error("Concierge error", e?.message || e, "| API key set:", !!apiKey, "| key prefix:", apiKey?.substring(0, 6));
