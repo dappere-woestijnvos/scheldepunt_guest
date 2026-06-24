@@ -84,25 +84,24 @@ const BottomNav = ({ active, onChange }) => (
     paddingBottom: "env(safe-area-inset-bottom, 0)",
   }}>
     <div style={{
-      display: "flex", overflowX: "auto", padding: "8px 6px",
-      gap: 2, scrollbarWidth: "none", WebkitOverflowScrolling: "touch",
+      display: "flex", padding: "6px 4px",
     }}>
       {NAV_ITEMS.map((n) => {
         const isActive = n.k === active;
         return (
           <button key={n.k} onClick={() => onChange(n.k)} style={{
-            flex: "0 0 auto", minWidth: 56,
-            display: "flex", flexDirection: "column", alignItems: "center", gap: 4,
-            padding: "8px 6px",
+            flex: "1 0 0", minWidth: 0,
+            display: "flex", flexDirection: "column", alignItems: "center", gap: 3,
+            padding: "6px 0",
             background: "transparent", border: "none",
             color: isActive ? "var(--terra)" : "var(--ink-mute)",
             position: "relative",
             cursor: "pointer",
           }}>
-            <Icon name={n.icon} size={20} stroke={isActive ? "var(--terra)" : "var(--ink)"} strokeWidth={isActive ? 1.8 : 1.4} />
+            <Icon name={n.icon} size={18} stroke={isActive ? "var(--terra)" : "var(--ink)"} strokeWidth={isActive ? 1.8 : 1.4} />
             <span style={{
               fontFamily: "Geist Mono, monospace",
-              fontSize: 9, letterSpacing: "0.08em", textTransform: "uppercase",
+              fontSize: 7.5, letterSpacing: "0.04em", textTransform: "uppercase",
             }}>{window.t(n.tKey)}</span>
             {isActive && <span style={{
               position: "absolute", top: 0, left: "50%", transform: "translateX(-50%)",
