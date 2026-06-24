@@ -201,6 +201,10 @@ const App = () => {
     }).catch(() => {});
   }, []);
 
+  useEffectApp(() => {
+    if (window.OwnerNotifications) window.OwnerNotifications.init();
+  }, []);
+
   const changeLang = (code) => {
     window.currentLang = code;
     setLang(code);
