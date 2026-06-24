@@ -104,21 +104,26 @@ const ConciergePanel = ({ open, onClose, openContact }) => {
       .map((m) => ({ role: m.role, content: m.content }));
 
     try {
-      const res = await fetch("https://api.anthropic.com/v1/messages", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "x-api-key": apiKey,
-          "anthropic-version": "2023-06-01",
-          "anthropic-dangerous-direct-browser-access": "true",
+      const geminiMessages = [
+        { role: "user", parts: [{ text: system }] },
+        { role: "model", parts: [{ text: "Understood. I am the Scheldepunt concierge. How can I help?" }] },
+        ...apiMessages.map((m) => ({
+          role: m.role === "assistant" ? "model" : "user",
+          parts: [{ text: m.content }],
+        })),
+      ];
+
+      const res = await fetch(
+        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            contents: geminiMessages,
+            generationConfig: { maxOutputTokens: 1024 },
+          }),
         },
-        body: JSON.stringify({
-          model: "claude-sonnet-4-20250514",
-          max_tokens: 1024,
-          system,
-          messages: apiMessages,
-        }),
-      });
+      );
 
       if (!res.ok) {
         const err = await res.json().catch(() => ({}));
@@ -126,7 +131,7 @@ const ConciergePanel = ({ open, onClose, openContact }) => {
       }
 
       const data = await res.json();
-      const reply = data.content?.[0]?.text ?? "Sorry, I didn't catch that.";
+      const reply = data.candidates?.[0]?.content?.parts?.[0]?.text ?? "Sorry, I didn't catch that.";
       setMessages((m) => [...m, { role: "assistant", content: reply }]);
     } catch (e) {
       console.error("Concierge error", e);

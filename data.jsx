@@ -55,8 +55,8 @@ const APARTMENT_RAW = {
     "Beim Check-in gibt es einen persönlichen Empfang, bei dem ihr alle nötigen Informationen erhaltet. Die beim Check-in hinterlegte Kaution wird beim Check-out zurückerstattet.",
   ),
 
-  // Paste your Anthropic API key here to enable the AI Concierge.
-  // Leave empty to disable (guests will be directed to contact you directly).
+  // Paste your Google Gemini API key here to enable the AI Concierge.
+  // Get a free key at https://aistudio.google.com/apikey
   apiKey: "",
 
   // Supabase connection — enables guestbook, visitor tips, contact form, and
@@ -65,7 +65,7 @@ const APARTMENT_RAW = {
   // 2. Run the SQL schema in db.jsx (paste into Supabase SQL Editor)
   // 3. Copy Project URL and anon/public API key from Project Settings → API
   supabaseUrl: "https://rkyasgxmntkqagpunmpr.supabase.co",
-  supabaseKey: "sb_publishable_K6TqzY6uZ2OnVnBKtBk-MA_YuoHtcBX",
+  supabaseKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJreWFzZ3htbnRrcWFncHVubXByIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODE0NDcxOTIsImV4cCI6MjA5NzAyMzE5Mn0.68aFVWMhBCYQ_noFpUkUzAWBuEYsEJ3mcQPvnFOfvvg",
 
   welcomeText: T(
     "Welcome to Scheldepunt!\n\nHow lovely that you are here. We hope you have a wonderful stay in our apartment and can fully enjoy everything Ghent has to offer: charming little streets, beautiful historic buildings, cosy cafés and of course the typical Ghent atmosphere.\n\nMake yourself completely at home, take time to relax and turn it into a lovely weekend. In the apartment you will find everything you need for a comfortable stay. Should you have any questions, we are always happy to help.\n\nEnjoy your weekend in Ghent and have a wonderful time!",
