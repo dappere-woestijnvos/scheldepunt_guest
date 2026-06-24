@@ -87,9 +87,10 @@ const ConciergePanel = ({ open, onClose, openContact }) => {
     setMessages(next);
     setThinking(true);
 
-    const apiKey = window.APARTMENT.apiKey;
+    const supabaseUrl = window.APARTMENT.supabaseUrl?.replace(/\/$/, '');
+    const supabaseKey = window.APARTMENT.supabaseKey;
 
-    if (!apiKey) {
+    if (!supabaseUrl || !supabaseKey) {
       setMessages((m) => [...m, {
         role: "assistant",
         content: window.t('concierge.no_key'),
@@ -104,15 +105,13 @@ const ConciergePanel = ({ open, onClose, openContact }) => {
       .map((m) => ({ role: m.role, content: m.content }));
 
     try {
-      const res = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+      const res = await fetch(`${supabaseUrl}/functions/v1/concierge`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": `Bearer ${apiKey}`,
+          "Authorization": `Bearer ${supabaseKey}`,
         },
         body: JSON.stringify({
-          model: "llama-3.3-70b-versatile",
-          max_tokens: 1024,
           messages: [
             { role: "system", content: system },
             ...apiMessages,
