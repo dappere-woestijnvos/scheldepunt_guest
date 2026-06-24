@@ -125,6 +125,23 @@ const ConciergePanel = ({ open, onClose, openContact }) => {
         },
       );
 
+      if (res.status === 429) {
+        await new Promise((r) => setTimeout(r, 3000));
+        const retry = await fetch(
+          `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`,
+          { method: "POST", headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ contents: geminiMessages, generationConfig: { maxOutputTokens: 1024 } }) },
+        );
+        if (!retry.ok) {
+          const err = await retry.json().catch(() => ({}));
+          throw new Error(err.error?.message || `API error ${retry.status}`);
+        }
+        const rdata = await retry.json();
+        const rreply = rdata.candidates?.[0]?.content?.parts?.[0]?.text ?? "Sorry, I didn't catch that.";
+        setMessages((m) => [...m, { role: "assistant", content: rreply }]);
+        setThinking(false);
+        return;
+      }
       if (!res.ok) {
         const err = await res.json().catch(() => ({}));
         throw new Error(err.error?.message || `API error ${res.status}`);
@@ -134,7 +151,7 @@ const ConciergePanel = ({ open, onClose, openContact }) => {
       const reply = data.candidates?.[0]?.content?.parts?.[0]?.text ?? "Sorry, I didn't catch that.";
       setMessages((m) => [...m, { role: "assistant", content: reply }]);
     } catch (e) {
-      console.error("Concierge error", e);
+      console.error("Concierge error", e?.message || e, "| API key set:", !!apiKey, "| key prefix:", apiKey?.substring(0, 6));
       setError(window.t('concierge.error'));
     } finally {
       setThinking(false);
