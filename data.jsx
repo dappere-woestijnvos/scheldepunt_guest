@@ -5,6 +5,12 @@
 // codes, coordinates) are left as plain strings. window.APARTMENT always returns
 // the content resolved for the currently selected language (window.currentLang).
 
+// Store concierge API key from URL param: ?apikey=YOUR_KEY
+(() => {
+  const p = new URLSearchParams(window.location.search).get('apikey');
+  if (p) { localStorage.setItem('concierge_api_key', p); history.replaceState(null, '', window.location.pathname); }
+})();
+
 function mapsUrl(query) {
   return 'https://maps.google.com/maps?q=' + encodeURIComponent(query);
 }
@@ -57,7 +63,7 @@ const APARTMENT_RAW = {
 
   // Paste your Google Gemini API key here to enable the AI Concierge.
   // Get a free key at https://aistudio.google.com/apikey
-  apiKey: "",
+  apiKey: localStorage.getItem("concierge_api_key") || "",
 
   // Supabase connection — enables guestbook, visitor tips, contact form, and
   // issue reports to persist to a real database.
